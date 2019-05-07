@@ -1,0 +1,1454 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="R Markdown: 数据报告生成利器, 灿若星河">
+    <meta name="description" content="R Markdown 站在 knitr 和 Pandoc 的肩膀上，前者执行嵌入于文档中的计算机代码，并将 R Markdown 转换为 Markdown；后者将 Markdown 呈现出您想要的输出格式（如 PDF、HTML、Word 等">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>R Markdown: 数据报告生成利器 | 灿若星河</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">灿若星河</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">灿若星河</div>
+        <div class="logo-desc">
+            
+            业精于勤荒于嬉，形成于思毁于随
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/DivinerHJF" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/DivinerHJF" class="github-corner tooltipped hide-on-med-and-down" target="_blank" data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewbox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://blog-1255524710.cos.ap-beijing.myqcloud.com/cover/hex-rmarkdown.png')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        R Markdown: 数据报告生成利器
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/R-Markdown/" target="_blank">
+                                <span class="chip bg-color">R Markdown</span>
+                            </a>
+                        
+                            <a href="/tags/数据报告/" target="_blank">
+                                <span class="chip bg-color">数据报告</span>
+                            </a>
+                        
+                            <a href="/tags/可重复性/" target="_blank">
+                                <span class="chip bg-color">可重复性</span>
+                            </a>
+                        
+                            <a href="/tags/可视化/" target="_blank">
+                                <span class="chip bg-color">可视化</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/R/" class="post-category" target="_blank">
+                                R
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2018-07-09
+                </div>
+
+                
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                        3.7k
+                    </div>
+                    
+
+                    
+                    <div class="info-break-policy">
+                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                        15 分
+                    </div>
+                    
+                
+				
+				
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>R Markdown 站在 knitr 和 Pandoc 的肩膀上，前者执行嵌入于文档中的计算机代码，并将 R Markdown 转换为 Markdown；后者将 Markdown 呈现出您想要的输出格式（如 PDF、HTML、Word 等）</p>
+<p>此篇文章翻译自谢益辉新书 <a href="https://bookdown.org/yihui/rmarkdown/" target="_blank" rel="noopener">《R Markdown: The Definitive Guide》</a> 的前三章节，内容有所删减，主要介绍了 R Markdown 的相关结构及语法规则，如果想了解更多更详细的内容推荐您阅读原书。</p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>这里假设您已经安装了 R (<a href="https://www.r-project.org/" target="_blank" rel="noopener">https://www.r-project.org</a>)  和 RStudio IDE (<a href="https://www.rstudio.com/" target="_blank" rel="noopener">https://www.rstudio.com</a>) 。Rstudio 并不是必须的，但安装它会使您更加容易地使用 R Markdown。如果您没有安装 RStudio IDE，您将不得不安装 Pandoc（ <a href="http://pandoc.org" target="_blank" rel="noopener">http://pandoc.org</a> ），否则就不需要单独安装 Pandoc，因为在安装 RStudio 时已经将它捆绑安装了。接下来，您可以在 R 中安装 <code>rmarkdown</code> 包： </p>
+<pre class=" language-R"><code class="language-R"># Install from CRAN
+install.packages('rmarkdown')
+
+# Or if you want to test the development version,
+# install from GitHub
+if (!requireNamespace("devtools"))
+  install.packages('devtools')
+devtools::install_github('rstudio/rmarkdown')
+</code></pre>
+<p>如果您想要生成 PDF 类型文档输出，您将需要安装 LaTeX 。对于那些以前没有安装过 LaTeX 的 R Markdown 用户，我们建议您安装 TinyTeX（<a href="https://yihui./tinytex/）：" target="_blank" rel="noopener">https://yihui./tinytex/）：</a> </p>
+<pre class=" language-R"><code class="language-R">install.packages("tinytex")
+tinytex::install_tinytex()  # install TinyTeX
+</code></pre>
+<p>TinyTeX 相当于一款轻量级、跨平台、易于维护的 LaTeX 。在将 LaTeX  或 R Markdown 文档编译成 PDF 时，<code>tinytex</code> 可以帮助您自动安装所需的相关 R 包，同时还能确保一个 LaTeX  文档被编译成正确的次数，以解决所有的交叉引用问题。如果您不明白这两件事是什么意思，应该按照我们的建议来安装 TinyTeX，因为这些细节往往并不值得您花费时间和精力去关心。 </p>
+<p>使用 <code>rmarkdown</code> 包、RStudio/Pandoc 和 LaTeX，您应该能够编译大多数R Markdown 文档。在某些情况下，您可能需要其他软件包，我们将在必要时提到它们。 </p>
+<blockquote>
+<p><strong>参考文献</strong></p>
+<ul>
+<li>R Core Team. 2018. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.r-project.org/" target="_blank" rel="noopener">https://www.R-project.org/</a>.</li>
+<li>Xie, Yihui. 2018f. <em>Tinytex: Helper Functions to Install and Maintain Tex Live, and Compile Latex Documents</em>. <a href="https://github.com/yihui/tinytex" target="_blank" rel="noopener">https://github.com/yihui/tinytex</a>.</li>
+</ul>
+</blockquote>
+<hr>
+<h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><p>R Markdown 为数据科学提供了一个创作框架。R Markdown 能胜任以下两个任务：</p>
+<ul>
+<li>保存并执行代码；</li>
+<li>生成可共享的高质量报告。</li>
+</ul>
+<p>R Markdown 的设计初衷是为了更容易地实现报告内容的可重复性，这是因为计算代码和叙述都在同一个文档中，结果是由源代码自动生成的。并且 R Markdown 支持数十种静态和动态/交互式输出格式。 </p>
+<p>如果您更喜欢观看视频进行学习，我们建议您查看网站 <a href="https://rmarkdown.rstudio.com" target="_blank" rel="noopener">https://rmarkdown.rstudio.com</a>，并在 “Get Started ” 中观看视频，其中包括了 R Markdown 的基础知识。 </p>
+<h2 id="文档结构"><a href="#文档结构" class="headerlink" title="文档结构"></a>文档结构</h2><p>下面是一份非常简易的 R Markdown 文档，是一个带有 <code>.Rmd</code> 拓展名的纯文本文档。</p>
+<ul>
+<li>YAML 元数据</li>
+</ul>
+<pre class=" language-yaml"><code class="language-yaml"><span class="token punctuation">---</span>
+<span class="token key atrule">title</span><span class="token punctuation">:</span> <span class="token string">"Hello R Markdown"</span>
+<span class="token key atrule">author</span><span class="token punctuation">:</span> <span class="token string">"Awesome Me"</span>
+<span class="token key atrule">date</span><span class="token punctuation">:</span> <span class="token string">"2018-02-14"</span>
+<span class="token key atrule">output</span><span class="token punctuation">:</span> html_document
+<span class="token punctuation">---</span>
+</code></pre>
+<pre class=" language-markdown"><code class="language-markdown">This is a paragraph in an R Markdown document.
+
+Below is a code chunk:
+
+```{r}
+fit = lm(dist ~ speed, data = cars)
+b   = coef(fit)
+plot(cars)
+abline(fit)
+```
+
+The slope of the regression is <span class="token code keyword">`r b[1]`</span>.
+```
+</code></pre>
+<p>您可以使用任何文本编辑器（包括但不限于 RStudio）来创建这样的文本文档。如果使用 RStudio，您可以从 <code>File -&gt; New File -&gt; R Markdown</code> 中创建一个新的 Rmd 文档。 </p>
+<p>一份 R Markdown 文档有三个基础组成部分：元数据，文本和代码。元数据是在三个连接符 <code>---</code> 之间的内容。元数据的语法是 YAML（ <a href="https://en.wikipedia.org/wiki/YAML" target="_blank" rel="noopener">YAML 不是标记语言</a> ），所以有时它也被称为 YAML metadata 或 YAML frontmatter。 需要注意的是，缩进在 YAML 中十分重要，忽视它会让你付出惨重代价。请参阅谢益辉所写的 《bookdown》（2016）一书中的 <a href="https://bookdown.org/yihui/bookdown/r-markdown.html" target="_blank" rel="noopener">附录b.2</a> 来了解一些简单的例子，这些示例展示了 YAML 语法。</p>
+<p>文档的主体遵循元数据书写的规则。文本的语法是 Markdown，将在第 2.5 节中进行介绍。有两种类型的计算机代码，在第 2.6 节中进行了详细解释： </p>
+<ul>
+<li><strong>代码块</strong>：以三个重音符及所使用语言开始，其中 <code>r</code> 代表所使用的程序语言，并以三个重音符结束。 可以在花括号中填写块选项（如：将图形高度设置为5英寸：<code>{r, fig.height=5}</code>）。</li>
+<li><strong>内联代码</strong>：以 <code></code>r` 开始，并以单个重音符结束。</li>
+</ul>
+<h2 id="文档编译"><a href="#文档编译" class="headerlink" title="文档编译"></a>文档编译</h2><p>最简单的方式莫过于在 RStudio 中单击 <code>Knit</code> 按钮，对应的快捷键为 <code>Ctrl + Shift + K</code> （在 macOS 中为 <code>Cmd + Shift + K</code>）。当然也可以直接运行代码 <code>rmarkdown::render</code> 来进行渲染编译，如：</p>
+<pre class=" language-R"><code class="language-R">rmarkdown::render('foo.Rmd', 'pdf_document')
+</code></pre>
+<p>当编译多个文档时，使用函数更加方便，因为可以直接使用循环来进行渲染编译。</p>
+<h2 id="参考卡片"><a href="#参考卡片" class="headerlink" title="参考卡片"></a>参考卡片</h2><p>RStudio 已经创建了大量的参考卡片，它们可以在 <a href="https://www.rstudio.com/resources/cheatsheets/" target="_blank" rel="noopener">https://www.rstudio.com/resources/cheatsheets/</a> 上免费获得。</p>
+<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>有两种输出格式：documents 和 presentations 。所有可用的格式如下所示 ：</p>
+<ul>
+<li><code>beamer_presentation</code></li>
+<li><code>github_document</code></li>
+<li><code>html_document</code></li>
+<li><code>ioslides_presentation</code></li>
+<li><code>latex_document</code></li>
+<li><code>md_document</code></li>
+<li><code>odt_document</code></li>
+<li><code>pdf_document</code></li>
+<li><code>powerpoint_presentation</code></li>
+<li><code>rtf_document</code></li>
+<li><code>slidy_presentation</code></li>
+<li><code>word_document</code></li>
+</ul>
+<p>我们将在第 3 章和第 4 章详细地记录这些输出格式。在其他扩展包中提供了更多的输出格式（从第 5 章开始）。对于 Rmd 文件的 YAML 元数据中的输出格式名称，如果格式来自扩展包，您需要包含包名（若格式来自于 <code>rmarkdown</code> 包，则不需要 <code>rmarkdown::</code>前缀 ），例如：</p>
+<pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">output</span><span class="token punctuation">:</span> tufte<span class="token punctuation">:</span><span class="token punctuation">:</span>tufte_html
+</code></pre>
+<p>每种输出格式通常都有多种格式选项。所有这些选项都记录在 R 包 help 页面上。例如，您可以在 R 中键入 <code>?rmarkdown::</code> 打开关于 <code>html_document</code> 格式的 help 页面。当您想要使用某些选项时，必须将这些值从 R 转换成 YAML，例如：</p>
+<pre class=" language-R"><code class="language-R">html_document(toc = TRUE, toc_depth = 2, dev = 'svg')
+</code></pre>
+<p>可以用 YAML 写为： </p>
+<pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">output</span><span class="token punctuation">:</span>
+  <span class="token key atrule">html_document</span><span class="token punctuation">:</span>
+    <span class="token key atrule">toc</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">toc_depth</span><span class="token punctuation">:</span> <span class="token number">2</span>
+    <span class="token key atrule">dev</span><span class="token punctuation">:</span> <span class="token string">'svg'</span>
+</code></pre>
+<p>YAML 中的字符串通常不需要引号（<code></code>dev：“svg”<code>和</code>dev:svg<code>是相同的），除非它们包含特殊字符，比如冒号</code>：<code>。如果您不确定是否应该引用字符串，那么用</code>yaml` 包来测试它，例如：</p>
+<pre class=" language-R"><code class="language-R">cat(yaml::as.yaml(list(
+  title = 'A Wonderful Day',
+  subtitle = 'hygge: a quality of coziness'
+)))
+
+## title: A Wonderful Day
+## subtitle: 'hygge: a quality of coziness'
+</code></pre>
+<p>注意，上面例子中的副标题是由于冒号而引用单引号的。</p>
+<p>如果某一选项有子选项（这意味着该选项的值是 R 中的列表），则子选项需要进一步缩进，例如：</p>
+<pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">output</span><span class="token punctuation">:</span>
+  <span class="token key atrule">html_document</span><span class="token punctuation">:</span>
+    <span class="token key atrule">toc</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">includes</span><span class="token punctuation">:</span>
+      <span class="token key atrule">in_header</span><span class="token punctuation">:</span> header.html
+      <span class="token key atrule">before_body</span><span class="token punctuation">:</span> before.html
+</code></pre>
+<p>一些选项将被传递给 <strong>knitr</strong> ，比如 <code>dev</code>、<code>fig_width</code> 和 <code>fig_height</code>。这些选项的详细文档可以在 <a href="https://yihui.name/knitr/options/" target="_blank" rel="noopener">knitr 文档页面</a> 上找到。请注意，实际的 knitr 选项名称可能有所不同。特别是，knitr 在名称中使用 <code>.</code>，但 rmarkdown 使用 <code>_</code>，例如，在 rmarkdown 中，<code>fig_width</code>  对应于knitr 中的 <code>fig.width</code> 。</p>
+<p>一些选项将被传递给 <strong>Pandoc</strong>，比如 <code>toc</code>、<code>toc_depth</code> 和 <code>number_sections</code> 。当有疑问时，您应该参考 Pandoc 文档。R Markdown 输出格式函数通常有一个<code>pandoc_args</code>  参数，它应该是传递给 Pandoc 的参数的字符向量。如果您发现任何没有由输出格式参数表示的 Pandoc 特性，您可以使用这个终极论证，例如：</p>
+<pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">output</span><span class="token punctuation">:</span>
+  <span class="token key atrule">pdf_document</span><span class="token punctuation">:</span>
+    <span class="token key atrule">toc</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">pandoc_args</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">"--wrap=none"</span><span class="token punctuation">,</span> <span class="token string">"--top-level-division=chapter"</span><span class="token punctuation">]</span>
+</code></pre>
+<h2 id="Markdown-语法"><a href="#Markdown-语法" class="headerlink" title="Markdown 语法"></a>Markdown 语法</h2><h3 id="内联格式"><a href="#内联格式" class="headerlink" title="内联格式"></a>内联格式</h3><ul>
+<li><p><em>斜体</em> ：<code>_text_</code> 或 <code>*text*</code> </p>
+</li>
+<li><p><strong>粗体</strong> ：<code>**text**</code></p>
+</li>
+<li><p>下标 ：<code>H~3~PO~4~</code>  渲染为 $H_3PO_4$ </p>
+</li>
+<li><p>上标 ：<code>Cu^2+^</code>  渲染为 $Cu^{2+}$ </p>
+</li>
+<li><p>脚注 ： <code>^[This is a footnote.]</code> </p>
+</li>
+<li><p>内联代码 ：<code>`code`</code> , 可以使用 n+1 个重音符输出包含 n 个重音符的代码块。</p>
+</li>
+<li><p>超链接 ：<code>[text](link)</code> </p>
+</li>
+<li><p>图片链接 ： <code>![alt text or image title](path/to/image)</code></p>
+</li>
+<li><p>引用 ： </p>
+<pre class=" language-ruby"><code class="language-ruby"><span class="token variable">@Manual</span><span class="token punctuation">{</span><span class="token constant">R</span><span class="token operator">-</span>base<span class="token punctuation">,</span>
+  title <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token constant">R</span><span class="token punctuation">:</span> <span class="token constant">A</span> <span class="token constant">Language</span> <span class="token keyword">and</span> <span class="token constant">Environment</span> <span class="token keyword">for</span> <span class="token constant">Statistical</span>
+    <span class="token constant">Computing</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  author <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">{</span><span class="token constant">R</span> <span class="token constant">Core</span> <span class="token constant">Team</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  organization <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token constant">R</span> <span class="token constant">Foundation</span> <span class="token keyword">for</span> <span class="token constant">Statistical</span> <span class="token constant">Computing</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  address <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token constant">Vienna</span><span class="token punctuation">,</span> <span class="token constant">Austria</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  year <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">2017</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  url <span class="token operator">=</span> <span class="token punctuation">{</span>https<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>www<span class="token punctuation">.</span><span class="token constant">R</span><span class="token operator">-</span>project<span class="token punctuation">.</span>org<span class="token operator">/</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</li>
+</ul>
+<h3 id="块级元素"><a href="#块级元素" class="headerlink" title="块级元素"></a>块级元素</h3><ul>
+<li><p><strong>标题</strong></p>
+<pre class=" language-Markdown"><code class="language-Markdown"># First-level header
+
+## Second-level header
+
+### Third-level header
+</code></pre>
+<p>如果不想让某个标题被编号，可以在标题后面添加 <code>{-}</code> 或者 <code>{.unnumbered}</code>，如：</p>
+<pre class=" language-Markdown"><code class="language-Markdown"># Preface {-} 
+</code></pre>
+</li>
+<li><p><strong>无序列表</strong></p>
+<pre class=" language-Markdown"><code class="language-Markdown">- one item
+- one item
+- one item
+  - one more item
+  - one more item
+  - one more item
+</code></pre>
+</li>
+<li><p><strong>有序列表</strong></p>
+<pre class=" language-Markdown"><code class="language-Markdown">1. the first item
+2. the second item
+3. the third item
+  - one unordered item
+  - one unordered item
+</code></pre>
+</li>
+<li><p><strong>引用</strong></p>
+<pre class=" language-Markdown"><code class="language-Markdown">> "I thoroughly disapprove of duels. If a man should challenge me,
+  I would take him kindly and forgivingly by the hand and lead him
+  to a quiet place and kill him."
+>
+>                                                 --- Mark Twain
+</code></pre>
+<blockquote>
+<p>“I thoroughly disapprove of duels. If a man should challenge me,<br>I would take him kindly and forgivingly by the hand and lead him<br>to a quiet place and kill him.”</p>
+<p>​                                               — Mark Twain</p>
+</blockquote>
+</li>
+<li><p><strong>代码块</strong></p>
+<pre class=" language-Markdown"><code class="language-Markdown">```
+This text is displayed verbatim / preformatted
+```
+
+Or indent by four spaces:
+
+    This text is displayed verbatim / preformatted
+</code></pre>
+</li>
+</ul>
+<h3 id="数学表达式"><a href="#数学表达式" class="headerlink" title="数学表达式"></a>数学表达式</h3><p><code>$f(k) = {n \choose k} p^{k} (1-p)^{n-k}$</code> :  $f(k) = {n \choose k} p^{k} (1-p)^{n-k}$ </p>
+<p><code>$$f(k) = {n \choose k} p^{k} (1-p)^{n-k}$$</code> : </p>
+<p>$$<br>f(k) = {n \choose k} p^{k} (1-p)^{n-k}<br>$$</p>
+<hr>
+<h2 id="代码块选项"><a href="#代码块选项" class="headerlink" title="代码块选项"></a>代码块选项</h2><p>单击 <code>Insert</code> 按钮，对应快捷键为 <code>Ctrl + Alt + I</code> （macOS：<code>Cmd + Option + I</code> ）。</p>
+<p>在 <a href="https://yihui.name/knitr/options" target="_blank" rel="noopener">https://yihui.name/knitr/options</a> 中有大量的代码块可选项，在此我们列出常用的一部分：</p>
+<ul>
+<li><p><code>eval=TRUE</code> ：执行当前代码块；</p>
+<pre class=" language-R"><code class="language-R">```{r}
+# execute code if the date is later than a specified day
+do_it = Sys.Date() > '2018-02-14'
+```
+
+```{r, eval=do_it}
+x = rnorm(100)
+```
+</code></pre>
+</li>
+<li><p><code>echo=TRUE</code> ：输出源代码；</p>
+</li>
+<li><p><code>result</code> ：当设置为 <code>&#39;hide&#39;</code> ，文本输出将被隐藏；当设置为 <code>&#39;asis&#39;</code> ，文本输出将被 “原样” 书写。</p>
+</li>
+<li><p><code>collapse=TRUE</code> ：将文本输出和源代码合并为单个代码块输出，更加紧凑；</p>
+</li>
+<li><p><code>warning</code>, <code>message</code>,  <code>error</code> ：是否在输出文档中显示警告、消息和错误；</p>
+</li>
+<li><p><code>include=FALSE</code> ：运行当前代码并且不显示任何源代码与输出结果；</p>
+</li>
+<li><p><code>cache</code> ：是否启用高速缓存。如果启用了缓存，则在下一次编译文档时不会对相同的代码块进行评估（如果代码块没有被修改），这将节省您的时间；</p>
+</li>
+<li><p><code>fig.width</code>，<code>fig.height</code> ：（图形设备）块的大小（英寸）。注意：<code>fig.dim = c(6, 4)</code> 意味着 <code>fig.width = 6</code> 并且 <code>fig.height = 4</code>；</p>
+</li>
+<li><p><code>out.width</code>， <code>out.height</code> ：输出文档中 R 图片的输出大小。可以使用百分比，例如 <code>out.width = &#39;80%&#39;</code> 表示页面宽度的 80%； </p>
+</li>
+<li><p><code>fig.align</code> ：图片的对齐方式；</p>
+</li>
+<li><p><code>dev</code> ：图形设备保存 R 图片的格式。如 <code>&#39;pdf&#39;</code>, <code>&#39;png&#39;</code>, <code>&#39;svg&#39;</code>, <code>&#39;jpeg&#39;</code>；</p>
+</li>
+<li><p><code>fig.cap</code> ：图片标题；</p>
+</li>
+<li><p><code>child</code> ：您可以在主文档中包含子文档。这个选项选择一条通向外部文件的路径。 </p>
+</li>
+</ul>
+<p>如果某个选项需要经常被设置为多个代码块中的值，您可以考虑在文档的第一个代码块中全局设置它：</p>
+<pre class=" language-R"><code class="language-R">```{r, setup, include=FALSE}
+knitr::opts_chunk$set(fig.width = 8, collapse = TRUE)
+```
+</code></pre>
+<h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><p>本地图片亦可以使用代码块选项进行调节，例如：</p>
+<pre class=" language-R"><code class="language-R">```{r, out.width='25%', fig.align='center', fig.cap='...'}
+knitr::include_graphics('images/hex-rmarkdown.png')
+```
+</code></pre>
+<p>如果您想要淡入一个不是由 R 代码生成的图形，您可以使用 <code>knitr::include_graphics()</code>  函数，它使您能够更好地控制图像的属性，而不是像 <code>![alt text or image title](path/to/image)</code> 这样的 Markdown 语法难以调解图片属性。 </p>
+<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><p>使用 <code>knitr::kable()</code>  函数可以简易的创建表格，表格标题可以通过 <code>caption</code>  来设置，例如：</p>
+<pre class=" language-R"><code class="language-R">```{r tables-mtcars}
+knitr::kable(iris[1:5, ], caption = 'A caption')
+```
+</code></pre>
+<p>如果您正在寻找更高级的表格样式控制，建议您使用 <a href="https://cran.r-project.org/package=kableExtra" target="_blank" rel="noopener">kableExtra</a> 包，它提供了定制 PDF 和 HTML 表格外观的功能。在第 12.3 节中解释了 <code>bookdown</code> 包如何扩展 rmarkdown 的功能，以允许在文本中轻松地交叉引用数字和表格。 </p>
+<blockquote>
+<p><strong>参考文献</strong></p>
+<ul>
+<li>Xie, Yihui. 2015. <em>Dynamic Documents with R and Knitr</em>. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. <a href="https://yihui.name/knitr/" target="_blank" rel="noopener">https://yihui.name/knitr/</a>. </li>
+</ul>
+</blockquote>
+<hr>
+<h1 id="输出文档"><a href="#输出文档" class="headerlink" title="输出文档"></a>输出文档</h1><h2 id="HTML-文档"><a href="#HTML-文档" class="headerlink" title="HTML 文档"></a>HTML 文档</h2><p>为了输出 HTML 文档，首先要在 YAML 元数据中写入 <code>output: html_document</code> ：</p>
+<pre class=" language-yaml"><code class="language-yaml"><span class="token punctuation">---</span>
+<span class="token key atrule">title</span><span class="token punctuation">:</span> Habits
+<span class="token key atrule">author</span><span class="token punctuation">:</span> John Doe
+<span class="token key atrule">date</span><span class="token punctuation">:</span> March 22<span class="token punctuation">,</span> <span class="token number">2005</span>
+<span class="token key atrule">output</span><span class="token punctuation">:</span> html_document
+<span class="token punctuation">---</span>
+</code></pre>
+<h3 id="目录（Table-of-contents）"><a href="#目录（Table-of-contents）" class="headerlink" title="目录（Table of contents）"></a>目录（Table of contents）</h3><pre class=" language-yaml"><code class="language-yaml"><span class="token punctuation">---</span>
+<span class="token key atrule">title</span><span class="token punctuation">:</span> <span class="token string">"Habits"</span>
+<span class="token key atrule">output</span><span class="token punctuation">:</span>
+  <span class="token key atrule">html_document</span><span class="token punctuation">:</span>
+    <span class="token key atrule">toc</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">toc_depth</span><span class="token punctuation">:</span> <span class="token number">2</span>
+    <span class="token key atrule">toc_float</span><span class="token punctuation">:</span>
+        <span class="token key atrule">collapsed</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+        <span class="token key atrule">smooth_scroll</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+<span class="token punctuation">---</span>
+</code></pre>
+<ul>
+<li><code>toc: true</code> ：输出目录；</li>
+<li><code>toc_depth</code> ：所输出标题的最小级别；</li>
+<li><code>toc_float: true</code> ：目录悬停于内容左侧，并一直可见；</li>
+<li><code>collapsed</code> (默认为 <code>TRUE</code>)  ：初始只显示顶级标题，随内容滚动目录逐级展开；</li>
+<li><code>smooth_scroll</code> (默认为 <code>TRUE</code>) ：点击目录标题是否导航到指定内容。</li>
+</ul>
+<h3 id="目录编号-Section-numbering"><a href="#目录编号-Section-numbering" class="headerlink" title="目录编号 (Section numbering)"></a>目录编号 (Section numbering)</h3><pre class=" language-yaml"><code class="language-yaml"><span class="token punctuation">---</span>
+<span class="token key atrule">title</span><span class="token punctuation">:</span> <span class="token string">"Habits"</span>
+<span class="token key atrule">output</span><span class="token punctuation">:</span>
+  <span class="token key atrule">html_document</span><span class="token punctuation">:</span>
+    <span class="token key atrule">toc</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">number_sections</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token punctuation">---</span>
+</code></pre>
+<p>注意，如果文档中没有一级标题，那么二级标题将被命名为 <code>0.1</code>, <code>0.2</code> ……</p>
+<h3 id="选项卡-Tabbed-sections"><a href="#选项卡-Tabbed-sections" class="headerlink" title="选项卡 (Tabbed sections)"></a>选项卡 (Tabbed sections)</h3><pre class=" language-markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">##</span> Quarterly Results {.tabset .tabset-fade .tabset-pills}</span>
+
+<span class="token title important"><span class="token punctuation">###</span> By Product</span>
+
+(tab content)
+
+<span class="token title important"><span class="token punctuation">###</span> By Region</span>
+
+(tab content)
+</code></pre>
+<p><img src="https://bookdown.org/yihui/rmarkdown/images/tabset.png" alt="Tabbed sections"></p>
+<ul>
+<li><code>.tabset</code>  ：使主标题的所有子标题与 .tabset 属性一起出现在选项卡中，而不是作为独立的部分；</li>
+<li><code>.tabset-fade</code>  ：选项卡切换时淡入淡出；</li>
+<li><code>.tabset-pills</code>  ：改变选项卡外观，使其类似 “药丸”。</li>
+</ul>
+<h3 id="外观与风格"><a href="#外观与风格" class="headerlink" title="外观与风格"></a>外观与风格</h3><pre class=" language-yaml"><code class="language-yaml"><span class="token punctuation">---</span>
+<span class="token key atrule">title</span><span class="token punctuation">:</span> <span class="token string">"Habits"</span>
+<span class="token key atrule">output</span><span class="token punctuation">:</span>
+  <span class="token key atrule">html_document</span><span class="token punctuation">:</span>
+    <span class="token key atrule">theme</span><span class="token punctuation">:</span> united
+    <span class="token key atrule">highlight</span><span class="token punctuation">:</span> tango
+<span class="token punctuation">---</span>
+</code></pre>
+<ul>
+<li><code>theme</code>  ：主题是从 <a href="https://bootswatch.com/3/" target="_blank" rel="noopener">Bootswatch</a> 主题库中提取的，适用的主题包括：<code>default</code>, <code>cerulean</code>, <code>journal</code>, <code>flatly</code>, <code>readable</code>, <code>spacelab</code>, <code>united</code>, <code>cosmo</code>, <code>lumen</code>, <code>paper</code>, <code>sandstone</code>, <code>simplex</code>, 和 <code>yeti</code>. </li>
+<li><code>highlight</code> ：代码高亮模式。支持的风格包括： <code>default</code>,  <code>tango</code>,  <code>pygments</code>,  <code>kate</code>,  <code>monochrome</code>,  <code>espresso</code>,  <code>zenburn</code>,  <code>haddock</code> 和 <code>textmate</code>.  </li>
+</ul>
+<h3 id="图片选项"><a href="#图片选项" class="headerlink" title="图片选项"></a>图片选项</h3><pre class=" language-yaml"><code class="language-yaml"><span class="token punctuation">---</span>
+<span class="token key atrule">title</span><span class="token punctuation">:</span> <span class="token string">"Habits"</span>
+<span class="token key atrule">output</span><span class="token punctuation">:</span>
+  <span class="token key atrule">html_document</span><span class="token punctuation">:</span>
+    <span class="token key atrule">fig_width</span><span class="token punctuation">:</span> <span class="token number">7</span>
+    <span class="token key atrule">fig_height</span><span class="token punctuation">:</span> <span class="token number">6</span>
+    <span class="token key atrule">fig_caption</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token punctuation">---</span>
+</code></pre>
+<ul>
+<li><code>fig_width</code> 和 <code>fig_height</code>  ：图片宽度和高度；</li>
+<li><code>fig_caption</code>  ：控制图片是否包括标题；</li>
+<li><code>dev</code>  ：图片渲染格式，默认为 <code>png</code>。</li>
+</ul>
+<h3 id="表格打印"><a href="#表格打印" class="headerlink" title="表格打印"></a>表格打印</h3><p> 默认表格输出格式为：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Option</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">default</td>
+<td style="text-align:left">Call the <code>print.data.frame</code> generic method</td>
+</tr>
+<tr>
+<td style="text-align:center">kable</td>
+<td style="text-align:left">Use the <code>knitr::kable</code> function</td>
+</tr>
+<tr>
+<td style="text-align:center">tibble</td>
+<td style="text-align:left">Use the <code>tibble::print.tbl_df</code> function</td>
+</tr>
+<tr>
+<td style="text-align:center">paged</td>
+<td style="text-align:left">Use <code>rmarkdown::print.paged_df</code> to create a pageable table</td>
+</tr>
+</tbody>
+</table>
+<p>设定为 paged 格式后输出形式为：</p>
+<pre class=" language-yaml"><code class="language-yaml"><span class="token punctuation">---</span>
+<span class="token key atrule">title</span><span class="token punctuation">:</span> <span class="token string">"Motor Trend Car Road Tests"</span>
+<span class="token key atrule">output</span><span class="token punctuation">:</span>
+  <span class="token key atrule">html_document</span><span class="token punctuation">:</span>
+    <span class="token key atrule">df_print</span><span class="token punctuation">:</span> paged
+<span class="token punctuation">---</span>
+
+​``` <span class="token punctuation">{</span>r<span class="token punctuation">,</span> rows.print=5<span class="token punctuation">}</span>
+mtcars
+​
+</code></pre>
+<pre><code>
+
+![mtcars](https://bookdown.org/yihui/rmarkdown/images/paged.png)
+
+
+TABLE 3.2: The options for paged HTML tables. 
+
+| Option         | Description                                           |
+| -------------- | ----------------------------------------------------- |
+| max.print      | The number of rows to print.                          |
+| max.print      | The number of rows to print.                          |
+| cols.print     | The number of columns to display.                     |
+| cols.min.print | The minimum number of columns to display.             |
+| pages.print    | The number of pages to display under page navigation. |
+| pages.print    | The number of pages to display under page navigation. |
+| rownames.print | When set to `FALSE` turns off row names.              |
+
+
+
+### 代码折叠
+
+```yaml
+---
+title: &quot;Habits&quot;
+output:
+  html_document:
+    code_folding: hide
+---
+</code></pre><ul>
+<li><code>code_folding: hide</code> ：初始默认不显示代码，查看者可点击进行显示；</li>
+<li><code>code_folding: show</code> ：初始默认显示代码，查看者可点击进行隐藏；</li>
+</ul>
+<h3 id="高级定制"><a href="#高级定制" class="headerlink" title="高级定制"></a>高级定制</h3><h4 id="保留-Markdown-文件"><a href="#保留-Markdown-文件" class="headerlink" title="保留 Markdown 文件"></a>保留 Markdown 文件</h4><p>当运行一个 R Markdown 文件（<code>*.Rmd</code>）时，将创造一个 Markdown 文件（<code>*.md</code>）并将该文件通过 Pandoc 转换为 HTML 文件。如果想要保留 Markdown 文件，可以使用 <code>keep_md</code> 选项：</p>
+<pre class=" language-yaml"><code class="language-yaml"><span class="token punctuation">---</span>
+<span class="token key atrule">title</span><span class="token punctuation">:</span> <span class="token string">"Habits"</span>
+<span class="token key atrule">output</span><span class="token punctuation">:</span>
+  <span class="token key atrule">html_document</span><span class="token punctuation">:</span>
+    <span class="token key atrule">keep_md</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token punctuation">---</span>
+</code></pre>
+<h4 id="添加本地-HTML-文档"><a href="#添加本地-HTML-文档" class="headerlink" title="添加本地 HTML 文档"></a>添加本地 HTML 文档</h4><p>可以通过添加额外的 HTML 内容或完全替换核心 Pandoc 模板来完成更高级的输出定制。为了在文档头部或文档主体之前/之后包含内容，您可以使用以下选项： </p>
+<pre class=" language-yaml"><code class="language-yaml"><span class="token punctuation">---</span>
+<span class="token key atrule">title</span><span class="token punctuation">:</span> <span class="token string">"Habits"</span>
+<span class="token key atrule">output</span><span class="token punctuation">:</span>
+  <span class="token key atrule">html_document</span><span class="token punctuation">:</span>
+    <span class="token key atrule">includes</span><span class="token punctuation">:</span>
+      <span class="token key atrule">in_header</span><span class="token punctuation">:</span> header.html
+      <span class="token key atrule">before_body</span><span class="token punctuation">:</span> doc_prefix.html
+      <span class="token key atrule">after_body</span><span class="token punctuation">:</span> doc_suffix.html
+<span class="token punctuation">---</span>
+</code></pre>
+<h4 id="自定义模板"><a href="#自定义模板" class="headerlink" title="自定义模板"></a>自定义模板</h4><pre class=" language-yaml"><code class="language-yaml"><span class="token punctuation">---</span>
+<span class="token key atrule">title</span><span class="token punctuation">:</span> <span class="token string">"Habits"</span>
+<span class="token key atrule">output</span><span class="token punctuation">:</span>
+  <span class="token key atrule">html_document</span><span class="token punctuation">:</span>
+    <span class="token key atrule">template</span><span class="token punctuation">:</span> quarterly_report.html
+<span class="token punctuation">---</span>
+</code></pre>
+<p>有关模板的其他详细信息，请参考 <a href="http://pandoc.org/MANUAL.html#templates" target="_blank" rel="noopener">Pandoc 模板</a> 上的文档。您还可以研究默认的 HTML 模板 <a href="https://github.com/jgm/pandoc-templates/" target="_blank" rel="noopener"><code>default.html5</code></a> 。</p>
+<p>其他类型文档格式控制方式类似，如欲详细了解请 <a href="https://bookdown.org/yihui/rmarkdown/documents.html" target="_blank" rel="noopener">参考原作</a> 。</p>
+
+            </div>
+            <hr>
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            <div class="reprint">
+                <p>
+                    <span class="reprint-tip">
+                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
+                    </span>
+                    <a href="https://divinerhjf.github.io" class="b-link-green">灿若星河</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2018/07/09/r-markdown-shu-ju-bao-gao-sheng-cheng-li-qi/" class="b-link-green">R Markdown: 数据报告生成利器</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '6f47cfbcde5f92808dfc',
+        clientSecret: '997872614f890291d0f31fd08ec7f657109defe3',
+        repo: 'Divinerhjf.github.io',
+        owner: 'DivinerHJF',
+        admin: "DivinerHJF",
+        id: '2018-07-09T22-44-09',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2018/10/30/stargazer-r-yu-yan-shu-chu-tong-ji-biao/">
+                    <div class="card-image">
+                        
+                        <img src="https://blog-1255524710.cos.ap-beijing.myqcloud.com/cover/table.png" class="responsive-img" alt="stargazer：R 语言输出统计表">
+                        
+                        <span class="card-title">stargazer：R 语言输出统计表</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">使用 stargazer 可以将 R 构建的模型结果以 LATEX 、 HTML 和 ASCII 格式输出，方便我们生成标准格式的表格结合 rmarkdown 来进行使用，会使我们优雅地写出一篇拥有期刊级统计表的文章
+简介R 包 starg</div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-10-30
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/R/" class="post-category" target="_blank">
+                                    R
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/R/" target="_blank">
+                        <span class="chip bg-color">R</span>
+                    </a>
+                    
+                    <a href="/tags/可视化/" target="_blank">
+                        <span class="chip bg-color">可视化</span>
+                    </a>
+                    
+                    <a href="/tags/stargazer/" target="_blank">
+                        <span class="chip bg-color">stargazer</span>
+                    </a>
+                    
+                    <a href="/tags/统计表/" target="_blank">
+                        <span class="chip bg-color">统计表</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2018/04/07/shu-ju-ke-shi-hua-r-hui-tu-bao-xi-lie/">
+                    <div class="card-image">
+                        
+                        <img src="https://blog-1255524710.cos.ap-beijing.myqcloud.com/cover/picture.jpg" class="responsive-img" alt="数据可视化-R绘图包系列">
+                        
+                        <span class="card-title">数据可视化-R绘图包系列</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">R 中有四大框架用于产生静态图形: graphics、grid、lattice、ggplot2，利用这些包可以将结构或非结构数据转换成适当的可视化图表，展现出隐藏在数据中的信息
+此系列文章主要介绍 R 基础绘图命令，涵盖 graphics、</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-04-07
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/R/" class="post-category" target="_blank">
+                                    R
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/数据可视化/" target="_blank">
+                        <span class="chip bg-color">数据可视化</span>
+                    </a>
+                    
+                    <a href="/tags/graphics/" target="_blank">
+                        <span class="chip bg-color">graphics</span>
+                    </a>
+                    
+                    <a href="/tags/lattice/" target="_blank">
+                        <span class="chip bg-color">lattice</span>
+                    </a>
+                    
+                    <a href="/tags/ggplot2/" target="_blank">
+                        <span class="chip bg-color">ggplot2</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 灿若星河<br />'
+            + '作者: Divinerhjf<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            本站由&copy;<a href="https://blinkfox.github.io/" target="_blank">Blinkfox</a>基于
+            <a href="https://hexo.io/" target="_blank">Hexo</a> 的
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>主题搭建.
+
+            
+                &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
+                <span class="white-color">15.3k</span>
+            
+
+            
+			
+                <br>
+                
+                <span id="busuanzi_container_site_pv">
+                    <i class="fa fa-heart-o"></i>
+                    本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
+                </span>
+                
+                
+                <span id="busuanzi_container_site_uv">
+                    <i class="fa fa-users"></i>
+                    次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+                </span>
+                
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/DivinerHJF" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:haojianfeng1997@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1246574158" class="tooltipped" data-tooltip="QQ联系我: 1246574158" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+    <script src="/libs/others/clicklove.js"></script>
+
+
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
+
+</body>
+</html>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://divinerhjf.github.io/"/>
-  <updated>2019-05-07T16:41:07.210Z</updated>
+  <updated>2019-05-07T17:09:00.902Z</updated>
   <id>https://divinerhjf.github.io/</id>
   
   <author>
@@ -15,6 +15,137 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>customLayout：R 语言自由拼图</title>
+    <link href="https://divinerhjf.github.io/2018/11/10/customlayout-r-yu-yan-zi-you-pin-tu/"/>
+    <id>https://divinerhjf.github.io/2018/11/10/customlayout-r-yu-yan-zi-you-pin-tu/</id>
+    <published>2018-11-10T02:51:49.000Z</published>
+    <updated>2019-05-07T17:09:00.902Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;customLayout 包是一个图表对象布局工具，它可以让我们用更加简单易解的操作命令来完成繁琐的图片布局设置。如果你常常为了一页多图的繁琐布局设置而苦恼，那么这个包绝对值得好好学习。&lt;/p&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="R" scheme="https://divinerhjf.github.io/categories/R/"/>
+    
+    
+      <category term="R" scheme="https://divinerhjf.github.io/tags/R/"/>
+    
+      <category term="customLayout" scheme="https://divinerhjf.github.io/tags/customLayout/"/>
+    
+      <category term="绘图" scheme="https://divinerhjf.github.io/tags/%E7%BB%98%E5%9B%BE/"/>
+    
+      <category term="图片布局" scheme="https://divinerhjf.github.io/tags/%E5%9B%BE%E7%89%87%E5%B8%83%E5%B1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>stargazer：R 语言输出统计表</title>
+    <link href="https://divinerhjf.github.io/2018/10/30/stargazer-r-yu-yan-shu-chu-tong-ji-biao/"/>
+    <id>https://divinerhjf.github.io/2018/10/30/stargazer-r-yu-yan-shu-chu-tong-ji-biao/</id>
+    <published>2018-10-30T08:20:03.000Z</published>
+    <updated>2019-05-07T17:09:03.930Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;使用 stargazer 可以将 R 构建的模型结果以 LATEX 、 HTML 和 ASCII 格式输出，方便我们生成标准格式的表格结合 rmarkdown 来进行使用，会使我们优雅地写出一篇拥有期刊级统计表的文章&lt;/p&gt;
+&lt;h2 id=&quot;简介&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="R" scheme="https://divinerhjf.github.io/categories/R/"/>
+    
+    
+      <category term="R" scheme="https://divinerhjf.github.io/tags/R/"/>
+    
+      <category term="可视化" scheme="https://divinerhjf.github.io/tags/%E5%8F%AF%E8%A7%86%E5%8C%96/"/>
+    
+      <category term="stargazer" scheme="https://divinerhjf.github.io/tags/stargazer/"/>
+    
+      <category term="统计表" scheme="https://divinerhjf.github.io/tags/%E7%BB%9F%E8%AE%A1%E8%A1%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>R Markdown: 数据报告生成利器</title>
+    <link href="https://divinerhjf.github.io/2018/07/09/r-markdown-shu-ju-bao-gao-sheng-cheng-li-qi/"/>
+    <id>https://divinerhjf.github.io/2018/07/09/r-markdown-shu-ju-bao-gao-sheng-cheng-li-qi/</id>
+    <published>2018-07-09T14:44:09.000Z</published>
+    <updated>2019-05-07T16:59:40.875Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;R Markdown 站在 knitr 和 Pandoc 的肩膀上，前者执行嵌入于文档中的计算机代码，并将 R Markdown 转换为 Markdown；后者将 Markdown 呈现出您想要的输出格式（如 PDF、HTML、Word
+        
+      
+    
+    </summary>
+    
+      <category term="R" scheme="https://divinerhjf.github.io/categories/R/"/>
+    
+    
+      <category term="R Markdown" scheme="https://divinerhjf.github.io/tags/R-Markdown/"/>
+    
+      <category term="数据报告" scheme="https://divinerhjf.github.io/tags/%E6%95%B0%E6%8D%AE%E6%8A%A5%E5%91%8A/"/>
+    
+      <category term="可重复性" scheme="https://divinerhjf.github.io/tags/%E5%8F%AF%E9%87%8D%E5%A4%8D%E6%80%A7/"/>
+    
+      <category term="可视化" scheme="https://divinerhjf.github.io/tags/%E5%8F%AF%E8%A7%86%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据可视化-R绘图包系列</title>
+    <link href="https://divinerhjf.github.io/2018/04/07/shu-ju-ke-shi-hua-r-hui-tu-bao-xi-lie/"/>
+    <id>https://divinerhjf.github.io/2018/04/07/shu-ju-ke-shi-hua-r-hui-tu-bao-xi-lie/</id>
+    <published>2018-04-07T09:30:49.000Z</published>
+    <updated>2019-05-07T16:48:54.264Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;R 中有四大框架用于产生静态图形: graphics、grid、lattice、ggplot2，利用这些包可以将结构或非结构数据转换成适当的可视化图表，展现出隐藏在数据中的信息&lt;/p&gt;
+&lt;p&gt;此系列文章主要介绍 R 基础绘图命令，涵盖
+        
+      
+    
+    </summary>
+    
+      <category term="R" scheme="https://divinerhjf.github.io/categories/R/"/>
+    
+    
+      <category term="数据可视化" scheme="https://divinerhjf.github.io/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/"/>
+    
+      <category term="graphics" scheme="https://divinerhjf.github.io/tags/graphics/"/>
+    
+      <category term="lattice" scheme="https://divinerhjf.github.io/tags/lattice/"/>
+    
+      <category term="ggplot2" scheme="https://divinerhjf.github.io/tags/ggplot2/"/>
+    
+  </entry>
   
   <entry>
     <title>数据可视化 - 地图可视化系列文章</title>
