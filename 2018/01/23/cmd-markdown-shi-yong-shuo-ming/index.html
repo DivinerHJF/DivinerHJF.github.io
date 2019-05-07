@@ -307,20 +307,16 @@
         margin-top: -100px;
         visibility: hidden;
     }
-
     #articleContent :focus {
         outline: none;
     }
-
     .toc-fixed {
         position: fixed;
         top: 64px;
     }
-
     .toc-widget {
         padding-left: 20px;
     }
-
     .toc-widget .toc-title {
         margin: 35px 0 15px 0;
         padding-left: 17px;
@@ -328,39 +324,31 @@
         font-weight: bold;
         line-height: 1.5rem;
     }
-
     .toc-widget ol {
         padding: 0;
         list-style: none;
     }
-
     #toc-content ol {
         padding-left: 10px;
     }
-
     #toc-content ol li {
         padding-left: 10px;
     }
-
     #toc-content .toc-link:hover {
         color: #42b983;
         font-weight: 700;
         text-decoration: underline;
     }
-
     #toc-content .toc-link::before {
         background-color: transparent;
         max-height: 25px;
     }
-
     #toc-content .is-active-link {
         color: #42b983;
     }
-
     #toc-content .is-active-link::before {
         background-color: #42b983;
     }
-
     #floating-toc-btn {
         position: fixed;
         right: 20px;
@@ -369,12 +357,10 @@
         margin-bottom: 0;
         z-index: 998;
     }
-
     #floating-toc-btn .btn-floating {
         width: 48px;
         height: 48px;
     }
-
     #floating-toc-btn .btn-floating i {
         line-height: 48px;
         font-size: 1.4rem;
@@ -749,7 +735,7 @@ Bob-->Alice: I am good thanks!
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
@@ -762,7 +748,7 @@ Bob-->Alice: I am good thanks!
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">学习了新知识，疏于记录便会淡忘，要用到时方悔当初；纸本与现有平台有其局限性，对于技术文档的展示有颇多限制，个人博客不失为一个好的选择——源于记录，善于书页。
+                    <div class="summary block-with-text">学习了新知识，疏于记录便会淡忘，要用到时方悔当初；纸本与现有平台有其局限性，对于技术文档的展示有颇多限制，个人博客不失为一个好的选择——源于记录，善于书页。
 
 注：本文基于本网站的初代版本 —— NEXT 主题，部分内容与本网站当前主题略有</div>
                     <div class="publish-info">
@@ -798,7 +784,7 @@ Bob-->Alice: I am good thanks!
         </div>
         
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
                 本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
             </div>
@@ -812,7 +798,7 @@ Bob-->Alice: I am good thanks!
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">我们理解您需要更便捷更高效的工具记录思想，整理笔记、知识，并将其中承载的价值传播给他人，Cmd Markdown 是我们给出的答案 —— 我们为记录思想和分享知识提供更专业的工具。 
+                    <div class="summary block-with-text">我们理解您需要更便捷更高效的工具记录思想，整理笔记、知识，并将其中承载的价值传播给他人，Cmd Markdown 是我们给出的答案 —— 我们为记录思想和分享知识提供更专业的工具。 
 您可以使用 Cmd Markdown：
 
 
@@ -916,20 +902,17 @@ Bob-->Alice: I am good thanks!
             // headingsOffset: -205,
             headingSelector: 'h2, h3, h4'
         });
-
         // modify the toc link href to support Chinese.
         let i = 0;
         let tocHeading = 'toc-heading-';
         $('#toc-content a').each(function () {
             $(this).attr('href', '#' + tocHeading + (++i));
         });
-
         // modify the heading title id to support Chinese.
         i = 0;
         $('#articleContent').children('h2, h3, h4').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
-
         // Set scroll toc fixed.
         let tocHeight = parseInt($(window).height() * 0.4 - 64);
         let $tocWidget = $('.toc-widget');
@@ -942,7 +925,6 @@ Bob-->Alice: I am good thanks!
                 $tocWidget.removeClass('toc-fixed');
             }
         });
-
         
         /* 修复文章卡片 div 的宽度. */
         let fixPostCardWidth = function (srcId, targetId) {
@@ -950,7 +932,6 @@ Bob-->Alice: I am good thanks!
             if (srcDiv.length === 0) {
                 return;
             }
-
             let w = srcDiv.width();
             if (w >= 450) {
                 w = w + 21;
@@ -963,7 +944,6 @@ Bob-->Alice: I am good thanks!
             }
             $('#' + targetId).width(w);
         };
-
         // 切换TOC目录展开收缩的相关操作.
         const expandedClass = 'expanded';
         let $tocAside = $('#toc-aside');
@@ -981,6 +961,7 @@ Bob-->Alice: I am good thanks!
         
     });
 </script>
+
     
 
 </main>

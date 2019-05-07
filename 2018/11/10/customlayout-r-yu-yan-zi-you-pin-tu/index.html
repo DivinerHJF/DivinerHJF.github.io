@@ -305,20 +305,16 @@
         margin-top: -100px;
         visibility: hidden;
     }
-
     #articleContent :focus {
         outline: none;
     }
-
     .toc-fixed {
         position: fixed;
         top: 64px;
     }
-
     .toc-widget {
         padding-left: 20px;
     }
-
     .toc-widget .toc-title {
         margin: 35px 0 15px 0;
         padding-left: 17px;
@@ -326,39 +322,31 @@
         font-weight: bold;
         line-height: 1.5rem;
     }
-
     .toc-widget ol {
         padding: 0;
         list-style: none;
     }
-
     #toc-content ol {
         padding-left: 10px;
     }
-
     #toc-content ol li {
         padding-left: 10px;
     }
-
     #toc-content .toc-link:hover {
         color: #42b983;
         font-weight: 700;
         text-decoration: underline;
     }
-
     #toc-content .toc-link::before {
         background-color: transparent;
         max-height: 25px;
     }
-
     #toc-content .is-active-link {
         color: #42b983;
     }
-
     #toc-content .is-active-link::before {
         background-color: #42b983;
     }
-
     #floating-toc-btn {
         position: fixed;
         right: 20px;
@@ -367,12 +355,10 @@
         margin-bottom: 0;
         z-index: 998;
     }
-
     #floating-toc-btn .btn-floating {
         width: 48px;
         height: 48px;
     }
-
     #floating-toc-btn .btn-floating i {
         line-height: 48px;
         font-size: 1.4rem;
@@ -698,7 +684,7 @@ pie<span class="token punctuation">(</span>c<span class="token punctuation">(</s
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
             </div>
@@ -712,7 +698,7 @@ pie<span class="token punctuation">(</span>c<span class="token punctuation">(</s
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">customLayout 包是一个图表对象布局工具，它可以让我们用更加简单易解的操作命令来完成繁琐的图片布局设置。如果你常常为了一页多图的繁琐布局设置而苦恼，那么这个包绝对值得好好学习。
+                    <div class="summary block-with-text">customLayout 包是一个图表对象布局工具，它可以让我们用更加简单易解的操作命令来完成繁琐的图片布局设置。如果你常常为了一页多图的繁琐布局设置而苦恼，那么这个包绝对值得好好学习。
 
 由上图可以看到 customLayout 包的所有</div>
                     <div class="publish-info">
@@ -757,7 +743,7 @@ pie<span class="token punctuation">(</span>c<span class="token punctuation">(</s
         </div>
         
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
@@ -771,7 +757,7 @@ pie<span class="token punctuation">(</span>c<span class="token punctuation">(</s
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">使用 stargazer 可以将 R 构建的模型结果以 LATEX 、 HTML 和 ASCII 格式输出，方便我们生成标准格式的表格结合 rmarkdown 来进行使用，会使我们优雅地写出一篇拥有期刊级统计表的文章
+                    <div class="summary block-with-text">使用 stargazer 可以将 R 构建的模型结果以 LATEX 、 HTML 和 ASCII 格式输出，方便我们生成标准格式的表格结合 rmarkdown 来进行使用，会使我们优雅地写出一篇拥有期刊级统计表的文章
 简介R 包 starg</div>
                     <div class="publish-info">
                             <span class="publish-date">
@@ -796,12 +782,12 @@ pie<span class="token punctuation">(</span>c<span class="token punctuation">(</s
                         <span class="chip bg-color">R</span>
                     </a>
                     
-                    <a href="/tags/可视化/" target="_blank">
-                        <span class="chip bg-color">可视化</span>
-                    </a>
-                    
                     <a href="/tags/stargazer/" target="_blank">
                         <span class="chip bg-color">stargazer</span>
+                    </a>
+                    
+                    <a href="/tags/可视化/" target="_blank">
+                        <span class="chip bg-color">可视化</span>
                     </a>
                     
                     <a href="/tags/统计表/" target="_blank">
@@ -883,20 +869,17 @@ pie<span class="token punctuation">(</span>c<span class="token punctuation">(</s
             // headingsOffset: -205,
             headingSelector: 'h2, h3, h4'
         });
-
         // modify the toc link href to support Chinese.
         let i = 0;
         let tocHeading = 'toc-heading-';
         $('#toc-content a').each(function () {
             $(this).attr('href', '#' + tocHeading + (++i));
         });
-
         // modify the heading title id to support Chinese.
         i = 0;
         $('#articleContent').children('h2, h3, h4').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
-
         // Set scroll toc fixed.
         let tocHeight = parseInt($(window).height() * 0.4 - 64);
         let $tocWidget = $('.toc-widget');
@@ -909,7 +892,6 @@ pie<span class="token punctuation">(</span>c<span class="token punctuation">(</s
                 $tocWidget.removeClass('toc-fixed');
             }
         });
-
         
         /* 修复文章卡片 div 的宽度. */
         let fixPostCardWidth = function (srcId, targetId) {
@@ -917,7 +899,6 @@ pie<span class="token punctuation">(</span>c<span class="token punctuation">(</s
             if (srcDiv.length === 0) {
                 return;
             }
-
             let w = srcDiv.width();
             if (w >= 450) {
                 w = w + 21;
@@ -930,7 +911,6 @@ pie<span class="token punctuation">(</span>c<span class="token punctuation">(</s
             }
             $('#' + targetId).width(w);
         };
-
         // 切换TOC目录展开收缩的相关操作.
         const expandedClass = 'expanded';
         let $tocAside = $('#toc-aside');
@@ -948,6 +928,7 @@ pie<span class="token punctuation">(</span>c<span class="token punctuation">(</s
         
     });
 </script>
+
     
 
 </main>

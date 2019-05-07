@@ -304,20 +304,16 @@
         margin-top: -100px;
         visibility: hidden;
     }
-
     #articleContent :focus {
         outline: none;
     }
-
     .toc-fixed {
         position: fixed;
         top: 64px;
     }
-
     .toc-widget {
         padding-left: 20px;
     }
-
     .toc-widget .toc-title {
         margin: 35px 0 15px 0;
         padding-left: 17px;
@@ -325,39 +321,31 @@
         font-weight: bold;
         line-height: 1.5rem;
     }
-
     .toc-widget ol {
         padding: 0;
         list-style: none;
     }
-
     #toc-content ol {
         padding-left: 10px;
     }
-
     #toc-content ol li {
         padding-left: 10px;
     }
-
     #toc-content .toc-link:hover {
         color: #42b983;
         font-weight: 700;
         text-decoration: underline;
     }
-
     #toc-content .toc-link::before {
         background-color: transparent;
         max-height: 25px;
     }
-
     #toc-content .is-active-link {
         color: #42b983;
     }
-
     #toc-content .is-active-link::before {
         background-color: #42b983;
     }
-
     #floating-toc-btn {
         position: fixed;
         right: 20px;
@@ -366,12 +354,10 @@
         margin-bottom: 0;
         z-index: 998;
     }
-
     #floating-toc-btn .btn-floating {
         width: 48px;
         height: 48px;
     }
-
     #floating-toc-btn .btn-floating i {
         line-height: 48px;
         font-size: 1.4rem;
@@ -388,10 +374,6 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/数据可视化/" target="_blank">
-                                <span class="chip bg-color">数据可视化</span>
-                            </a>
-                        
                             <a href="/tags/graphics/" target="_blank">
                                 <span class="chip bg-color">graphics</span>
                             </a>
@@ -402,6 +384,10 @@
                         
                             <a href="/tags/ggplot2/" target="_blank">
                                 <span class="chip bg-color">ggplot2</span>
+                            </a>
+                        
+                            <a href="/tags/数据可视化/" target="_blank">
+                                <span class="chip bg-color">数据可视化</span>
                             </a>
                         
                     </div>
@@ -656,7 +642,7 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
@@ -669,7 +655,7 @@
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">R Markdown 站在 knitr 和 Pandoc 的肩膀上，前者执行嵌入于文档中的计算机代码，并将 R Markdown 转换为 Markdown；后者将 Markdown 呈现出您想要的输出格式（如 PDF、HTML、Word 等</div>
+                    <div class="summary block-with-text">R Markdown 站在 knitr 和 Pandoc 的肩膀上，前者执行嵌入于文档中的计算机代码，并将 R Markdown 转换为 Markdown；后者将 Markdown 呈现出您想要的输出格式（如 PDF、HTML、Word 等</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2018-07-09
@@ -701,17 +687,13 @@
                         <span class="chip bg-color">可重复性</span>
                     </a>
                     
-                    <a href="/tags/可视化/" target="_blank">
-                        <span class="chip bg-color">可视化</span>
-                    </a>
-                    
                 </div>
                 
             </div>
         </div>
         
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
@@ -725,7 +707,7 @@
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">可视化的形式也五彩缤纷，星现多维化的局面，并正在发展，地图可视化是空间信息可视化的最主要形式，这种数据表达方式让人一目了然，方便挖掘深层信息，更好的辅助决策
+                    <div class="summary block-with-text">可视化的形式也五彩缤纷，星现多维化的局面，并正在发展，地图可视化是空间信息可视化的最主要形式，这种数据表达方式让人一目了然，方便挖掘深层信息，更好的辅助决策
 
 
 
@@ -842,20 +824,17 @@
             // headingsOffset: -205,
             headingSelector: 'h2, h3, h4'
         });
-
         // modify the toc link href to support Chinese.
         let i = 0;
         let tocHeading = 'toc-heading-';
         $('#toc-content a').each(function () {
             $(this).attr('href', '#' + tocHeading + (++i));
         });
-
         // modify the heading title id to support Chinese.
         i = 0;
         $('#articleContent').children('h2, h3, h4').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
-
         // Set scroll toc fixed.
         let tocHeight = parseInt($(window).height() * 0.4 - 64);
         let $tocWidget = $('.toc-widget');
@@ -868,7 +847,6 @@
                 $tocWidget.removeClass('toc-fixed');
             }
         });
-
         
         /* 修复文章卡片 div 的宽度. */
         let fixPostCardWidth = function (srcId, targetId) {
@@ -876,7 +854,6 @@
             if (srcDiv.length === 0) {
                 return;
             }
-
             let w = srcDiv.width();
             if (w >= 450) {
                 w = w + 21;
@@ -889,7 +866,6 @@
             }
             $('#' + targetId).width(w);
         };
-
         // 切换TOC目录展开收缩的相关操作.
         const expandedClass = 'expanded';
         let $tocAside = $('#toc-aside');
@@ -907,6 +883,7 @@
         
     });
 </script>
+
     
 
 </main>

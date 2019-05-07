@@ -305,20 +305,16 @@
         margin-top: -100px;
         visibility: hidden;
     }
-
     #articleContent :focus {
         outline: none;
     }
-
     .toc-fixed {
         position: fixed;
         top: 64px;
     }
-
     .toc-widget {
         padding-left: 20px;
     }
-
     .toc-widget .toc-title {
         margin: 35px 0 15px 0;
         padding-left: 17px;
@@ -326,39 +322,31 @@
         font-weight: bold;
         line-height: 1.5rem;
     }
-
     .toc-widget ol {
         padding: 0;
         list-style: none;
     }
-
     #toc-content ol {
         padding-left: 10px;
     }
-
     #toc-content ol li {
         padding-left: 10px;
     }
-
     #toc-content .toc-link:hover {
         color: #42b983;
         font-weight: 700;
         text-decoration: underline;
     }
-
     #toc-content .toc-link::before {
         background-color: transparent;
         max-height: 25px;
     }
-
     #toc-content .is-active-link {
         color: #42b983;
     }
-
     #toc-content .is-active-link::before {
         background-color: #42b983;
     }
-
     #floating-toc-btn {
         position: fixed;
         right: 20px;
@@ -367,12 +355,10 @@
         margin-bottom: 0;
         z-index: 998;
     }
-
     #floating-toc-btn .btn-floating {
         width: 48px;
         height: 48px;
     }
-
     #floating-toc-btn .btn-floating i {
         line-height: 48px;
         font-size: 1.4rem;
@@ -910,7 +896,7 @@ $$<span class="token function">f</span><span class="token punctuation">(</span>x
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
@@ -923,7 +909,7 @@ $$<span class="token function">f</span><span class="token punctuation">(</span>x
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">R 作为一种向量化的编程语言，一大特征便是以向量计算替代了循环计算，使效率大大提升。apply函数族正是为解决数据循环处理问题而生的 —— 面向不同数据类型，生成不同返回值的包含8个相关函数的函数族。
+                    <div class="summary block-with-text">R 作为一种向量化的编程语言，一大特征便是以向量计算替代了循环计算，使效率大大提升。apply函数族正是为解决数据循环处理问题而生的 —— 面向不同数据类型，生成不同返回值的包含8个相关函数的函数族。
 为何要用apply？在使用 R 时，要</div>
                     <div class="publish-info">
                         <span class="publish-date">
@@ -962,7 +948,7 @@ $$<span class="token function">f</span><span class="token punctuation">(</span>x
         </div>
         
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
@@ -976,7 +962,7 @@ $$<span class="token function">f</span><span class="token punctuation">(</span>x
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">我们理解您需要更便捷更高效的工具记录思想，整理笔记、知识，并将其中承载的价值传播给他人，Cmd Markdown 是我们给出的答案 —— 我们为记录思想和分享知识提供更专业的工具。 
+                    <div class="summary block-with-text">我们理解您需要更便捷更高效的工具记录思想，整理笔记、知识，并将其中承载的价值传播给他人，Cmd Markdown 是我们给出的答案 —— 我们为记录思想和分享知识提供更专业的工具。 
 您可以使用 Cmd Markdown：
 
 
@@ -1079,20 +1065,17 @@ $$<span class="token function">f</span><span class="token punctuation">(</span>x
             // headingsOffset: -205,
             headingSelector: 'h2, h3, h4'
         });
-
         // modify the toc link href to support Chinese.
         let i = 0;
         let tocHeading = 'toc-heading-';
         $('#toc-content a').each(function () {
             $(this).attr('href', '#' + tocHeading + (++i));
         });
-
         // modify the heading title id to support Chinese.
         i = 0;
         $('#articleContent').children('h2, h3, h4').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
-
         // Set scroll toc fixed.
         let tocHeight = parseInt($(window).height() * 0.4 - 64);
         let $tocWidget = $('.toc-widget');
@@ -1105,7 +1088,6 @@ $$<span class="token function">f</span><span class="token punctuation">(</span>x
                 $tocWidget.removeClass('toc-fixed');
             }
         });
-
         
         /* 修复文章卡片 div 的宽度. */
         let fixPostCardWidth = function (srcId, targetId) {
@@ -1113,7 +1095,6 @@ $$<span class="token function">f</span><span class="token punctuation">(</span>x
             if (srcDiv.length === 0) {
                 return;
             }
-
             let w = srcDiv.width();
             if (w >= 450) {
                 w = w + 21;
@@ -1126,7 +1107,6 @@ $$<span class="token function">f</span><span class="token punctuation">(</span>x
             }
             $('#' + targetId).width(w);
         };
-
         // 切换TOC目录展开收缩的相关操作.
         const expandedClass = 'expanded';
         let $tocAside = $('#toc-aside');
@@ -1144,6 +1124,7 @@ $$<span class="token function">f</span><span class="token punctuation">(</span>x
         
     });
 </script>
+
     
 
 </main>

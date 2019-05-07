@@ -53,9 +53,9 @@
             
             <tag> R </tag>
             
-            <tag> 可视化 </tag>
-            
             <tag> stargazer </tag>
+            
+            <tag> 可视化 </tag>
             
             <tag> 统计表 </tag>
             
@@ -88,8 +88,6 @@
             
             <tag> 可重复性 </tag>
             
-            <tag> 可视化 </tag>
-            
         </tags>
       
     </entry>
@@ -113,13 +111,13 @@
       
         <tags>
             
-            <tag> 数据可视化 </tag>
-            
             <tag> graphics </tag>
             
             <tag> lattice </tag>
             
             <tag> ggplot2 </tag>
+            
+            <tag> 数据可视化 </tag>
             
         </tags>
       
@@ -206,11 +204,11 @@
             
             <tag> R </tag>
             
+            <tag> 数据可视化 </tag>
+            
             <tag> formattable </tag>
             
             <tag> 数据展示 </tag>
-            
-            <tag> 数据可视化 </tag>
             
         </tags>
       

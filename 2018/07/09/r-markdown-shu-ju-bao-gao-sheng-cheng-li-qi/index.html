@@ -303,20 +303,16 @@
         margin-top: -100px;
         visibility: hidden;
     }
-
     #articleContent :focus {
         outline: none;
     }
-
     .toc-fixed {
         position: fixed;
         top: 64px;
     }
-
     .toc-widget {
         padding-left: 20px;
     }
-
     .toc-widget .toc-title {
         margin: 35px 0 15px 0;
         padding-left: 17px;
@@ -324,39 +320,31 @@
         font-weight: bold;
         line-height: 1.5rem;
     }
-
     .toc-widget ol {
         padding: 0;
         list-style: none;
     }
-
     #toc-content ol {
         padding-left: 10px;
     }
-
     #toc-content ol li {
         padding-left: 10px;
     }
-
     #toc-content .toc-link:hover {
         color: #42b983;
         font-weight: 700;
         text-decoration: underline;
     }
-
     #toc-content .toc-link::before {
         background-color: transparent;
         max-height: 25px;
     }
-
     #toc-content .is-active-link {
         color: #42b983;
     }
-
     #toc-content .is-active-link::before {
         background-color: #42b983;
     }
-
     #floating-toc-btn {
         position: fixed;
         right: 20px;
@@ -365,12 +353,10 @@
         margin-bottom: 0;
         z-index: 998;
     }
-
     #floating-toc-btn .btn-floating {
         width: 48px;
         height: 48px;
     }
-
     #floating-toc-btn .btn-floating i {
         line-height: 48px;
         font-size: 1.4rem;
@@ -397,10 +383,6 @@
                         
                             <a href="/tags/可重复性/" target="_blank">
                                 <span class="chip bg-color">可重复性</span>
-                            </a>
-                        
-                            <a href="/tags/可视化/" target="_blank">
-                                <span class="chip bg-color">可视化</span>
                             </a>
                         
                     </div>
@@ -1091,7 +1073,7 @@ output:
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
@@ -1104,7 +1086,7 @@ output:
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">使用 stargazer 可以将 R 构建的模型结果以 LATEX 、 HTML 和 ASCII 格式输出，方便我们生成标准格式的表格结合 rmarkdown 来进行使用，会使我们优雅地写出一篇拥有期刊级统计表的文章
+                    <div class="summary block-with-text">使用 stargazer 可以将 R 构建的模型结果以 LATEX 、 HTML 和 ASCII 格式输出，方便我们生成标准格式的表格结合 rmarkdown 来进行使用，会使我们优雅地写出一篇拥有期刊级统计表的文章
 简介R 包 starg</div>
                     <div class="publish-info">
                         <span class="publish-date">
@@ -1129,12 +1111,12 @@ output:
                         <span class="chip bg-color">R</span>
                     </a>
                     
-                    <a href="/tags/可视化/" target="_blank">
-                        <span class="chip bg-color">可视化</span>
-                    </a>
-                    
                     <a href="/tags/stargazer/" target="_blank">
                         <span class="chip bg-color">stargazer</span>
+                    </a>
+                    
+                    <a href="/tags/可视化/" target="_blank">
+                        <span class="chip bg-color">可视化</span>
                     </a>
                     
                     <a href="/tags/统计表/" target="_blank">
@@ -1147,7 +1129,7 @@ output:
         </div>
         
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
@@ -1161,7 +1143,7 @@ output:
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">R 中有四大框架用于产生静态图形: graphics、grid、lattice、ggplot2，利用这些包可以将结构或非结构数据转换成适当的可视化图表，展现出隐藏在数据中的信息
+                    <div class="summary block-with-text">R 中有四大框架用于产生静态图形: graphics、grid、lattice、ggplot2，利用这些包可以将结构或非结构数据转换成适当的可视化图表，展现出隐藏在数据中的信息
 此系列文章主要介绍 R 基础绘图命令，涵盖 graphics、</div>
                     <div class="publish-info">
                             <span class="publish-date">
@@ -1182,10 +1164,6 @@ output:
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/数据可视化/" target="_blank">
-                        <span class="chip bg-color">数据可视化</span>
-                    </a>
-                    
                     <a href="/tags/graphics/" target="_blank">
                         <span class="chip bg-color">graphics</span>
                     </a>
@@ -1196,6 +1174,10 @@ output:
                     
                     <a href="/tags/ggplot2/" target="_blank">
                         <span class="chip bg-color">ggplot2</span>
+                    </a>
+                    
+                    <a href="/tags/数据可视化/" target="_blank">
+                        <span class="chip bg-color">数据可视化</span>
                     </a>
                     
                 </div>
@@ -1273,20 +1255,17 @@ output:
             // headingsOffset: -205,
             headingSelector: 'h2, h3, h4'
         });
-
         // modify the toc link href to support Chinese.
         let i = 0;
         let tocHeading = 'toc-heading-';
         $('#toc-content a').each(function () {
             $(this).attr('href', '#' + tocHeading + (++i));
         });
-
         // modify the heading title id to support Chinese.
         i = 0;
         $('#articleContent').children('h2, h3, h4').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
-
         // Set scroll toc fixed.
         let tocHeight = parseInt($(window).height() * 0.4 - 64);
         let $tocWidget = $('.toc-widget');
@@ -1299,7 +1278,6 @@ output:
                 $tocWidget.removeClass('toc-fixed');
             }
         });
-
         
         /* 修复文章卡片 div 的宽度. */
         let fixPostCardWidth = function (srcId, targetId) {
@@ -1307,7 +1285,6 @@ output:
             if (srcDiv.length === 0) {
                 return;
             }
-
             let w = srcDiv.width();
             if (w >= 450) {
                 w = w + 21;
@@ -1320,7 +1297,6 @@ output:
             }
             $('#' + targetId).width(w);
         };
-
         // 切换TOC目录展开收缩的相关操作.
         const expandedClass = 'expanded';
         let $tocAside = $('#toc-aside');
@@ -1338,6 +1314,7 @@ output:
         
     });
 </script>
+
     
 
 </main>

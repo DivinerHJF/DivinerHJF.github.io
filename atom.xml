@@ -74,9 +74,9 @@
     
       <category term="R" scheme="https://divinerhjf.github.io/tags/R/"/>
     
-      <category term="可视化" scheme="https://divinerhjf.github.io/tags/%E5%8F%AF%E8%A7%86%E5%8C%96/"/>
-    
       <category term="stargazer" scheme="https://divinerhjf.github.io/tags/stargazer/"/>
+    
+      <category term="可视化" scheme="https://divinerhjf.github.io/tags/%E5%8F%AF%E8%A7%86%E5%8C%96/"/>
     
       <category term="统计表" scheme="https://divinerhjf.github.io/tags/%E7%BB%9F%E8%AE%A1%E8%A1%A8/"/>
     
@@ -87,7 +87,7 @@
     <link href="https://divinerhjf.github.io/2018/07/09/r-markdown-shu-ju-bao-gao-sheng-cheng-li-qi/"/>
     <id>https://divinerhjf.github.io/2018/07/09/r-markdown-shu-ju-bao-gao-sheng-cheng-li-qi/</id>
     <published>2018-07-09T14:44:09.000Z</published>
-    <updated>2019-05-07T16:59:40.875Z</updated>
+    <updated>2019-05-07T18:21:13.472Z</updated>
     
     <summary type="html">
     
@@ -109,8 +109,6 @@
       <category term="数据报告" scheme="https://divinerhjf.github.io/tags/%E6%95%B0%E6%8D%AE%E6%8A%A5%E5%91%8A/"/>
     
       <category term="可重复性" scheme="https://divinerhjf.github.io/tags/%E5%8F%AF%E9%87%8D%E5%A4%8D%E6%80%A7/"/>
-    
-      <category term="可视化" scheme="https://divinerhjf.github.io/tags/%E5%8F%AF%E8%A7%86%E5%8C%96/"/>
     
   </entry>
   
@@ -137,13 +135,13 @@
       <category term="R" scheme="https://divinerhjf.github.io/categories/R/"/>
     
     
-      <category term="数据可视化" scheme="https://divinerhjf.github.io/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/"/>
-    
       <category term="graphics" scheme="https://divinerhjf.github.io/tags/graphics/"/>
     
       <category term="lattice" scheme="https://divinerhjf.github.io/tags/lattice/"/>
     
       <category term="ggplot2" scheme="https://divinerhjf.github.io/tags/ggplot2/"/>
+    
+      <category term="数据可视化" scheme="https://divinerhjf.github.io/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/"/>
     
   </entry>
   
@@ -235,11 +233,11 @@
     
       <category term="R" scheme="https://divinerhjf.github.io/tags/R/"/>
     
+      <category term="数据可视化" scheme="https://divinerhjf.github.io/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/"/>
+    
       <category term="formattable" scheme="https://divinerhjf.github.io/tags/formattable/"/>
     
       <category term="数据展示" scheme="https://divinerhjf.github.io/tags/%E6%95%B0%E6%8D%AE%E5%B1%95%E7%A4%BA/"/>
-    
-      <category term="数据可视化" scheme="https://divinerhjf.github.io/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/"/>
     
   </entry>
   
