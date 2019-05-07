@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://divinerhjf.github.io/"/>
-  <updated>2019-05-07T15:40:28.543Z</updated>
+  <updated>2019-05-07T16:41:07.210Z</updated>
   <id>https://divinerhjf.github.io/</id>
   
   <author>
@@ -15,6 +15,133 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数据可视化 - 地图可视化系列文章</title>
+    <link href="https://divinerhjf.github.io/2018/04/05/shu-ju-ke-shi-hua-di-tu-ke-shi-hua-xi-lie-wen-zhang/"/>
+    <id>https://divinerhjf.github.io/2018/04/05/shu-ju-ke-shi-hua-di-tu-ke-shi-hua-xi-lie-wen-zhang/</id>
+    <published>2018-04-05T14:30:49.000Z</published>
+    <updated>2019-05-07T16:41:07.210Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;可视化的形式也五彩缤纷，星现多维化的局面，并正在发展，地图可视化是空间信息可视化的最主要形式，这种数据表达方式让人一目了然，方便挖掘深层信息，更好的辅助决策&lt;/p&gt;
+&lt;iframe height=&quot;450&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="R" scheme="https://divinerhjf.github.io/categories/R/"/>
+    
+    
+      <category term="R" scheme="https://divinerhjf.github.io/tags/R/"/>
+    
+      <category term="API" scheme="https://divinerhjf.github.io/tags/API/"/>
+    
+      <category term="REmap" scheme="https://divinerhjf.github.io/tags/REmap/"/>
+    
+      <category term="地图可视化" scheme="https://divinerhjf.github.io/tags/%E5%9C%B0%E5%9B%BE%E5%8F%AF%E8%A7%86%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>DT：DataTables 库的 R 接口</title>
+    <link href="https://divinerhjf.github.io/2018/04/05/dt-datatables-ku-de-r-jie-kou/"/>
+    <id>https://divinerhjf.github.io/2018/04/05/dt-datatables-ku-de-r-jie-kou/</id>
+    <published>2018-04-05T07:00:11.000Z</published>
+    <updated>2019-05-07T16:42:21.393Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;R 包 &lt;strong&gt;DT&lt;/strong&gt; 为 JavaScript 的 &lt;a href=&quot;https://datatables.net/&quot; target=&quot;_blank&quot; style=&quot;font-weight:
+        
+      
+    
+    </summary>
+    
+      <category term="R" scheme="https://divinerhjf.github.io/categories/R/"/>
+    
+    
+      <category term="R" scheme="https://divinerhjf.github.io/tags/R/"/>
+    
+      <category term="DT" scheme="https://divinerhjf.github.io/tags/DT/"/>
+    
+      <category term="数据处理" scheme="https://divinerhjf.github.io/tags/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据可视化-formattable包</title>
+    <link href="https://divinerhjf.github.io/2018/03/22/shu-ju-ke-shi-hua-formattable-bao/"/>
+    <id>https://divinerhjf.github.io/2018/03/22/shu-ju-ke-shi-hua-formattable-bao/</id>
+    <published>2018-03-22T06:00:11.000Z</published>
+    <updated>2019-05-07T16:34:32.734Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;该软件包使用预定义的格式化规则更加丰富形象地展示数据，在存储原始数据的同时将输出结果用格式化输出，使数据在保留原有属性的基础上更加易读&lt;/p&gt;
+&lt;h2 id=&quot;加载包&quot;&gt;&lt;a href=&quot;#加载包&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="R" scheme="https://divinerhjf.github.io/categories/R/"/>
+    
+    
+      <category term="R" scheme="https://divinerhjf.github.io/tags/R/"/>
+    
+      <category term="formattable" scheme="https://divinerhjf.github.io/tags/formattable/"/>
+    
+      <category term="数据展示" scheme="https://divinerhjf.github.io/tags/%E6%95%B0%E6%8D%AE%E5%B1%95%E7%A4%BA/"/>
+    
+      <category term="数据可视化" scheme="https://divinerhjf.github.io/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据操作-apply函数族</title>
+    <link href="https://divinerhjf.github.io/2018/03/15/shu-ju-cao-zuo-apply-han-shu-zu/"/>
+    <id>https://divinerhjf.github.io/2018/03/15/shu-ju-cao-zuo-apply-han-shu-zu/</id>
+    <published>2018-03-15T04:19:00.000Z</published>
+    <updated>2019-05-07T16:27:29.752Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;R 作为一种向量化的编程语言，一大特征便是以向量计算替代了循环计算，使效率大大提升。apply函数族正是为解决数据循环处理问题而生的 —— 面向不同数据类型，生成不同返回值的包含8个相关函数的函数族。&lt;/p&gt;
+&lt;h2 id=&quot;为何要用apply？&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="R" scheme="https://divinerhjf.github.io/categories/R/"/>
+    
+    
+      <category term="R" scheme="https://divinerhjf.github.io/tags/R/"/>
+    
+      <category term="apply" scheme="https://divinerhjf.github.io/tags/apply/"/>
+    
+      <category term="数据操作" scheme="https://divinerhjf.github.io/tags/%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C/"/>
+    
+  </entry>
   
   <entry>
     <title>博客文章写作样式</title>
