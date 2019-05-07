@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>灿若星河</title>
+  
+  <subtitle>修 远</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://divinerhjf.github.io/"/>
+  <updated>2019-05-07T11:38:52.980Z</updated>
+  <id>https://divinerhjf.github.io/</id>
+  
+  <author>
+    <name>Divinerhjf</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hhh</title>
+    <link href="https://divinerhjf.github.io/2019/05/07/di-03-zhang-python-de-shu-ju-jie-gou-han-shu-he-wen-jian/"/>
+    <id>https://divinerhjf.github.io/2019/05/07/di-03-zhang-python-de-shu-ju-jie-gou-han-shu-he-wen-jian/</id>
+    <published>2019-05-07T11:37:26.000Z</published>
+    <updated>2019-05-07T11:38:52.980Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;本章讨论Python的内置功能，这些功能本书会用到很多。虽然扩展库，比如pandas和Numpy，使处理大数据集很方便，但它们是和Python的内置数据处理工具一同使用的。&lt;/p&gt;
+&lt;p&gt;我们会从Python最基础的数据结构开始：元组、列表、字典和集合。然后会讨论创建你自己
+        
+      
+    
+    </summary>
+    
+    
+      <category term="hh" scheme="https://divinerhjf.github.io/tags/hh/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Cmd Markdown 使用说明</title>
+    <link href="https://divinerhjf.github.io/2018/01/23/markdown/"/>
+    <id>https://divinerhjf.github.io/2018/01/23/markdown/</id>
+    <published>2018-01-23T02:54:32.000Z</published>
+    <updated>2019-05-07T14:02:57.460Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;您可以使用 Cmd Markdown：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;整理知识，学习笔记&lt;/li&gt;
+&lt;li&gt;发布日记，杂文，所见所想&lt;/li&gt;
+&lt;li&gt;撰写发布技术文稿（代码支持）&lt;/li&gt;
+&lt;li&gt;撰写发布学术论文（LaTeX
+        
+      
+    
+    </summary>
+    
+      <category term="软件推荐" scheme="https://divinerhjf.github.io/categories/%E8%BD%AF%E4%BB%B6%E6%8E%A8%E8%8D%90/"/>
+    
+    
+      <category term="Cmd-Markdown" scheme="https://divinerhjf.github.io/tags/Cmd-Markdown/"/>
+    
+  </entry>
+  
+</feed>
