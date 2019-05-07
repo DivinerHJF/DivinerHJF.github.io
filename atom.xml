@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://divinerhjf.github.io/"/>
-  <updated>2019-05-07T15:16:34.515Z</updated>
+  <updated>2019-05-07T15:40:28.543Z</updated>
   <id>https://divinerhjf.github.io/</id>
   
   <author>
@@ -17,11 +17,41 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>博客文章写作样式</title>
+    <link href="https://divinerhjf.github.io/2018/01/27/bo-ke-wen-zhang-xie-zuo-yang-shi/"/>
+    <id>https://divinerhjf.github.io/2018/01/27/bo-ke-wen-zhang-xie-zuo-yang-shi/</id>
+    <published>2018-01-26T16:51:29.000Z</published>
+    <updated>2019-05-07T15:40:28.543Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;学习了新知识，疏于记录便会淡忘，要用到时方悔当初；纸本与现有平台有其局限性，对于技术文档的展示有颇多限制，个人博客不失为一个好的选择——源于记录，善于书页。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;注：本文基于本网站的初代版本 —— NEXT
+        
+      
+    
+    </summary>
+    
+      <category term="排版" scheme="https://divinerhjf.github.io/categories/%E6%8E%92%E7%89%88/"/>
+    
+    
+      <category term="Markdown" scheme="https://divinerhjf.github.io/tags/Markdown/"/>
+    
+      <category term="Hexo" scheme="https://divinerhjf.github.io/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Cmd Markdown 使用说明</title>
     <link href="https://divinerhjf.github.io/2018/01/23/cmd-markdown-shi-yong-shuo-ming/"/>
     <id>https://divinerhjf.github.io/2018/01/23/cmd-markdown-shi-yong-shuo-ming/</id>
     <published>2018-01-23T02:54:32.000Z</published>
-    <updated>2019-05-07T15:16:34.515Z</updated>
+    <updated>2019-05-07T15:28:26.017Z</updated>
     
     <summary type="html">
     
