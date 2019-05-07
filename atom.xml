@@ -135,13 +135,13 @@
       <category term="R" scheme="https://divinerhjf.github.io/categories/R/"/>
     
     
+      <category term="数据可视化" scheme="https://divinerhjf.github.io/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/"/>
+    
       <category term="graphics" scheme="https://divinerhjf.github.io/tags/graphics/"/>
     
       <category term="lattice" scheme="https://divinerhjf.github.io/tags/lattice/"/>
     
       <category term="ggplot2" scheme="https://divinerhjf.github.io/tags/ggplot2/"/>
-    
-      <category term="数据可视化" scheme="https://divinerhjf.github.io/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/"/>
     
   </entry>
   
@@ -233,11 +233,11 @@
     
       <category term="R" scheme="https://divinerhjf.github.io/tags/R/"/>
     
-      <category term="数据可视化" scheme="https://divinerhjf.github.io/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/"/>
-    
       <category term="formattable" scheme="https://divinerhjf.github.io/tags/formattable/"/>
     
       <category term="数据展示" scheme="https://divinerhjf.github.io/tags/%E6%95%B0%E6%8D%AE%E5%B1%95%E7%A4%BA/"/>
+    
+      <category term="数据可视化" scheme="https://divinerhjf.github.io/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/"/>
     
   </entry>
   
