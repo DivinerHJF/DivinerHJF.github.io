@@ -440,8 +440,7 @@
 <h2 id="为何要用apply？"><a href="#为何要用apply？" class="headerlink" title="为何要用apply？"></a>为何要用apply？</h2><p>在使用 R 时，要尽量用 array 的方式思考，避免 for 循环，写过多的 for 循环代码，最后把 R 代码写的跟 C 似得说明你没有进入 R 的思考方式，是一种费力不讨好的行为。那么不用循环怎么实现迭代呢？apply函数族是一把利器，它不是一个函数，而是一族功能类似的函数。</p>
 <hr>
 <h2 id="语法详解"><a href="#语法详解" class="headerlink" title="语法详解"></a>语法详解</h2><h3 id="apply"><a href="#apply" class="headerlink" title="apply"></a>apply</h3><p>apply-函数定义：在 X 上，沿 margin 方向，依次调用 FUN</p>
-<pre class=" language-r"><code class="language-r">apply<span class="token punctuation">(</span>X<span class="token punctuation">,</span> margin<span class="token punctuation">,</span> FUN<span class="token punctuation">,</span> <span class="token ellipsis">...</span><span class="token punctuation">)</span>
-</code></pre>
+<pre class=" language-r"><code class="language-r">apply<span class="token punctuation">(</span>X<span class="token punctuation">,</span> margin<span class="token punctuation">,</span> FUN<span class="token punctuation">,</span> <span class="token ellipsis">...</span><span class="token punctuation">)</span></code></pre>
 <blockquote>
 <p><strong>参数列表：</strong><br>X：数组、矩阵、数据框<br>margin：按维度运算，1表示按行，2表示按列，c(1,3)表示第1、3维<br>FUN：要使用的函数</p>
 </blockquote>
@@ -456,8 +455,7 @@
 <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token punctuation">]</span>    <span class="token number">3</span>    <span class="token number">6</span>    <span class="token number">9</span>   <span class="token number">12</span>
 
 <span class="token operator">></span> apply<span class="token punctuation">(</span>mat<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> sum<span class="token punctuation">)</span>
-<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>  <span class="token number">6</span> <span class="token number">15</span> <span class="token number">24</span> <span class="token number">33</span>
-</code></pre>
+<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>  <span class="token number">6</span> <span class="token number">15</span> <span class="token number">24</span> <span class="token number">33</span></code></pre>
 <ul>
 <li>eg2-数组第1、3维度组合求和</li>
 </ul>
@@ -475,8 +473,7 @@
 <span class="token operator">></span> apply<span class="token punctuation">(</span>ary<span class="token punctuation">,</span> c<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> sum<span class="token punctuation">)</span>
      <span class="token punctuation">[</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span>
 <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token punctuation">]</span>    <span class="token number">9</span>   <span class="token number">27</span>
-<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token punctuation">]</span>   <span class="token number">12</span>   <span class="token number">30</span>
-</code></pre>
+<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token punctuation">]</span>   <span class="token number">12</span>   <span class="token number">30</span></code></pre>
 <ul>
 <li>eg3-数据框按列求均值</li>
 </ul>
@@ -491,12 +488,10 @@
 
 <span class="token operator">></span> apply<span class="token punctuation">(</span>data<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> mean<span class="token punctuation">)</span>
 x1 x2 
- <span class="token number">3</span>  <span class="token number">8</span> 
-</code></pre>
+ <span class="token number">3</span>  <span class="token number">8</span> </code></pre>
 <hr>
 <h3 id="tapply"><a href="#tapply" class="headerlink" title="tapply"></a>tapply</h3><p>tapply-函数定义：按 INDEX 值分组，相同值对应下标的 X 中的元素形成一个集合，应用到 FUN</p>
-<pre class=" language-r"><code class="language-r">tapply<span class="token punctuation">(</span>X<span class="token punctuation">,</span> INDEX<span class="token punctuation">,</span> FUN <span class="token operator">=</span> <span class="token keyword">NULL</span><span class="token punctuation">,</span> <span class="token ellipsis">...</span><span class="token punctuation">,</span> simplify <span class="token operator">=</span> <span class="token boolean">TRUE</span><span class="token punctuation">)</span>
-</code></pre>
+<pre class=" language-r"><code class="language-r">tapply<span class="token punctuation">(</span>X<span class="token punctuation">,</span> INDEX<span class="token punctuation">,</span> FUN <span class="token operator">=</span> <span class="token keyword">NULL</span><span class="token punctuation">,</span> <span class="token ellipsis">...</span><span class="token punctuation">,</span> simplify <span class="token operator">=</span> <span class="token boolean">TRUE</span><span class="token punctuation">)</span></code></pre>
 <blockquote>
 <p><strong>参数列表：</strong><br>X：向量、数组<br>INDEX：用于分组的索引<br>FUN：要使用的函数<br>simplify : 是否数组化，当值TRUE时，输出结果按数组进行分组输出</p>
 </blockquote>
@@ -506,15 +501,13 @@ x1 x2
 <pre class=" language-r"><code class="language-r"><span class="token operator">></span> x <span class="token operator">&lt;-</span> <span class="token number">1</span><span class="token operator">:</span><span class="token number">6</span>
 <span class="token operator">></span> INDEX <span class="token operator">&lt;-</span> c<span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">,</span><span class="token string">'a'</span><span class="token punctuation">,</span><span class="token string">'b'</span><span class="token punctuation">,</span><span class="token string">'c'</span><span class="token punctuation">,</span><span class="token string">'c'</span><span class="token punctuation">,</span><span class="token string">'c'</span><span class="token punctuation">)</span>
 <span class="token operator">></span> tapply<span class="token punctuation">(</span>x<span class="token punctuation">,</span> INDEX<span class="token punctuation">)</span>
-<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token number">1</span> <span class="token number">1</span> <span class="token number">2</span> <span class="token number">3</span> <span class="token number">3</span> <span class="token number">3</span>
-</code></pre>
+<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token number">1</span> <span class="token number">1</span> <span class="token number">2</span> <span class="token number">3</span> <span class="token number">3</span> <span class="token number">3</span></code></pre>
 <ul>
 <li>eg2-向量按 INDEX 分组求和</li>
 </ul>
 <pre class=" language-r"><code class="language-r"><span class="token operator">></span> tapply<span class="token punctuation">(</span>x<span class="token punctuation">,</span> INDEX<span class="token punctuation">,</span> sum<span class="token punctuation">)</span>
  a  b  c 
- <span class="token number">3</span>  <span class="token number">3</span> <span class="token number">15</span> 
-</code></pre>
+ <span class="token number">3</span>  <span class="token number">3</span> <span class="token number">15</span> </code></pre>
 <p>eg3-矩阵按 INDEX 分组求均值</p>
 <pre class=" language-r"><code class="language-r"><span class="token operator">></span> mat <span class="token operator">&lt;-</span> matrix<span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">:</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
 <span class="token operator">></span> mat
@@ -530,12 +523,10 @@ x1 x2
  <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token number">1</span> <span class="token number">1</span> <span class="token number">1</span> <span class="token number">1</span> <span class="token number">1</span> <span class="token number">2</span> <span class="token number">2</span> <span class="token number">2</span> <span class="token number">2</span> <span class="token number">2</span>
 <span class="token operator">></span> tapply<span class="token punctuation">(</span>mat<span class="token punctuation">,</span> INDEX<span class="token punctuation">,</span> mean<span class="token punctuation">)</span>
 <span class="token number">1</span> <span class="token number">2</span> 
-<span class="token number">3</span> <span class="token number">8</span> 
-</code></pre>
+<span class="token number">3</span> <span class="token number">8</span> </code></pre>
 <hr>
 <h3 id="lapply"><a href="#lapply" class="headerlink" title="lapply"></a>lapply</h3><p>lapply-函数定义：在 X 上逐个元素调用 FUN, 返回和 X 等长的 list 作为结果集</p>
-<pre class=" language-r"><code class="language-r">lapply<span class="token punctuation">(</span>X<span class="token punctuation">,</span> FUN<span class="token punctuation">,</span> <span class="token ellipsis">...</span><span class="token punctuation">)</span>
-</code></pre>
+<pre class=" language-r"><code class="language-r">lapply<span class="token punctuation">(</span>X<span class="token punctuation">,</span> FUN<span class="token punctuation">,</span> <span class="token ellipsis">...</span><span class="token punctuation">)</span></code></pre>
 <blockquote>
 <p><strong>参数列表：</strong><br>X：列表、向量、数据框<br>FUN：要使用的函数</p>
 </blockquote>
@@ -557,8 +548,7 @@ x1 x2
 <span class="token operator">$</span>b
 <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token number">3</span>
 <span class="token operator">$</span>c
-<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token number">5</span>
-</code></pre>
+<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token number">5</span></code></pre>
 <ul>
 <li>eg2-对数据框的列求和</li>
 </ul>
@@ -574,8 +564,7 @@ x1 x2
 <span class="token operator">$</span>x1
 <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token number">15</span>
 <span class="token operator">$</span>x2
-<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token number">40</span>
-</code></pre>
+<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token number">40</span></code></pre>
 <ul>
 <li>eg3-找出闰年：对向量内各元素依次调用函数</li>
 </ul>
@@ -585,12 +574,10 @@ x1 x2
 <span class="token operator">+</span> <span class="token punctuation">}</span>
 <span class="token operator">></span> a <span class="token operator">&lt;-</span> <span class="token number">1900</span><span class="token operator">:</span><span class="token number">1910</span>
 <span class="token operator">></span> unlist<span class="token punctuation">(</span>lapply<span class="token punctuation">(</span>a<span class="token punctuation">,</span> isLeapYear<span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token number">1900</span> <span class="token number">1904</span> <span class="token number">1908</span>
-</code></pre>
+<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token number">1900</span> <span class="token number">1904</span> <span class="token number">1908</span></code></pre>
 <hr>
 <h3 id="rapply"><a href="#rapply" class="headerlink" title="rapply"></a>rapply</h3><p>rapply-函数定义：递归版lapply，对list遍历直至无list，最终非list元素若类型是classes参数指定的类型，则调用FUN</p>
-<pre class=" language-r"><code class="language-r">rapply<span class="token punctuation">(</span>list<span class="token punctuation">,</span> f<span class="token punctuation">,</span> classes <span class="token operator">=</span> <span class="token string">"ANY"</span><span class="token punctuation">,</span> deflt <span class="token operator">=</span> <span class="token keyword">NULL</span><span class="token punctuation">,</span>how <span class="token operator">=</span> c<span class="token punctuation">(</span><span class="token string">"unlist"</span><span class="token punctuation">,</span> <span class="token string">"replace"</span><span class="token punctuation">,</span> <span class="token string">"list"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token ellipsis">...</span><span class="token punctuation">)</span>
-</code></pre>
+<pre class=" language-r"><code class="language-r">rapply<span class="token punctuation">(</span>list<span class="token punctuation">,</span> f<span class="token punctuation">,</span> classes <span class="token operator">=</span> <span class="token string">"ANY"</span><span class="token punctuation">,</span> deflt <span class="token operator">=</span> <span class="token keyword">NULL</span><span class="token punctuation">,</span>how <span class="token operator">=</span> c<span class="token punctuation">(</span><span class="token string">"unlist"</span><span class="token punctuation">,</span> <span class="token string">"replace"</span><span class="token punctuation">,</span> <span class="token string">"list"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token ellipsis">...</span><span class="token punctuation">)</span></code></pre>
 <blockquote>
 <p><strong>参数列表：</strong><br>list：列表<br>f：要使用的函数<br>classes： 匹配类型, ANY为所有类型<br>deflt: 非匹配类型的默认值<br>how: 3种操作方式，</p>
 <ul>
@@ -625,12 +612,10 @@ x1 x2
 
 <span class="token operator">></span> rapply<span class="token punctuation">(</span>lst<span class="token punctuation">,</span> sum<span class="token punctuation">,</span> how<span class="token operator">=</span><span class="token string">"unlist"</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true"># 输出结果为vector</span>
 a.aa a.ab b.ba 
-  <span class="token number">15</span>   <span class="token number">40</span>   <span class="token number">55</span> 
-</code></pre>
+  <span class="token number">15</span>   <span class="token number">40</span>   <span class="token number">55</span> </code></pre>
 <hr>
 <h3 id="sapply"><a href="#sapply" class="headerlink" title="sapply"></a>sapply</h3><p>sapply-函数定义：简化版lapply，增加参数simplify和USE.NAMES，可设定输出类型</p>
-<pre class=" language-r"><code class="language-r">sapply<span class="token punctuation">(</span>X<span class="token punctuation">,</span> FUN<span class="token punctuation">,</span> <span class="token ellipsis">...</span><span class="token punctuation">,</span> simplify <span class="token operator">=</span> <span class="token boolean">TRUE</span><span class="token punctuation">,</span> USE.NAMES <span class="token operator">=</span> <span class="token boolean">TRUE</span><span class="token punctuation">)</span>
-</code></pre>
+<pre class=" language-r"><code class="language-r">sapply<span class="token punctuation">(</span>X<span class="token punctuation">,</span> FUN<span class="token punctuation">,</span> <span class="token ellipsis">...</span><span class="token punctuation">,</span> simplify <span class="token operator">=</span> <span class="token boolean">TRUE</span><span class="token punctuation">,</span> USE.NAMES <span class="token operator">=</span> <span class="token boolean">TRUE</span><span class="token punctuation">)</span></code></pre>
 <blockquote>
 <p><strong>参数列表：</strong><br>X：列表、向量、数据框<br>FUN：要使用的函数<br>simplify: 若FALSE，等价于lapply。否则，将lapply输出的list简化为vector或matrix<br>USE.NAMES: 如果X为字符串，TRUE设置字符串为数据名，FALSE不设置</p>
 </blockquote>
@@ -654,8 +639,7 @@ a.aa a.ab b.ba
 <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token punctuation">]</span> <span class="token number">2</span>  <span class="token number">7</span>
 <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token punctuation">]</span> <span class="token number">3</span>  <span class="token number">8</span>
 <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token punctuation">]</span> <span class="token number">4</span>  <span class="token number">9</span>
-<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token punctuation">]</span> <span class="token number">5</span> <span class="token number">10</span>
-</code></pre>
+<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token punctuation">]</span> <span class="token number">5</span> <span class="token number">10</span></code></pre>
 <ul>
 <li>eg2-USE.NAMES参数作用</li>
 </ul>
@@ -666,12 +650,10 @@ a.aa a.ab b.ba
   a   b   c   d   e   f 
 <span class="token string">"a"</span> <span class="token string">"b"</span> <span class="token string">"c"</span> <span class="token string">"d"</span> <span class="token string">"e"</span> <span class="token string">"f"</span> 
 <span class="token operator">></span> sapply<span class="token punctuation">(</span>val<span class="token punctuation">,</span> paste<span class="token punctuation">,</span> USE.NAMES <span class="token operator">=</span> F<span class="token punctuation">)</span>
-<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token string">"a"</span> <span class="token string">"b"</span> <span class="token string">"c"</span> <span class="token string">"d"</span> <span class="token string">"e"</span> <span class="token string">"f"</span>
-</code></pre>
+<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token string">"a"</span> <span class="token string">"b"</span> <span class="token string">"c"</span> <span class="token string">"d"</span> <span class="token string">"e"</span> <span class="token string">"f"</span></code></pre>
 <hr>
 <h3 id="vapply"><a href="#vapply" class="headerlink" title="vapply"></a>vapply</h3><p>vapply-函数定义：类似sapply，但提供参数FUN.VALUE用以设定返回值的行名</p>
-<pre class=" language-r"><code class="language-r">vapply<span class="token punctuation">(</span>X<span class="token punctuation">,</span> FUN<span class="token punctuation">,</span> FUN.VALUE<span class="token punctuation">,</span> <span class="token ellipsis">...</span><span class="token punctuation">,</span> USE.NAMES <span class="token operator">=</span> <span class="token boolean">TRUE</span><span class="token punctuation">)</span>
-</code></pre>
+<pre class=" language-r"><code class="language-r">vapply<span class="token punctuation">(</span>X<span class="token punctuation">,</span> FUN<span class="token punctuation">,</span> FUN.VALUE<span class="token punctuation">,</span> <span class="token ellipsis">...</span><span class="token punctuation">,</span> USE.NAMES <span class="token operator">=</span> <span class="token boolean">TRUE</span><span class="token punctuation">)</span></code></pre>
 <blockquote>
 <p><strong>参数列表：</strong><br>X：列表、数据框<br>FUN：要使用的函数<br>FUN.VALUE：定义返回值的行名row.names<br>USE.NAMES: 如果X为字符串，TRUE设置字符串为数据名，FALSE不设置</p>
 </blockquote>
@@ -683,8 +665,7 @@ a.aa a.ab b.ba
 <span class="token operator">></span> res
      a  b
 min. <span class="token number">1</span>  <span class="token number">6</span>
-max. <span class="token number">5</span> <span class="token number">10</span>
-</code></pre>
+max. <span class="token number">5</span> <span class="token number">10</span></code></pre>
 <ul>
 <li>eg2-对数据框的数据累计求和，并对每一行设置行名row.names</li>
 </ul>
@@ -701,12 +682,10 @@ max. <span class="token number">5</span> <span class="token number">10</span>
 a  <span class="token number">3</span>  <span class="token number">2</span>
 b  <span class="token number">6</span>  <span class="token number">3</span>
 c  <span class="token number">9</span>  <span class="token number">7</span>
-d <span class="token number">12</span> <span class="token number">12</span>
-</code></pre>
+d <span class="token number">12</span> <span class="token number">12</span></code></pre>
 <hr>
 <h3 id="mapply"><a href="#mapply" class="headerlink" title="mapply"></a>mapply</h3><p>mapply-函数定义：多变量版sapply，将FUN应用于多个同结构数据第一个元素组成的数组，然后是第二个元素组成的数组，依此类推</p>
-<pre class=" language-r"><code class="language-r">mapply<span class="token punctuation">(</span>FUN<span class="token punctuation">,</span> <span class="token ellipsis">...</span><span class="token punctuation">,</span> MoreArgs<span class="token operator">=</span><span class="token keyword">NULL</span><span class="token punctuation">,</span> SIMPLIFY<span class="token operator">=</span><span class="token boolean">TRUE</span><span class="token punctuation">,</span> USE.NAMES<span class="token operator">=</span><span class="token boolean">TRUE</span><span class="token punctuation">)</span>
-</code></pre>
+<pre class=" language-r"><code class="language-r">mapply<span class="token punctuation">(</span>FUN<span class="token punctuation">,</span> <span class="token ellipsis">...</span><span class="token punctuation">,</span> MoreArgs<span class="token operator">=</span><span class="token keyword">NULL</span><span class="token punctuation">,</span> SIMPLIFY<span class="token operator">=</span><span class="token boolean">TRUE</span><span class="token punctuation">,</span> USE.NAMES<span class="token operator">=</span><span class="token boolean">TRUE</span><span class="token punctuation">)</span></code></pre>
 <blockquote>
 <p><strong>参数列表：</strong><br>FUN：要使用的函数<br>…: 接收多个数据(list、vector)<br>MoreArgs: FUN的参数列表<br>simplify: 若FALSE，输出list。否则，将输出的list简化为vector或matrix<br>USE.NAMES: 如果X为字符串，TRUE设置字符串为数据名，FALSE不设置</p>
 </blockquote>
@@ -715,8 +694,7 @@ d <span class="token number">12</span> <span class="token number">12</span>
 </ul>
 <pre class=" language-r"><code class="language-r"><span class="token operator">></span> mapply<span class="token punctuation">(</span>sum<span class="token punctuation">,</span> list<span class="token punctuation">(</span>a<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span>b<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span>c<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> list<span class="token punctuation">(</span>a<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">,</span>b<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">,</span>d<span class="token operator">=</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
  a  b  c 
-<span class="token number">11</span> <span class="token number">22</span> <span class="token number">33</span> 
-</code></pre>
+<span class="token number">11</span> <span class="token number">22</span> <span class="token number">33</span> </code></pre>
 <ul>
 <li>eg2-比较两个向量大小，按索引顺序取较大的值</li>
 </ul>
@@ -727,8 +705,7 @@ d <span class="token number">12</span> <span class="token number">12</span>
 <span class="token operator">></span> b
  <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>  <span class="token number">5</span>  <span class="token number">4</span>  <span class="token number">3</span>  <span class="token number">2</span>  <span class="token number">1</span>  <span class="token number">0</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token operator">-</span><span class="token number">2</span> <span class="token operator">-</span><span class="token number">3</span> <span class="token operator">-</span><span class="token number">4</span>
 <span class="token operator">></span> mapply<span class="token punctuation">(</span>max<span class="token punctuation">,</span> a<span class="token punctuation">,</span> b<span class="token punctuation">)</span>
- <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>  <span class="token number">5</span>  <span class="token number">4</span>  <span class="token number">3</span>  <span class="token number">4</span>  <span class="token number">5</span>  <span class="token number">6</span>  <span class="token number">7</span>  <span class="token number">8</span>  <span class="token number">9</span> <span class="token number">10</span>
-</code></pre>
+ <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>  <span class="token number">5</span>  <span class="token number">4</span>  <span class="token number">3</span>  <span class="token number">4</span>  <span class="token number">5</span>  <span class="token number">6</span>  <span class="token number">7</span>  <span class="token number">8</span>  <span class="token number">9</span> <span class="token number">10</span></code></pre>
 <ul>
 <li>eg3-输入向量，返回值多个时返回matrix</li>
 </ul>
@@ -736,12 +713,10 @@ d <span class="token number">12</span> <span class="token number">12</span>
      <span class="token punctuation">[</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span>
 <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token punctuation">]</span>    <span class="token number">2</span>    <span class="token number">4</span>    <span class="token number">6</span>    <span class="token number">8</span>   <span class="token number">10</span>
 <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token punctuation">]</span>    <span class="token number">1</span>    <span class="token number">4</span>   <span class="token number">27</span>  <span class="token number">256</span> <span class="token number">3125</span>
-<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token punctuation">]</span>    <span class="token number">0</span>    <span class="token number">0</span>    <span class="token number">0</span>    <span class="token number">0</span>    <span class="token number">0</span>
-</code></pre>
+<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token punctuation">]</span>    <span class="token number">0</span>    <span class="token number">0</span>    <span class="token number">0</span>    <span class="token number">0</span>    <span class="token number">0</span></code></pre>
 <hr>
 <h3 id="eapply"><a href="#eapply" class="headerlink" title="eapply"></a>eapply</h3><p>eapply-函数定义：对一个环境空间中的所有变量进行遍历</p>
-<pre class=" language-r"><code class="language-r">eapply<span class="token punctuation">(</span>env<span class="token punctuation">,</span> FUN<span class="token punctuation">,</span> <span class="token ellipsis">...</span><span class="token punctuation">,</span> all.names <span class="token operator">=</span> <span class="token boolean">FALSE</span><span class="token punctuation">,</span> USE.NAMES <span class="token operator">=</span> <span class="token boolean">TRUE</span><span class="token punctuation">)</span>
-</code></pre>
+<pre class=" language-r"><code class="language-r">eapply<span class="token punctuation">(</span>env<span class="token punctuation">,</span> FUN<span class="token punctuation">,</span> <span class="token ellipsis">...</span><span class="token punctuation">,</span> all.names <span class="token operator">=</span> <span class="token boolean">FALSE</span><span class="token punctuation">,</span> USE.NAMES <span class="token operator">=</span> <span class="token boolean">TRUE</span><span class="token punctuation">)</span></code></pre>
 <blockquote>
 <p><strong>参数列表：</strong><br>env: 环境空间<br>FUN：要使用的函数<br>all.names: 匹配类型, ANY为所有类型<br>USE.NAMES: 如果X为字符串，TRUE设置字符串为数据名，FALSE不设置</p>
 </blockquote>
@@ -768,9 +743,9 @@ logic <span class="token operator">:</span>  logi <span class="token punctuation
 <span class="token operator">$</span>b
 <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token number">4.535125</span>
 <span class="token operator">$</span>logic
-<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token number">0.5</span>
-</code></pre>
-<p><br></p>
+<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token number">0.5</span></code></pre>
+<br>
+
 <hr>
 <h2 id="应用及拓展"><a href="#应用及拓展" class="headerlink" title="应用及拓展"></a>应用及拓展</h2><h3 id="应用展示"><a href="#应用展示" class="headerlink" title="应用展示"></a>应用展示</h3><p>原始数据为按年份year、地区loc和商品类别type进行统计的销售量。我们要制作两个销售总量的crosstable，一个以年份为行、地区为列，一个以年份为行，类别为列。</p>
 <ul>
@@ -806,8 +781,7 @@ year   beijing shanghai
 year    A  B
   <span class="token number">2001</span>  <span class="token number">4</span>  <span class="token number">6</span>
   <span class="token number">2002</span> <span class="token number">12</span> <span class="token number">14</span>
-  <span class="token number">2003</span> <span class="token number">20</span> <span class="token number">22</span>
-</code></pre>
+  <span class="token number">2003</span> <span class="token number">20</span> <span class="token number">22</span></code></pre>
 <ul>
 <li>应用2-mapply使两个嵌套列表对应项相加</li>
 </ul>
@@ -839,12 +813,10 @@ year    A  B
 <span class="token operator">$</span>b<span class="token operator">$</span>c
 <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>  <span class="token number">6</span>  <span class="token number">8</span> <span class="token number">10</span> <span class="token number">12</span>
 <span class="token operator">$</span>b<span class="token operator">$</span>d
-<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>  <span class="token number">6</span>  <span class="token number">8</span> <span class="token number">10</span> <span class="token number">12</span> <span class="token number">14</span>
-</code></pre>
+<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>  <span class="token number">6</span>  <span class="token number">8</span> <span class="token number">10</span> <span class="token number">12</span> <span class="token number">14</span></code></pre>
 <hr>
 <h3 id="相关函数"><a href="#相关函数" class="headerlink" title="相关函数"></a>相关函数</h3><h4 id="by"><a href="#by" class="headerlink" title="by"></a>by</h4><p>by-函数定义：by可以当成data.frame上的tapply，在数据框行上施用索引分组运算</p>
-<pre class=" language-r"><code class="language-r">by<span class="token punctuation">(</span>data<span class="token punctuation">,</span> INDICES<span class="token punctuation">,</span> FUN<span class="token punctuation">,</span> <span class="token ellipsis">...</span><span class="token punctuation">,</span> simplify <span class="token operator">=</span> <span class="token boolean">TRUE</span><span class="token punctuation">)</span>
-</code></pre>
+<pre class=" language-r"><code class="language-r">by<span class="token punctuation">(</span>data<span class="token punctuation">,</span> INDICES<span class="token punctuation">,</span> FUN<span class="token punctuation">,</span> <span class="token ellipsis">...</span><span class="token punctuation">,</span> simplify <span class="token operator">=</span> <span class="token boolean">TRUE</span><span class="token punctuation">)</span></code></pre>
 <blockquote>
 <p><strong>参数列表：</strong><br>data: 数据框<br>INDICES：与数据框行数等长的用于分组的索引<br>FUN：要使用的函数</p>
 </blockquote>
@@ -876,11 +848,9 @@ INDICES<span class="token operator">:</span> <span class="token number">1</span>
 <span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>
 INDICES<span class="token operator">:</span> <span class="token number">2</span>
   <span class="token number">3</span>   <span class="token number">4</span>   <span class="token number">5</span> 
-<span class="token number">5.5</span> <span class="token number">6.5</span> <span class="token number">7.5</span> 
-</code></pre>
+<span class="token number">5.5</span> <span class="token number">6.5</span> <span class="token number">7.5</span> </code></pre>
 <h4 id="outer"><a href="#outer" class="headerlink" title="outer"></a>outer</h4><p>outer-函数定义：作用于数组的类似于矩阵外积运算方式的运算函数</p>
-<pre class=" language-r"><code class="language-r">outer<span class="token punctuation">(</span>X<span class="token punctuation">,</span> Y<span class="token punctuation">,</span> FUN <span class="token operator">=</span> <span class="token string">"*"</span><span class="token punctuation">,</span> <span class="token ellipsis">...</span><span class="token punctuation">)</span>
-</code></pre>
+<pre class=" language-r"><code class="language-r">outer<span class="token punctuation">(</span>X<span class="token punctuation">,</span> Y<span class="token punctuation">,</span> FUN <span class="token operator">=</span> <span class="token string">"*"</span><span class="token punctuation">,</span> <span class="token ellipsis">...</span><span class="token punctuation">)</span></code></pre>
 <blockquote>
 <p><strong>参数列表：</strong><br>X、Y: 向量、数组<br>FUN：当为空时即为外积运算，否则为将FUN代替外积运算符进行类似外积的运算操作</p>
 </blockquote>
@@ -913,12 +883,10 @@ INDICES<span class="token operator">:</span> <span class="token number">2</span>
  <span class="token punctuation">[</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token punctuation">]</span> <span class="token string">"Sep 1999"</span> <span class="token string">"Sep 2000"</span> <span class="token string">"Sep 2001"</span> <span class="token string">"Sep 2002"</span> <span class="token string">"Sep 2003"</span>
 <span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token punctuation">]</span> <span class="token string">"Oct 1999"</span> <span class="token string">"Oct 2000"</span> <span class="token string">"Oct 2001"</span> <span class="token string">"Oct 2002"</span> <span class="token string">"Oct 2003"</span>
 <span class="token punctuation">[</span><span class="token number">11</span><span class="token punctuation">,</span><span class="token punctuation">]</span> <span class="token string">"Nov 1999"</span> <span class="token string">"Nov 2000"</span> <span class="token string">"Nov 2001"</span> <span class="token string">"Nov 2002"</span> <span class="token string">"Nov 2003"</span>
-<span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">,</span><span class="token punctuation">]</span> <span class="token string">"Dec 1999"</span> <span class="token string">"Dec 2000"</span> <span class="token string">"Dec 2001"</span> <span class="token string">"Dec 2002"</span> <span class="token string">"Dec 2003"</span>
-</code></pre>
+<span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">,</span><span class="token punctuation">]</span> <span class="token string">"Dec 1999"</span> <span class="token string">"Dec 2000"</span> <span class="token string">"Dec 2001"</span> <span class="token string">"Dec 2002"</span> <span class="token string">"Dec 2003"</span></code></pre>
 <hr>
 <h4 id="sweep"><a href="#sweep" class="headerlink" title="sweep"></a>sweep</h4><p>sweep-函数定义：对数组、矩阵按维度进行运算</p>
-<pre class=" language-r"><code class="language-r">sweep<span class="token punctuation">(</span>x<span class="token punctuation">,</span> MARGIN<span class="token punctuation">,</span> STATS<span class="token punctuation">,</span> FUN <span class="token operator">=</span> <span class="token string">"-"</span><span class="token punctuation">,</span> check.margin <span class="token operator">=</span> <span class="token boolean">TRUE</span><span class="token punctuation">,</span> <span class="token ellipsis">...</span><span class="token punctuation">)</span>
-</code></pre>
+<pre class=" language-r"><code class="language-r">sweep<span class="token punctuation">(</span>x<span class="token punctuation">,</span> MARGIN<span class="token punctuation">,</span> STATS<span class="token punctuation">,</span> FUN <span class="token operator">=</span> <span class="token string">"-"</span><span class="token punctuation">,</span> check.margin <span class="token operator">=</span> <span class="token boolean">TRUE</span><span class="token punctuation">,</span> <span class="token ellipsis">...</span><span class="token punctuation">)</span></code></pre>
 <blockquote>
 <p><strong>参数列表：</strong><br>x: 数组、矩阵<br>MARGIN：运算维度，1表示行，2表示列，3即第三维度，以此类推<br>STATS：运算参数，类似于减法中的减数，除法中的除数<br>FUN：要使用的函数</p>
 </blockquote>
@@ -936,8 +904,7 @@ INDICES<span class="token operator">:</span> <span class="token number">2</span>
      <span class="token punctuation">[</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span>
 <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token punctuation">]</span>    <span class="token number">2</span>    <span class="token number">5</span>    <span class="token number">8</span>
 <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token punctuation">]</span>    <span class="token number">6</span>    <span class="token number">9</span>   <span class="token number">12</span>
-<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token punctuation">]</span>   <span class="token number">10</span>   <span class="token number">13</span>   <span class="token number">16</span>
-</code></pre>
+<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token punctuation">]</span>   <span class="token number">10</span>   <span class="token number">13</span>   <span class="token number">16</span></code></pre>
 <ul>
 <li>eg2-STATS可为其他格式，但注意与取MARGIN后的X结构相符</li>
 </ul>
@@ -975,12 +942,10 @@ INDICES<span class="token operator">:</span> <span class="token number">2</span>
 <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token punctuation">]</span>    <span class="token number">6</span>    <span class="token number">6</span>    <span class="token number">6</span>
 <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token punctuation">]</span>    <span class="token number">6</span>    <span class="token number">6</span>    <span class="token number">6</span>
 <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token punctuation">]</span>    <span class="token number">6</span>    <span class="token number">6</span>    <span class="token number">6</span>
-<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token punctuation">]</span>    <span class="token number">6</span>    <span class="token number">6</span>    <span class="token number">6</span>
-</code></pre>
+<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token punctuation">]</span>    <span class="token number">6</span>    <span class="token number">6</span>    <span class="token number">6</span></code></pre>
 <hr>
 <h4 id="replicate"><a href="#replicate" class="headerlink" title="replicate"></a>replicate</h4><p>replicate-函数定义：rep能把输入参数重复数次，replicate则能调用表达式数次</p>
-<pre class=" language-r"><code class="language-r">replicate<span class="token punctuation">(</span>n<span class="token punctuation">,</span> expr<span class="token punctuation">,</span> simplify <span class="token operator">=</span> <span class="token string">"array"</span><span class="token punctuation">)</span>
-</code></pre>
+<pre class=" language-r"><code class="language-r">replicate<span class="token punctuation">(</span>n<span class="token punctuation">,</span> expr<span class="token punctuation">,</span> simplify <span class="token operator">=</span> <span class="token string">"array"</span><span class="token punctuation">)</span></code></pre>
 <blockquote>
 <p><strong>参数列表：</strong><br>n: 调用的次数<br>expr：调用的表达式</p>
 </blockquote>
@@ -992,12 +957,10 @@ INDICES<span class="token operator">:</span> <span class="token number">2</span>
 <span class="token operator">+</span>   return<span class="token punctuation">(</span>sum<span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token operator">+</span> <span class="token punctuation">}</span>
 <span class="token operator">></span> replicate<span class="token punctuation">(</span>n<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">,</span> game<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
- <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>  <span class="token number">6</span>  <span class="token number">6</span>  <span class="token number">6</span>  <span class="token number">7</span>  <span class="token number">7</span>  <span class="token number">7</span> <span class="token number">11</span>  <span class="token number">8</span>  <span class="token number">7</span>  <span class="token number">9</span>
-</code></pre>
+ <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>  <span class="token number">6</span>  <span class="token number">6</span>  <span class="token number">6</span>  <span class="token number">7</span>  <span class="token number">7</span>  <span class="token number">7</span> <span class="token number">11</span>  <span class="token number">8</span>  <span class="token number">7</span>  <span class="token number">9</span></code></pre>
 <hr>
 <h4 id="aggregate"><a href="#aggregate" class="headerlink" title="aggregate"></a>aggregate</h4><p>aggregate-函数定义：可按要求把数据分组，然后对分组后的数据进行各种操作</p>
-<pre class=" language-r"><code class="language-r">aggregate<span class="token punctuation">(</span>x<span class="token punctuation">,</span> by<span class="token punctuation">,</span> FUN<span class="token punctuation">,</span> <span class="token ellipsis">...</span><span class="token punctuation">)</span>
-</code></pre>
+<pre class=" language-r"><code class="language-r">aggregate<span class="token punctuation">(</span>x<span class="token punctuation">,</span> by<span class="token punctuation">,</span> FUN<span class="token punctuation">,</span> <span class="token ellipsis">...</span><span class="token punctuation">)</span></code></pre>
 <blockquote>
 <p><strong>参数列表：</strong><br>x: 一种R数据结构，通常为数据框<br>by：分组索引，必须为list格式<br>FUN：要使用的函数</p>
 </blockquote>
@@ -1017,9 +980,9 @@ INDICES<span class="token operator">:</span> <span class="token number">2</span>
 <span class="token operator">></span> aggregate<span class="token punctuation">(</span>data<span class="token punctuation">[</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token operator">:</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">,</span> by<span class="token operator">=</span>list<span class="token punctuation">(</span>data<span class="token operator">$</span>sex<span class="token punctuation">)</span><span class="token punctuation">,</span> mean<span class="token punctuation">)</span>
   Group<span class="token number">.1</span> age height
 <span class="token number">1</span>       F  <span class="token number">26</span>  <span class="token number">152.5</span>
-<span class="token number">2</span>       M  <span class="token number">30</span>  <span class="token number">168.0</span>
-</code></pre>
-<p><br></p>
+<span class="token number">2</span>       M  <span class="token number">30</span>  <span class="token number">168.0</span></code></pre>
+<br>
+
 <hr>
 <h2 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h2><blockquote>
 <h3 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h3><ul>

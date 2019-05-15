@@ -445,9 +445,9 @@
 <p>首先加载所需的程序包：</p>
 <pre class=" language-r"><code class="language-r">devtools<span class="token operator">::</span>install_github<span class="token punctuation">(</span><span class="token string">"renkun-ken/formattable"</span><span class="token punctuation">)</span>
 install.packages<span class="token punctuation">(</span><span class="token string">"formattable"</span><span class="token punctuation">)</span>
-library<span class="token punctuation">(</span><span class="token string">"formattable"</span><span class="token punctuation">)</span>
-</code></pre>
-<p><br></p>
+library<span class="token punctuation">(</span><span class="token string">"formattable"</span><span class="token punctuation">)</span></code></pre>
+<br>
+
 <hr>
 <h2 id="格式化数据"><a href="#格式化数据" class="headerlink" title="格式化数据"></a>格式化数据</h2><p>该包提供了几个典型的可格式化对象，它们包括：<code>percent</code>, <code>comma</code>, <code>currency</code>, <code>accounting</code> 和 <code>scientific</code> 。这些对象实质上是具有预定义格式规则和参数的数值型向量。</p>
 <h3 id="percent"><a href="#percent" class="headerlink" title="percent"></a>percent</h3><p>percent-函数定义：将输出向量自定义为百分比数字格式</p>
@@ -457,8 +457,7 @@ library<span class="token punctuation">(</span><span class="token string">"forma
 percent<span class="token punctuation">(</span>x<span class="token punctuation">,</span> digits <span class="token operator">=</span> <span class="token number">2L</span><span class="token punctuation">,</span> format <span class="token operator">=</span> <span class="token string">"f"</span><span class="token punctuation">,</span> <span class="token ellipsis">...</span><span class="token punctuation">)</span>
 
 <span class="token comment" spellcheck="true">## S3 method for class 'character'</span>
-percent<span class="token punctuation">(</span>x<span class="token punctuation">,</span> digits <span class="token operator">=</span> <span class="token keyword">NA</span><span class="token punctuation">,</span> format <span class="token operator">=</span> <span class="token string">"f"</span><span class="token punctuation">,</span> <span class="token ellipsis">...</span><span class="token punctuation">)</span>
-</code></pre>
+percent<span class="token punctuation">(</span>x<span class="token punctuation">,</span> digits <span class="token operator">=</span> <span class="token keyword">NA</span><span class="token punctuation">,</span> format <span class="token operator">=</span> <span class="token string">"f"</span><span class="token punctuation">,</span> <span class="token ellipsis">...</span><span class="token punctuation">)</span></code></pre>
 <blockquote>
 <p>参数列表：<br>x：数值型向量<br>digits：一个整数，用于指示百分比字符串的位数<br>format：格式类型，传递给formatC</p>
 </blockquote>
@@ -476,8 +475,7 @@ p
 
 <span class="token operator">></span> <span class="token comment" spellcheck="true"># formattable格式继承了numeric属性，因而保留了数学运算能力</span>
 <span class="token operator">></span> class<span class="token punctuation">(</span>p<span class="token punctuation">)</span>
-<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token string">"formattable"</span> <span class="token string">"numeric"</span> 
-</code></pre>
+<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token string">"formattable"</span> <span class="token string">"numeric"</span> </code></pre>
 <hr>
 <h3 id="comma"><a href="#comma" class="headerlink" title="comma"></a>comma</h3><p>comma-函数定义：将输出向量自定义为千位分隔符数字格式</p>
 <pre class=" language-r"><code class="language-r">comma<span class="token punctuation">(</span>x<span class="token punctuation">,</span> digits<span class="token punctuation">,</span> format <span class="token operator">=</span> <span class="token string">"f"</span><span class="token punctuation">,</span> big.mark <span class="token operator">=</span> <span class="token string">","</span><span class="token punctuation">,</span> <span class="token ellipsis">...</span><span class="token punctuation">)</span>
@@ -487,8 +485,7 @@ comma<span class="token punctuation">(</span>x<span class="token punctuation">,<
 
 <span class="token comment" spellcheck="true">## S3 method for class 'character'</span>
 comma<span class="token punctuation">(</span>x<span class="token punctuation">,</span> digits <span class="token operator">=</span> max<span class="token punctuation">(</span>get_digits<span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> format <span class="token operator">=</span> <span class="token string">"f"</span><span class="token punctuation">,</span>
-  big.mark <span class="token operator">=</span> <span class="token string">","</span><span class="token punctuation">,</span> <span class="token ellipsis">...</span><span class="token punctuation">)</span>
-</code></pre>
+  big.mark <span class="token operator">=</span> <span class="token string">","</span><span class="token punctuation">,</span> <span class="token ellipsis">...</span><span class="token punctuation">)</span></code></pre>
 <blockquote>
 <p>参数列表：<br>x：数值型向量<br>digits：一个整数，用于指示百分比字符串的位数<br>format：格式类型，传递给formatC</p>
 </blockquote>
@@ -502,8 +499,7 @@ comma<span class="token punctuation">(</span>x<span class="token punctuation">,<
 <span class="token operator">></span> comma<span class="token punctuation">(</span>c<span class="token punctuation">(</span><span class="token number">1250000</span><span class="token punctuation">,</span> <span class="token number">225000</span><span class="token punctuation">)</span><span class="token punctuation">,</span> format <span class="token operator">=</span> <span class="token string">"d"</span><span class="token punctuation">)</span>
 <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token number">1</span><span class="token punctuation">,</span><span class="token number">250</span><span class="token punctuation">,</span><span class="token number">000</span> <span class="token number">225</span><span class="token punctuation">,</span><span class="token number">000</span>  
 <span class="token operator">></span> comma<span class="token punctuation">(</span><span class="token string">"123,345.123"</span><span class="token punctuation">)</span>
-<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token number">123</span><span class="token punctuation">,</span><span class="token number">345.123</span>
-</code></pre>
+<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token number">123</span><span class="token punctuation">,</span><span class="token number">345.123</span></code></pre>
 <hr>
 <h3 id="currency"><a href="#currency" class="headerlink" title="currency"></a>currency</h3><p>currency-函数定义：将输出向量自定义为百分比数字格式</p>
 <pre class=" language-r"><code class="language-r">currency<span class="token punctuation">(</span>x<span class="token punctuation">,</span> symbol<span class="token punctuation">,</span> digits<span class="token punctuation">,</span> format <span class="token operator">=</span> <span class="token string">"f"</span><span class="token punctuation">,</span> big.mark <span class="token operator">=</span> <span class="token string">","</span><span class="token punctuation">,</span> <span class="token ellipsis">...</span><span class="token punctuation">,</span> sep <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">)</span>
@@ -514,8 +510,7 @@ currency<span class="token punctuation">(</span>x<span class="token punctuation"
 
 <span class="token comment" spellcheck="true">## S3 method for class 'character'</span>
 currency<span class="token punctuation">(</span>x<span class="token punctuation">,</span> symbol <span class="token operator">=</span> get_currency_symbol<span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">,</span>
-  digits <span class="token operator">=</span> max<span class="token punctuation">(</span>get_digits<span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> format <span class="token operator">=</span> <span class="token string">"f"</span><span class="token punctuation">,</span> big.mark <span class="token operator">=</span> <span class="token string">","</span><span class="token punctuation">,</span> <span class="token ellipsis">...</span><span class="token punctuation">)</span>
-</code></pre>
+  digits <span class="token operator">=</span> max<span class="token punctuation">(</span>get_digits<span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> format <span class="token operator">=</span> <span class="token string">"f"</span><span class="token punctuation">,</span> big.mark <span class="token operator">=</span> <span class="token string">","</span><span class="token punctuation">,</span> <span class="token ellipsis">...</span><span class="token punctuation">)</span></code></pre>
 <blockquote>
 <p>参数列表：<br>x：数值型向量<br>symbol：货币符号<br>digits：一个整数，用于指示百分比字符串的位数<br>format：格式类型，传递给formatC<br>big.mark：千分隔符<br>sep：符号和值之间的分隔符</p>
 </blockquote>
@@ -529,8 +524,7 @@ currency<span class="token punctuation">(</span>x<span class="token punctuation"
 <span class="token operator">></span> currency<span class="token punctuation">(</span><span class="token string">"$ 120,250.50"</span><span class="token punctuation">)</span>
 <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">$</span><span class="token number">120</span><span class="token punctuation">,</span><span class="token number">250.50</span>
 <span class="token operator">></span> currency<span class="token punctuation">(</span><span class="token string">"HK$ 120, 250.50"</span><span class="token punctuation">)</span>
-<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> HK<span class="token operator">$</span><span class="token number">120</span><span class="token punctuation">,</span><span class="token number">250.50</span>
-</code></pre>
+<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> HK<span class="token operator">$</span><span class="token number">120</span><span class="token punctuation">,</span><span class="token number">250.50</span></code></pre>
 <hr>
 <h3 id="accounting"><a href="#accounting" class="headerlink" title="accounting"></a>accounting</h3><ul>
 <li>accounting-函数定义：将输出向量自定义为会计数字格式</li>
@@ -543,8 +537,7 @@ accounting<span class="token punctuation">(</span>x<span class="token punctuatio
 
 <span class="token comment" spellcheck="true">## S3 method for class 'character'</span>
 accounting<span class="token punctuation">(</span>x<span class="token punctuation">,</span> digits <span class="token operator">=</span> max<span class="token punctuation">(</span>get_digits<span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> format <span class="token operator">=</span> <span class="token string">"f"</span><span class="token punctuation">,</span>
-  big.mark <span class="token operator">=</span> <span class="token string">","</span><span class="token punctuation">,</span> <span class="token ellipsis">...</span><span class="token punctuation">)</span>
-</code></pre>
+  big.mark <span class="token operator">=</span> <span class="token string">","</span><span class="token punctuation">,</span> <span class="token ellipsis">...</span><span class="token punctuation">)</span></code></pre>
 <blockquote>
 <p>参数列表：<br>x：数值型向量<br>digits：一个整数，用于指示小数位数<br>format：格式类型，传递给formatC<br>big.mark：千分隔符</p>
 </blockquote>
@@ -560,11 +553,9 @@ accounting<span class="token punctuation">(</span>x<span class="token punctuatio
 
 <span class="token operator">></span> <span class="token comment" spellcheck="true"># 函数保留了保留其数学运算属性</span>
 <span class="token operator">></span> balance <span class="token operator">+</span> <span class="token number">1000</span>
-<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token number">2</span><span class="token punctuation">,</span><span class="token number">000.00</span> <span class="token number">1</span><span class="token punctuation">,</span><span class="token number">500.00</span> <span class="token number">1</span><span class="token punctuation">,</span><span class="token number">200.00</span> <span class="token number">850.00</span>   <span class="token number">1</span><span class="token punctuation">,</span><span class="token number">000.00</span> <span class="token number">2</span><span class="token punctuation">,</span><span class="token number">200.00</span>
-</code></pre>
+<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token number">2</span><span class="token punctuation">,</span><span class="token number">000.00</span> <span class="token number">1</span><span class="token punctuation">,</span><span class="token number">500.00</span> <span class="token number">1</span><span class="token punctuation">,</span><span class="token number">200.00</span> <span class="token number">850.00</span>   <span class="token number">1</span><span class="token punctuation">,</span><span class="token number">000.00</span> <span class="token number">2</span><span class="token punctuation">,</span><span class="token number">200.00</span></code></pre>
 <hr>
-<h3 id="scientific"><a href="#scientific" class="headerlink" title="scientific"></a>scientific</h3><pre class=" language-r"><code class="language-r">scientific<span class="token punctuation">(</span>x<span class="token punctuation">,</span> format <span class="token operator">=</span> c<span class="token punctuation">(</span><span class="token string">"e"</span><span class="token punctuation">,</span> <span class="token string">"E"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> digits <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token ellipsis">...</span><span class="token punctuation">)</span>
-</code></pre>
+<h3 id="scientific"><a href="#scientific" class="headerlink" title="scientific"></a>scientific</h3><pre class=" language-r"><code class="language-r">scientific<span class="token punctuation">(</span>x<span class="token punctuation">,</span> format <span class="token operator">=</span> c<span class="token punctuation">(</span><span class="token string">"e"</span><span class="token punctuation">,</span> <span class="token string">"E"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> digits <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token ellipsis">...</span><span class="token punctuation">)</span></code></pre>
 <blockquote>
 <p>参数列表：<br>x：数值型向量<br>digits：一个整数，用于指示小数位数<br>format：格式类型，传递给formatC</p>
 </blockquote>
@@ -574,8 +565,7 @@ accounting<span class="token punctuation">(</span>x<span class="token punctuatio
 <pre class=" language-r"><code class="language-r"><span class="token operator">></span> scientific<span class="token punctuation">(</span><span class="token number">1253421</span><span class="token punctuation">,</span> digits <span class="token operator">=</span> <span class="token number">8</span><span class="token punctuation">)</span>
 <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token number">1.25342100e+06</span>
 <span class="token operator">></span> scientific<span class="token punctuation">(</span><span class="token number">1253421</span><span class="token punctuation">,</span> digits <span class="token operator">=</span> <span class="token number">8</span><span class="token punctuation">,</span> format <span class="token operator">=</span> <span class="token string">"E"</span><span class="token punctuation">)</span>
-<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token number">1.25342100E+06</span>
-</code></pre>
+<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token number">1.25342100E+06</span></code></pre>
 <hr>
 <h3 id="复杂数据结构"><a href="#复杂数据结构" class="headerlink" title="复杂数据结构"></a>复杂数据结构</h3><p><code>formattable()</code> 将高度可定制的格式应用于各种类的对象，如 <code>numeric</code>, <code>logical</code>, <code>factor</code>, <code>Date</code>, <code>data.frame</code> 等。例如，数据框可能也可存储格式化的列向量（这是自然地，因为数据框就是由若干个等长的向量组成的）：</p>
 <ul>
@@ -593,9 +583,9 @@ accounting<span class="token punctuation">(</span>x<span class="token punctuatio
 <span class="token number">2</span>  <span class="token number">2</span>   A2  <span class="token number">36</span><span class="token punctuation">,</span><span class="token number">150</span>    <span class="token number">30</span>%   yes
 <span class="token number">3</span>  <span class="token number">3</span>   B1  <span class="token number">25</span><span class="token punctuation">,</span><span class="token number">000</span>    <span class="token number">10</span>%    no
 <span class="token number">4</span>  <span class="token number">4</span>   B2  <span class="token number">18</span><span class="token punctuation">,</span><span class="token number">300</span>    <span class="token number">15</span>%    no
-<span class="token number">5</span>  <span class="token number">5</span>   C1   <span class="token number">7</span><span class="token punctuation">,</span><span class="token number">600</span>    <span class="token number">15</span>%   yes
-</code></pre>
-<p><br></p>
+<span class="token number">5</span>  <span class="token number">5</span>   C1   <span class="token number">7</span><span class="token punctuation">,</span><span class="token number">600</span>    <span class="token number">15</span>%   yes</code></pre>
+<br>
+
 <hr>
 <h2 id="格式化数据表"><a href="#格式化数据表" class="headerlink" title="格式化数据表"></a>格式化数据表</h2><h3 id="举个栗子"><a href="#举个栗子" class="headerlink" title="举个栗子"></a>举个栗子</h3><p>普通的表格数据如下所示：</p>
 <pre class=" language-r"><code class="language-r"><span class="token operator">></span> df <span class="token operator">&lt;-</span> data.frame<span class="token punctuation">(</span>
@@ -620,8 +610,7 @@ accounting<span class="token punctuation">(</span>x<span class="token punctuatio
 <span class="token number">7</span>   <span class="token number">7</span>    Leo  <span class="token number">27</span>     B         <span class="token number">9.3</span>         <span class="token number">9.2</span>        <span class="token number">9.25</span>       <span class="token boolean">TRUE</span>
 <span class="token number">8</span>   <span class="token number">8</span>   John  <span class="token number">27</span>     A         <span class="token number">9.9</span>         <span class="token number">9.3</span>        <span class="token number">9.60</span>      <span class="token boolean">FALSE</span>
 <span class="token number">9</span>   <span class="token number">9</span>  Emily  <span class="token number">31</span>     C         <span class="token number">8.5</span>         <span class="token number">9.1</span>        <span class="token number">8.80</span>      <span class="token boolean">FALSE</span>
-<span class="token number">10</span> <span class="token number">10</span>    Lee  <span class="token number">30</span>     C         <span class="token number">8.6</span>         <span class="token number">8.8</span>        <span class="token number">8.70</span>      <span class="token boolean">FALSE</span>
-</code></pre>
+<span class="token number">10</span> <span class="token number">10</span>    Lee  <span class="token number">30</span>     C         <span class="token number">8.6</span>         <span class="token number">8.8</span>        <span class="token number">8.70</span>      <span class="token boolean">FALSE</span></code></pre>
 <p>格式化表格，具有以下可视化效果：</p>
 <pre class=" language-r"><code class="language-r"><span class="token operator">></span> formattable<span class="token punctuation">(</span>df<span class="token punctuation">,</span> 
 <span class="token operator">+</span>             list<span class="token punctuation">(</span>
@@ -642,8 +631,7 @@ accounting<span class="token punctuation">(</span>x<span class="token punctuatio
 <span class="token operator">+</span>                 x <span class="token operator">~</span> icontext<span class="token punctuation">(</span>ifelse<span class="token punctuation">(</span>x<span class="token punctuation">,</span> <span class="token string">"ok"</span><span class="token punctuation">,</span> <span class="token string">"remove"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> ifelse<span class="token punctuation">(</span>x<span class="token punctuation">,</span> <span class="token string">"Yes"</span><span class="token punctuation">,</span> <span class="token string">"No"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token operator">+</span>               <span class="token punctuation">)</span>
 <span class="token operator">+</span>             <span class="token punctuation">)</span>
-<span class="token operator">+</span> <span class="token punctuation">)</span>
-</code></pre>
+<span class="token operator">+</span> <span class="token punctuation">)</span></code></pre>
 <p><img src="https://blog-1255524710.cos.ap-beijing.myqcloud.com/cover/formattable.png" alt="formattable.png"></p>
 <p>表格中使用的图标集由<a href="GLYPHICONS.com">GLYPHICONS.com</a>提供并包含在<a href="https://getbootstrap.com/docs/3.3/components/" target="_blank" rel="noopener">Bootstrap</a>中。</p>
 <p>注意到一共用了 <code>文字格式自定义、文字背景自定义、文本自定义</code> 三种自定义可视化类型：</p>
@@ -653,11 +641,9 @@ accounting<span class="token punctuation">(</span>x<span class="token punctuatio
 </blockquote>
 <hr>
 <h3 id="文字格式自定义"><a href="#文字格式自定义" class="headerlink" title="文字格式自定义"></a>文字格式自定义</h3><h4 id="color-text"><a href="#color-text" class="headerlink" title="color_text"></a>color_text</h4><p>color_text(“color1”, “color2”)：输出按照数值量级进行字体颜色填充的列</p>
-<pre class=" language-r"><code class="language-r">formattable<span class="token punctuation">(</span>mtcars<span class="token punctuation">,</span> list<span class="token punctuation">(</span>mpg <span class="token operator">=</span> color_text<span class="token punctuation">(</span><span class="token string">"black"</span><span class="token punctuation">,</span> <span class="token string">"red"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-</code></pre>
+<pre class=" language-r"><code class="language-r">formattable<span class="token punctuation">(</span>mtcars<span class="token punctuation">,</span> list<span class="token punctuation">(</span>mpg <span class="token operator">=</span> color_text<span class="token punctuation">(</span><span class="token string">"black"</span><span class="token punctuation">,</span> <span class="token string">"red"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
 <h4 id="formatter"><a href="#formatter" class="headerlink" title="formatter"></a>formatter</h4><p>formatter-函数定义：创建一个HTML元素制作的格式化函数</p>
-<pre class=" language-r"><code class="language-r">formatter<span class="token punctuation">(</span>.tag<span class="token punctuation">,</span> style <span class="token operator">=</span> <span class="token ellipsis">...</span><span class="token punctuation">)</span>
-</code></pre>
+<pre class=" language-r"><code class="language-r">formatter<span class="token punctuation">(</span>.tag<span class="token punctuation">,</span> style <span class="token operator">=</span> <span class="token ellipsis">...</span><span class="token punctuation">)</span></code></pre>
 <blockquote>
 <p>参数列表：<br>.tag：HTML 标签，默认为 span<br>style：CSS语句<br>注：类似 x ~ expr 的公式将表现得像 function(x) expr</p>
 </blockquote>
@@ -674,22 +660,20 @@ formattable<span class="token punctuation">(</span>mtcars<span class="token punc
 <span class="token comment" spellcheck="true"># proportion_bar(color = "lightgray", ...)</span>
 <span class="token comment" spellcheck="true"># 按正常配置输出大小以数值量级为比例的色块</span>
 formattable<span class="token punctuation">(</span>mtcars<span class="token punctuation">,</span> list<span class="token punctuation">(</span>mpg <span class="token operator">=</span> normalize_bar<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-formattable<span class="token punctuation">(</span>mtcars<span class="token punctuation">,</span> list<span class="token punctuation">(</span>mpg <span class="token operator">=</span> proportion_bar<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-</code></pre>
+formattable<span class="token punctuation">(</span>mtcars<span class="token punctuation">,</span> list<span class="token punctuation">(</span>mpg <span class="token operator">=</span> proportion_bar<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
 <h4 id="area"><a href="#area" class="headerlink" title="area"></a>area</h4><p>area-函数定义：选取特定表格区域进行格式化</p>
-<pre class=" language-r"><code class="language-r">area<span class="token punctuation">(</span>row<span class="token punctuation">,</span> col<span class="token punctuation">)</span> <span class="token operator">~</span> formatter<span class="token operator">/</span>normalize_bar……
-</code></pre>
+<pre class=" language-r"><code class="language-r">area<span class="token punctuation">(</span>row<span class="token punctuation">,</span> col<span class="token punctuation">)</span> <span class="token operator">~</span> formatter<span class="token operator">/</span>normalize_bar……</code></pre>
 <blockquote>
 <p>参数列表：<br>row/col：选取的行与列，默认为全选</p>
 </blockquote>
 <h3 id="文本自定义"><a href="#文本自定义" class="headerlink" title="文本自定义"></a>文本自定义</h3><h4 id="icontext"><a href="#icontext" class="headerlink" title="icontext"></a>icontext</h4><p>icontext-函数定义：文本修饰函数-添加图标、更改内容</p>
-<pre class=" language-r"><code class="language-r">icontext<span class="token punctuation">(</span>icon<span class="token punctuation">,</span> text <span class="token operator">=</span> list<span class="token punctuation">(</span><span class="token keyword">NULL</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token ellipsis">...</span><span class="token punctuation">)</span>
-</code></pre>
+<pre class=" language-r"><code class="language-r">icontext<span class="token punctuation">(</span>icon<span class="token punctuation">,</span> text <span class="token operator">=</span> list<span class="token punctuation">(</span><span class="token keyword">NULL</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token ellipsis">...</span><span class="token punctuation">)</span></code></pre>
 <blockquote>
 <p>参数列表：<br>icon：图标名称的字符矢量或字符矢量列表<br>text：文本的字符向量</p>
 </blockquote>
 <p>使用的图标集由<a href="GLYPHICONS.com">GLYPHICONS.com</a>提供并包含在<a href="https://getbootstrap.com/docs/3.3/components/" target="_blank" rel="noopener">Bootstrap</a>中。</p>
-<p><br></p>
+<br>
+
 <hr>
 <h2 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h2><blockquote>
 <h3 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h3><ul>

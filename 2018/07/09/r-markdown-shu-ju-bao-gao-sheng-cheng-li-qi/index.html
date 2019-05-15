@@ -445,12 +445,10 @@ install.packages('rmarkdown')
 # install from GitHub
 if (!requireNamespace("devtools"))
   install.packages('devtools')
-devtools::install_github('rstudio/rmarkdown')
-</code></pre>
+devtools::install_github('rstudio/rmarkdown')</code></pre>
 <p>如果您想要生成 PDF 类型文档输出，您将需要安装 LaTeX 。对于那些以前没有安装过 LaTeX 的 R Markdown 用户，我们建议您安装 TinyTeX（<a href="https://yihui./tinytex/）：" target="_blank" rel="noopener">https://yihui./tinytex/）：</a> </p>
 <pre class=" language-R"><code class="language-R">install.packages("tinytex")
-tinytex::install_tinytex()  # install TinyTeX
-</code></pre>
+tinytex::install_tinytex()  # install TinyTeX</code></pre>
 <p>TinyTeX 相当于一款轻量级、跨平台、易于维护的 LaTeX 。在将 LaTeX  或 R Markdown 文档编译成 PDF 时，<code>tinytex</code> 可以帮助您自动安装所需的相关 R 包，同时还能确保一个 LaTeX  文档被编译成正确的次数，以解决所有的交叉引用问题。如果您不明白这两件事是什么意思，应该按照我们的建议来安装 TinyTeX，因为这些细节往往并不值得您花费时间和精力去关心。 </p>
 <p>使用 <code>rmarkdown</code> 包、RStudio/Pandoc 和 LaTeX，您应该能够编译大多数R Markdown 文档。在某些情况下，您可能需要其他软件包，我们将在必要时提到它们。 </p>
 <blockquote>
@@ -477,8 +475,7 @@ tinytex::install_tinytex()  # install TinyTeX
 <span class="token key atrule">author</span><span class="token punctuation">:</span> <span class="token string">"Awesome Me"</span>
 <span class="token key atrule">date</span><span class="token punctuation">:</span> <span class="token string">"2018-02-14"</span>
 <span class="token key atrule">output</span><span class="token punctuation">:</span> html_document
-<span class="token punctuation">---</span>
-</code></pre>
+<span class="token punctuation">---</span></code></pre>
 <pre class=" language-markdown"><code class="language-markdown">This is a paragraph in an R Markdown document.
 
 Below is a code chunk:
@@ -491,18 +488,16 @@ abline(fit)
 ```
 
 The slope of the regression is <span class="token code keyword">`r b[1]`</span>.
-```
-</code></pre>
+```</code></pre>
 <p>您可以使用任何文本编辑器（包括但不限于 RStudio）来创建这样的文本文档。如果使用 RStudio，您可以从 <code>File -&gt; New File -&gt; R Markdown</code> 中创建一个新的 Rmd 文档。 </p>
 <p>一份 R Markdown 文档有三个基础组成部分：元数据，文本和代码。元数据是在三个连接符 <code>---</code> 之间的内容。元数据的语法是 YAML（ <a href="https://en.wikipedia.org/wiki/YAML" target="_blank" rel="noopener">YAML 不是标记语言</a> ），所以有时它也被称为 YAML metadata 或 YAML frontmatter。 需要注意的是，缩进在 YAML 中十分重要，忽视它会让你付出惨重代价。请参阅谢益辉所写的 《bookdown》（2016）一书中的 <a href="https://bookdown.org/yihui/bookdown/r-markdown.html" target="_blank" rel="noopener">附录b.2</a> 来了解一些简单的例子，这些示例展示了 YAML 语法。</p>
 <p>文档的主体遵循元数据书写的规则。文本的语法是 Markdown，将在第 2.5 节中进行介绍。有两种类型的计算机代码，在第 2.6 节中进行了详细解释： </p>
 <ul>
 <li><strong>代码块</strong>：以三个重音符及所使用语言开始，其中 <code>r</code> 代表所使用的程序语言，并以三个重音符结束。 可以在花括号中填写块选项（如：将图形高度设置为5英寸：<code>{r, fig.height=5}</code>）。</li>
-<li><strong>内联代码</strong>：以 <code></code>r` 开始，并以单个重音符结束。</li>
+<li><strong>内联代码</strong>：以 ``r` 开始，并以单个重音符结束。</li>
 </ul>
 <h2 id="文档编译"><a href="#文档编译" class="headerlink" title="文档编译"></a>文档编译</h2><p>最简单的方式莫过于在 RStudio 中单击 <code>Knit</code> 按钮，对应的快捷键为 <code>Ctrl + Shift + K</code> （在 macOS 中为 <code>Cmd + Shift + K</code>）。当然也可以直接运行代码 <code>rmarkdown::render</code> 来进行渲染编译，如：</p>
-<pre class=" language-R"><code class="language-R">rmarkdown::render('foo.Rmd', 'pdf_document')
-</code></pre>
+<pre class=" language-R"><code class="language-R">rmarkdown::render('foo.Rmd', 'pdf_document')</code></pre>
 <p>当编译多个文档时，使用函数更加方便，因为可以直接使用循环来进行渲染编译。</p>
 <h2 id="参考卡片"><a href="#参考卡片" class="headerlink" title="参考卡片"></a>参考卡片</h2><p>RStudio 已经创建了大量的参考卡片，它们可以在 <a href="https://www.rstudio.com/resources/cheatsheets/" target="_blank" rel="noopener">https://www.rstudio.com/resources/cheatsheets/</a> 上免费获得。</p>
 <h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>有两种输出格式：documents 和 presentations 。所有可用的格式如下所示 ：</p>
@@ -521,27 +516,23 @@ The slope of the regression is <span class="token code keyword">`r b[1]`</span>.
 <li><code>word_document</code></li>
 </ul>
 <p>我们将在第 3 章和第 4 章详细地记录这些输出格式。在其他扩展包中提供了更多的输出格式（从第 5 章开始）。对于 Rmd 文件的 YAML 元数据中的输出格式名称，如果格式来自扩展包，您需要包含包名（若格式来自于 <code>rmarkdown</code> 包，则不需要 <code>rmarkdown::</code>前缀 ），例如：</p>
-<pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">output</span><span class="token punctuation">:</span> tufte<span class="token punctuation">:</span><span class="token punctuation">:</span>tufte_html
-</code></pre>
+<pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">output</span><span class="token punctuation">:</span> tufte<span class="token punctuation">:</span><span class="token punctuation">:</span>tufte_html</code></pre>
 <p>每种输出格式通常都有多种格式选项。所有这些选项都记录在 R 包 help 页面上。例如，您可以在 R 中键入 <code>?rmarkdown::</code> 打开关于 <code>html_document</code> 格式的 help 页面。当您想要使用某些选项时，必须将这些值从 R 转换成 YAML，例如：</p>
-<pre class=" language-R"><code class="language-R">html_document(toc = TRUE, toc_depth = 2, dev = 'svg')
-</code></pre>
+<pre class=" language-R"><code class="language-R">html_document(toc = TRUE, toc_depth = 2, dev = 'svg')</code></pre>
 <p>可以用 YAML 写为： </p>
 <pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">output</span><span class="token punctuation">:</span>
   <span class="token key atrule">html_document</span><span class="token punctuation">:</span>
     <span class="token key atrule">toc</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
     <span class="token key atrule">toc_depth</span><span class="token punctuation">:</span> <span class="token number">2</span>
-    <span class="token key atrule">dev</span><span class="token punctuation">:</span> <span class="token string">'svg'</span>
-</code></pre>
-<p>YAML 中的字符串通常不需要引号（<code></code>dev：“svg”<code>和</code>dev:svg<code>是相同的），除非它们包含特殊字符，比如冒号</code>：<code>。如果您不确定是否应该引用字符串，那么用</code>yaml` 包来测试它，例如：</p>
+    <span class="token key atrule">dev</span><span class="token punctuation">:</span> <span class="token string">'svg'</span></code></pre>
+<p>YAML 中的字符串通常不需要引号（``dev：“svg”<code>和</code>dev:svg<code>是相同的），除非它们包含特殊字符，比如冒号</code>：<code>。如果您不确定是否应该引用字符串，那么用</code>yaml` 包来测试它，例如：</p>
 <pre class=" language-R"><code class="language-R">cat(yaml::as.yaml(list(
   title = 'A Wonderful Day',
   subtitle = 'hygge: a quality of coziness'
 )))
 
 ## title: A Wonderful Day
-## subtitle: 'hygge: a quality of coziness'
-</code></pre>
+## subtitle: 'hygge: a quality of coziness'</code></pre>
 <p>注意，上面例子中的副标题是由于冒号而引用单引号的。</p>
 <p>如果某一选项有子选项（这意味着该选项的值是 R 中的列表），则子选项需要进一步缩进，例如：</p>
 <pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">output</span><span class="token punctuation">:</span>
@@ -549,15 +540,13 @@ The slope of the regression is <span class="token code keyword">`r b[1]`</span>.
     <span class="token key atrule">toc</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
     <span class="token key atrule">includes</span><span class="token punctuation">:</span>
       <span class="token key atrule">in_header</span><span class="token punctuation">:</span> header.html
-      <span class="token key atrule">before_body</span><span class="token punctuation">:</span> before.html
-</code></pre>
+      <span class="token key atrule">before_body</span><span class="token punctuation">:</span> before.html</code></pre>
 <p>一些选项将被传递给 <strong>knitr</strong> ，比如 <code>dev</code>、<code>fig_width</code> 和 <code>fig_height</code>。这些选项的详细文档可以在 <a href="https://yihui.name/knitr/options/" target="_blank" rel="noopener">knitr 文档页面</a> 上找到。请注意，实际的 knitr 选项名称可能有所不同。特别是，knitr 在名称中使用 <code>.</code>，但 rmarkdown 使用 <code>_</code>，例如，在 rmarkdown 中，<code>fig_width</code>  对应于knitr 中的 <code>fig.width</code> 。</p>
 <p>一些选项将被传递给 <strong>Pandoc</strong>，比如 <code>toc</code>、<code>toc_depth</code> 和 <code>number_sections</code> 。当有疑问时，您应该参考 Pandoc 文档。R Markdown 输出格式函数通常有一个<code>pandoc_args</code>  参数，它应该是传递给 Pandoc 的参数的字符向量。如果您发现任何没有由输出格式参数表示的 Pandoc 特性，您可以使用这个终极论证，例如：</p>
 <pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">output</span><span class="token punctuation">:</span>
   <span class="token key atrule">pdf_document</span><span class="token punctuation">:</span>
     <span class="token key atrule">toc</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-    <span class="token key atrule">pandoc_args</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">"--wrap=none"</span><span class="token punctuation">,</span> <span class="token string">"--top-level-division=chapter"</span><span class="token punctuation">]</span>
-</code></pre>
+    <span class="token key atrule">pandoc_args</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">"--wrap=none"</span><span class="token punctuation">,</span> <span class="token string">"--top-level-division=chapter"</span><span class="token punctuation">]</span></code></pre>
 <h2 id="Markdown-语法"><a href="#Markdown-语法" class="headerlink" title="Markdown 语法"></a>Markdown 语法</h2><h3 id="内联格式"><a href="#内联格式" class="headerlink" title="内联格式"></a>内联格式</h3><ul>
 <li><p><em>斜体</em> ：<code>_text_</code> 或 <code>*text*</code> </p>
 </li>
@@ -584,8 +573,7 @@ The slope of the regression is <span class="token code keyword">`r b[1]`</span>.
   address <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token constant">Vienna</span><span class="token punctuation">,</span> <span class="token constant">Austria</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
   year <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">2017</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
   url <span class="token operator">=</span> <span class="token punctuation">{</span>https<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>www<span class="token punctuation">.</span><span class="token constant">R</span><span class="token operator">-</span>project<span class="token punctuation">.</span>org<span class="token operator">/</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 </li>
 </ul>
 <h3 id="块级元素"><a href="#块级元素" class="headerlink" title="块级元素"></a>块级元素</h3><ul>
@@ -594,11 +582,9 @@ The slope of the regression is <span class="token code keyword">`r b[1]`</span>.
 
 ## Second-level header
 
-### Third-level header
-</code></pre>
+### Third-level header</code></pre>
 <p>如果不想让某个标题被编号，可以在标题后面添加 <code>{-}</code> 或者 <code>{.unnumbered}</code>，如：</p>
-<pre class=" language-Markdown"><code class="language-Markdown"># Preface {-} 
-</code></pre>
+<pre class=" language-Markdown"><code class="language-Markdown"># Preface {-} </code></pre>
 </li>
 <li><p><strong>无序列表</strong></p>
 <pre class=" language-Markdown"><code class="language-Markdown">- one item
@@ -606,24 +592,21 @@ The slope of the regression is <span class="token code keyword">`r b[1]`</span>.
 - one item
   - one more item
   - one more item
-  - one more item
-</code></pre>
+  - one more item</code></pre>
 </li>
 <li><p><strong>有序列表</strong></p>
 <pre class=" language-Markdown"><code class="language-Markdown">1. the first item
 2. the second item
 3. the third item
   - one unordered item
-  - one unordered item
-</code></pre>
+  - one unordered item</code></pre>
 </li>
 <li><p><strong>引用</strong></p>
 <pre class=" language-Markdown"><code class="language-Markdown">> "I thoroughly disapprove of duels. If a man should challenge me,
   I would take him kindly and forgivingly by the hand and lead him
   to a quiet place and kill him."
 >
->                                                 --- Mark Twain
-</code></pre>
+>                                                 --- Mark Twain</code></pre>
 <blockquote>
 <p>“I thoroughly disapprove of duels. If a man should challenge me,<br>I would take him kindly and forgivingly by the hand and lead him<br>to a quiet place and kill him.”</p>
 <p>​                                               — Mark Twain</p>
@@ -636,8 +619,7 @@ This text is displayed verbatim / preformatted
 
 Or indent by four spaces:
 
-    This text is displayed verbatim / preformatted
-</code></pre>
+    This text is displayed verbatim / preformatted</code></pre>
 </li>
 </ul>
 <h3 id="数学表达式"><a href="#数学表达式" class="headerlink" title="数学表达式"></a>数学表达式</h3><p><code>$f(k) = {n \choose k} p^{k} (1-p)^{n-k}$</code> :  $f(k) = {n \choose k} p^{k} (1-p)^{n-k}$ </p>
@@ -655,8 +637,7 @@ do_it = Sys.Date() > '2018-02-14'
 
 ```{r, eval=do_it}
 x = rnorm(100)
-```
-</code></pre>
+```</code></pre>
 </li>
 <li><p><code>echo=TRUE</code> ：输出源代码；</p>
 </li>
@@ -686,19 +667,16 @@ x = rnorm(100)
 <p>如果某个选项需要经常被设置为多个代码块中的值，您可以考虑在文档的第一个代码块中全局设置它：</p>
 <pre class=" language-R"><code class="language-R">```{r, setup, include=FALSE}
 knitr::opts_chunk$set(fig.width = 8, collapse = TRUE)
-```
-</code></pre>
+```</code></pre>
 <h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><p>本地图片亦可以使用代码块选项进行调节，例如：</p>
 <pre class=" language-R"><code class="language-R">```{r, out.width='25%', fig.align='center', fig.cap='...'}
 knitr::include_graphics('images/hex-rmarkdown.png')
-```
-</code></pre>
+```</code></pre>
 <p>如果您想要淡入一个不是由 R 代码生成的图形，您可以使用 <code>knitr::include_graphics()</code>  函数，它使您能够更好地控制图像的属性，而不是像 <code>![alt text or image title](path/to/image)</code> 这样的 Markdown 语法难以调解图片属性。 </p>
 <h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><p>使用 <code>knitr::kable()</code>  函数可以简易的创建表格，表格标题可以通过 <code>caption</code>  来设置，例如：</p>
 <pre class=" language-R"><code class="language-R">```{r tables-mtcars}
 knitr::kable(iris[1:5, ], caption = 'A caption')
-```
-</code></pre>
+```</code></pre>
 <p>如果您正在寻找更高级的表格样式控制，建议您使用 <a href="https://cran.r-project.org/package=kableExtra" target="_blank" rel="noopener">kableExtra</a> 包，它提供了定制 PDF 和 HTML 表格外观的功能。在第 12.3 节中解释了 <code>bookdown</code> 包如何扩展 rmarkdown 的功能，以允许在文本中轻松地交叉引用数字和表格。 </p>
 <blockquote>
 <p><strong>参考文献</strong></p>
@@ -713,8 +691,7 @@ knitr::kable(iris[1:5, ], caption = 'A caption')
 <span class="token key atrule">author</span><span class="token punctuation">:</span> John Doe
 <span class="token key atrule">date</span><span class="token punctuation">:</span> March 22<span class="token punctuation">,</span> <span class="token number">2005</span>
 <span class="token key atrule">output</span><span class="token punctuation">:</span> html_document
-<span class="token punctuation">---</span>
-</code></pre>
+<span class="token punctuation">---</span></code></pre>
 <h3 id="目录（Table-of-contents）"><a href="#目录（Table-of-contents）" class="headerlink" title="目录（Table of contents）"></a>目录（Table of contents）</h3><pre class=" language-yaml"><code class="language-yaml"><span class="token punctuation">---</span>
 <span class="token key atrule">title</span><span class="token punctuation">:</span> <span class="token string">"Habits"</span>
 <span class="token key atrule">output</span><span class="token punctuation">:</span>
@@ -724,8 +701,7 @@ knitr::kable(iris[1:5, ], caption = 'A caption')
     <span class="token key atrule">toc_float</span><span class="token punctuation">:</span>
         <span class="token key atrule">collapsed</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
         <span class="token key atrule">smooth_scroll</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
-<span class="token punctuation">---</span>
-</code></pre>
+<span class="token punctuation">---</span></code></pre>
 <ul>
 <li><code>toc: true</code> ：输出目录；</li>
 <li><code>toc_depth</code> ：所输出标题的最小级别；</li>
@@ -739,8 +715,7 @@ knitr::kable(iris[1:5, ], caption = 'A caption')
   <span class="token key atrule">html_document</span><span class="token punctuation">:</span>
     <span class="token key atrule">toc</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
     <span class="token key atrule">number_sections</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-<span class="token punctuation">---</span>
-</code></pre>
+<span class="token punctuation">---</span></code></pre>
 <p>注意，如果文档中没有一级标题，那么二级标题将被命名为 <code>0.1</code>, <code>0.2</code> ……</p>
 <h3 id="选项卡-Tabbed-sections"><a href="#选项卡-Tabbed-sections" class="headerlink" title="选项卡 (Tabbed sections)"></a>选项卡 (Tabbed sections)</h3><pre class=" language-markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">##</span> Quarterly Results {.tabset .tabset-fade .tabset-pills}</span>
 
@@ -750,8 +725,7 @@ knitr::kable(iris[1:5, ], caption = 'A caption')
 
 <span class="token title important"><span class="token punctuation">###</span> By Region</span>
 
-(tab content)
-</code></pre>
+(tab content)</code></pre>
 <p><img src="https://bookdown.org/yihui/rmarkdown/images/tabset.png" alt="Tabbed sections"></p>
 <ul>
 <li><code>.tabset</code>  ：使主标题的所有子标题与 .tabset 属性一起出现在选项卡中，而不是作为独立的部分；</li>
@@ -764,8 +738,7 @@ knitr::kable(iris[1:5, ], caption = 'A caption')
   <span class="token key atrule">html_document</span><span class="token punctuation">:</span>
     <span class="token key atrule">theme</span><span class="token punctuation">:</span> united
     <span class="token key atrule">highlight</span><span class="token punctuation">:</span> tango
-<span class="token punctuation">---</span>
-</code></pre>
+<span class="token punctuation">---</span></code></pre>
 <ul>
 <li><code>theme</code>  ：主题是从 <a href="https://bootswatch.com/3/" target="_blank" rel="noopener">Bootswatch</a> 主题库中提取的，适用的主题包括：<code>default</code>, <code>cerulean</code>, <code>journal</code>, <code>flatly</code>, <code>readable</code>, <code>spacelab</code>, <code>united</code>, <code>cosmo</code>, <code>lumen</code>, <code>paper</code>, <code>sandstone</code>, <code>simplex</code>, 和 <code>yeti</code>. </li>
 <li><code>highlight</code> ：代码高亮模式。支持的风格包括： <code>default</code>,  <code>tango</code>,  <code>pygments</code>,  <code>kate</code>,  <code>monochrome</code>,  <code>espresso</code>,  <code>zenburn</code>,  <code>haddock</code> 和 <code>textmate</code>.  </li>
@@ -777,8 +750,7 @@ knitr::kable(iris[1:5, ], caption = 'A caption')
     <span class="token key atrule">fig_width</span><span class="token punctuation">:</span> <span class="token number">7</span>
     <span class="token key atrule">fig_height</span><span class="token punctuation">:</span> <span class="token number">6</span>
     <span class="token key atrule">fig_caption</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-<span class="token punctuation">---</span>
-</code></pre>
+<span class="token punctuation">---</span></code></pre>
 <ul>
 <li><code>fig_width</code> 和 <code>fig_height</code>  ：图片宽度和高度；</li>
 <li><code>fig_caption</code>  ：控制图片是否包括标题；</li>
@@ -788,29 +760,27 @@ knitr::kable(iris[1:5, ], caption = 'A caption')
 <table>
 <thead>
 <tr>
-<th style="text-align:center">Option</th>
-<th style="text-align:left">Description</th>
+<th align="center">Option</th>
+<th align="left">Description</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">default</td>
-<td style="text-align:left">Call the <code>print.data.frame</code> generic method</td>
+<tbody><tr>
+<td align="center">default</td>
+<td align="left">Call the <code>print.data.frame</code> generic method</td>
 </tr>
 <tr>
-<td style="text-align:center">kable</td>
-<td style="text-align:left">Use the <code>knitr::kable</code> function</td>
+<td align="center">kable</td>
+<td align="left">Use the <code>knitr::kable</code> function</td>
 </tr>
 <tr>
-<td style="text-align:center">tibble</td>
-<td style="text-align:left">Use the <code>tibble::print.tbl_df</code> function</td>
+<td align="center">tibble</td>
+<td align="left">Use the <code>tibble::print.tbl_df</code> function</td>
 </tr>
 <tr>
-<td style="text-align:center">paged</td>
-<td style="text-align:left">Use <code>rmarkdown::print.paged_df</code> to create a pageable table</td>
+<td align="center">paged</td>
+<td align="left">Use <code>rmarkdown::print.paged_df</code> to create a pageable table</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p>设定为 paged 格式后输出形式为：</p>
 <pre class=" language-yaml"><code class="language-yaml"><span class="token punctuation">---</span>
 <span class="token key atrule">title</span><span class="token punctuation">:</span> <span class="token string">"Motor Trend Car Road Tests"</span>
@@ -821,37 +791,52 @@ knitr::kable(iris[1:5, ], caption = 'A caption')
 
 ​``` <span class="token punctuation">{</span>r<span class="token punctuation">,</span> rows.print=5<span class="token punctuation">}</span>
 mtcars
-​
-</code></pre>
-<pre><code>
-
-![mtcars](https://bookdown.org/yihui/rmarkdown/images/paged.png)
-
-
-TABLE 3.2: The options for paged HTML tables. 
-
-| Option         | Description                                           |
-| -------------- | ----------------------------------------------------- |
-| max.print      | The number of rows to print.                          |
-| max.print      | The number of rows to print.                          |
-| cols.print     | The number of columns to display.                     |
-| cols.min.print | The minimum number of columns to display.             |
-| pages.print    | The number of pages to display under page navigation. |
-| pages.print    | The number of pages to display under page navigation. |
-| rownames.print | When set to `FALSE` turns off row names.              |
-
-
-
-### 代码折叠
-
-```yaml
----
-title: &quot;Habits&quot;
-output:
-  html_document:
-    code_folding: hide
----
-</code></pre><ul>
+​``` </code></pre>
+<p><img src="https://bookdown.org/yihui/rmarkdown/images/paged.png" alt="mtcars"></p>
+<p>TABLE 3.2: The options for paged HTML tables. </p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>max.print</td>
+<td>The number of rows to print.</td>
+</tr>
+<tr>
+<td>max.print</td>
+<td>The number of rows to print.</td>
+</tr>
+<tr>
+<td>cols.print</td>
+<td>The number of columns to display.</td>
+</tr>
+<tr>
+<td>cols.min.print</td>
+<td>The minimum number of columns to display.</td>
+</tr>
+<tr>
+<td>pages.print</td>
+<td>The number of pages to display under page navigation.</td>
+</tr>
+<tr>
+<td>pages.print</td>
+<td>The number of pages to display under page navigation.</td>
+</tr>
+<tr>
+<td>rownames.print</td>
+<td>When set to <code>FALSE</code> turns off row names.</td>
+</tr>
+</tbody></table>
+<h3 id="代码折叠"><a href="#代码折叠" class="headerlink" title="代码折叠"></a>代码折叠</h3><pre class=" language-yaml"><code class="language-yaml"><span class="token punctuation">---</span>
+<span class="token key atrule">title</span><span class="token punctuation">:</span> <span class="token string">"Habits"</span>
+<span class="token key atrule">output</span><span class="token punctuation">:</span>
+  <span class="token key atrule">html_document</span><span class="token punctuation">:</span>
+    <span class="token key atrule">code_folding</span><span class="token punctuation">:</span> hide
+<span class="token punctuation">---</span></code></pre>
+<ul>
 <li><code>code_folding: hide</code> ：初始默认不显示代码，查看者可点击进行显示；</li>
 <li><code>code_folding: show</code> ：初始默认显示代码，查看者可点击进行隐藏；</li>
 </ul>
@@ -861,8 +846,7 @@ output:
 <span class="token key atrule">output</span><span class="token punctuation">:</span>
   <span class="token key atrule">html_document</span><span class="token punctuation">:</span>
     <span class="token key atrule">keep_md</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-<span class="token punctuation">---</span>
-</code></pre>
+<span class="token punctuation">---</span></code></pre>
 <h4 id="添加本地-HTML-文档"><a href="#添加本地-HTML-文档" class="headerlink" title="添加本地 HTML 文档"></a>添加本地 HTML 文档</h4><p>可以通过添加额外的 HTML 内容或完全替换核心 Pandoc 模板来完成更高级的输出定制。为了在文档头部或文档主体之前/之后包含内容，您可以使用以下选项： </p>
 <pre class=" language-yaml"><code class="language-yaml"><span class="token punctuation">---</span>
 <span class="token key atrule">title</span><span class="token punctuation">:</span> <span class="token string">"Habits"</span>
@@ -872,15 +856,13 @@ output:
       <span class="token key atrule">in_header</span><span class="token punctuation">:</span> header.html
       <span class="token key atrule">before_body</span><span class="token punctuation">:</span> doc_prefix.html
       <span class="token key atrule">after_body</span><span class="token punctuation">:</span> doc_suffix.html
-<span class="token punctuation">---</span>
-</code></pre>
+<span class="token punctuation">---</span></code></pre>
 <h4 id="自定义模板"><a href="#自定义模板" class="headerlink" title="自定义模板"></a>自定义模板</h4><pre class=" language-yaml"><code class="language-yaml"><span class="token punctuation">---</span>
 <span class="token key atrule">title</span><span class="token punctuation">:</span> <span class="token string">"Habits"</span>
 <span class="token key atrule">output</span><span class="token punctuation">:</span>
   <span class="token key atrule">html_document</span><span class="token punctuation">:</span>
     <span class="token key atrule">template</span><span class="token punctuation">:</span> quarterly_report.html
-<span class="token punctuation">---</span>
-</code></pre>
+<span class="token punctuation">---</span></code></pre>
 <p>有关模板的其他详细信息，请参考 <a href="http://pandoc.org/MANUAL.html#templates" target="_blank" rel="noopener">Pandoc 模板</a> 上的文档。您还可以研究默认的 HTML 模板 <a href="https://github.com/jgm/pandoc-templates/" target="_blank" rel="noopener"><code>default.html5</code></a> 。</p>
 <p>其他类型文档格式控制方式类似，如欲详细了解请 <a href="https://bookdown.org/yihui/rmarkdown/documents.html" target="_blank" rel="noopener">参考原作</a> 。</p>
 

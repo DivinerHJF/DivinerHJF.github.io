@@ -444,33 +444,30 @@
 <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>R 包 <code>stargazer</code> 可以将 <strong>数据统计汇总</strong> （格式可以为数据框、向量和矩阵等）和 <strong>统计模型结果</strong> 输出为标准统计表格式的 <code>LATEX</code> 、<code>HTML</code> 和 <code>ASCII</code> 格式的字符文本，<strong><em>将其复制到对应的软件中</em></strong> 即可生成标准的统计表，当然也可以配合 <code>rmarkdown</code> 使用直接渲染输出为表格，更加方便直接。</p>
 <h2 id="安装及加载"><a href="#安装及加载" class="headerlink" title="安装及加载"></a>安装及加载</h2><p>可以使用常规方法导入 <code>stargazer</code> 包：</p>
 <pre class=" language-R"><code class="language-R">install.packages("stargazer")
-library(stargazer)
-</code></pre>
+library(stargazer)</code></pre>
 <blockquote>
 <p>stargazer 包的输出结果是相应格式的，例如输出 LATEX 格式，可以直接将结果粘贴进在线编辑器 <a href="https://www.overleaf.com" target="_blank" rel="noopener">Overleaf</a> 中输出表格。下文直接将结果以对应表格的形式展示。</p>
 </blockquote>
 <hr>
 <h2 id="数据统计汇总"><a href="#数据统计汇总" class="headerlink" title="数据统计汇总"></a>数据统计汇总</h2><h3 id="统计汇总数据"><a href="#统计汇总数据" class="headerlink" title="统计汇总数据"></a>统计汇总数据</h3><p>如果要展示数据集的基本描述性分析数据（由 R 函数 <code>summary</code> 得到），可以使用以下命令直接得到：</p>
-<pre class=" language-R"><code class="language-R">stargazer(attitude)
-</code></pre>
+<pre class=" language-R"><code class="language-R">stargazer(attitude)</code></pre>
 <p><img src="http://static.datartisan.com/upload/attachment/2016/12/qCOW9qcQ.png" alt="统计汇总数据"></p>
 <h3 id="原始数据展示"><a href="#原始数据展示" class="headerlink" title="原始数据展示"></a>原始数据展示</h3><p>如果想输出某些数据框的特定行的原始内容，需要指定要查看的数据框的一部分，并将设置参数 <code>summary = FALSE</code>, 如下所示：</p>
 <ul>
 <li>展示 attitude 数据集前四行</li>
 </ul>
 <pre class=" language-R"><code class="language-R">data("attitude")
-stargazer(attitude[1:4,], summary = FALSE, rownames = TRUE)
-</code></pre>
+stargazer(attitude[1:4,], summary = FALSE, rownames = TRUE)</code></pre>
 <p><img src="http://static.datartisan.com/upload/attachment/2016/12/O5nnDnBH.png" alt="展示数据集"></p>
 <p>可以看到，<code>attitude</code> 数据集中包括 <code>rating</code>、<code>complaints</code> 等多个变量，数据展示形式为 <strong>三线表</strong> 。</p>
 <h3 id="列联表"><a href="#列联表" class="headerlink" title="列联表"></a>列联表</h3><p><code>stargazer</code> 也可以用来展示向量、矩阵或者数据框的内容。在这里我们建立了 <code>attitude</code> 数据集中变量 <code>rating</code>、<code>complaints</code>、<code>privileges</code> 的相关系数矩阵，并予以展示：</p>
-<pre class=" language-R"><code class="language-R">correlation.matrix <- cor(attitude[,c("rating", "complaints", "privileges")]) stargazer(correlation.matrix, title="Correlation Matrix" ) < code></-></code></pre>
+<pre class=" language-R"><code class="language-R">correlation.matrix <- cor(attitude[,c("rating", "complaints", "privileges")]) stargazer(correlation.matrix, title="Correlation Matrix" )< code></-></code></pre>
 <p><img src="http://static.datartisan.com/upload/attachment/2016/12/cC2cR66K.png" alt="矩阵展示"></p>
 <hr>
 <h2 id="统计模型结果"><a href="#统计模型结果" class="headerlink" title="统计模型结果"></a>统计模型结果</h2><h3 id="回归表"><a href="#回归表" class="headerlink" title="回归表"></a>回归表</h3><p>在 R 中可以很方便的使用 <code>lm()</code> 和 <code>glm()</code> 函数来构建回归模型，我们同样可以在同一张表中对这些模型进行比较，参数 <code>title</code> 用来设定表的标题，参数 <code>align</code> 使每列中的系数沿小数点对齐：</p>
 <pre class=" language-R"><code class="language-R">## 构建两个线性回归模型
 linear.1 <- lm(rating ~ complaints + privileges learning raises critical, data="attitude)" linear.2 <- learning, ## 构建一个 probit 模型 attitude$high.rating (attitude$rating> 70)
-probit.model <- glm(high.rating ~ learning + critical advance, data="attitude," family="binomial(link" = "probit")) stargazer(linear.1, linear.2, probit.model, title="Results" , align="TRUE)" < code></-></-></code></pre>
+probit.model <- glm(high.rating ~ learning + critical advance, data="attitude," family="binomial(link" = "probit")) stargazer(linear.1, linear.2, probit.model, title="Results" , align="TRUE)</code"></-></-></code></pre>
 <p><img src="http://static.datartisan.com/upload/attachment/2016/12/Cyqs7adZ.png" alt="回归表"></p>
 <h4 id="回归表的修饰"><a href="#回归表的修饰" class="headerlink" title="回归表的修饰"></a>回归表的修饰</h4><p>为了使表格更加标准，我们还可以通过调整参数进行以下操作：</p>
 <ul>
@@ -482,8 +479,7 @@ probit.model <- glm(high.rating ~ learning + critical advance, data="attitude," 
 align = TRUE, dep.var.labels = c("Overall Rating","High Rating"),
 covariate.labels = c("Handling of Complaints", "No Special Privileges",
 "Opportunity to Learn", "Performance-Based Raises", "Too Critical","Advancement"),
-omit.stat = c("LL", "ser", "f"), no.space = TRUE)
-</code></pre>
+omit.stat = c("LL", "ser", "f"), no.space = TRUE)</code></pre>
 <p><img src="http://static.datartisan.com/upload/attachment/2016/12/xHMLhXyR.png" alt="回归表的修饰"></p>
 <p>本例中对原表格做了以下修改：</p>
 <blockquote>
@@ -505,8 +501,7 @@ omit.stat = c("LL", "ser", "f"), no.space = TRUE)
 dep.var.labels = c("Overall Rating", "High Rating"),
 covariate.labels = c("Handling of Complaints", "No Special Privileges",
 "Opportunity to Learn", "Performance-Based Raises", "Too Critical", "Advancement"),
-omit.stat = c("LL","ser","f"), ci = TRUE, ci.level = 0.90, single.row = TRUE)
-</code></pre>
+omit.stat = c("LL","ser","f"), ci = TRUE, ci.level = 0.90, single.row = TRUE)</code></pre>
 <p><img src="http://static.datartisan.com/upload/attachment/2016/12/rUe11IM4.png" alt="展示置信区间"></p>
 <h4 id="其他修饰功能"><a href="#其他修饰功能" class="headerlink" title="其他修饰功能"></a>其他修饰功能</h4><blockquote>
 <p>控制自变量展示的顺序：<code>order</code><br>控制要展示的统计量：<code>keep.stat</code> , <code>keep.stat = &quot;n&quot;</code> 即只展示样本量的大小，并移除其他统计量</p>
@@ -514,19 +509,17 @@ omit.stat = c("LL","ser","f"), ci = TRUE, ci.level = 0.90, single.row = TRUE)
 <pre class=" language-R"><code class="language-R">stargazer(linear.1, linear.2, title = "Regression Results",
 dep.var.labels = c("Overall Rating", "High Rating"),
 order = c("learning", "privileges"),
-keep.stat = "n", ci = TRUE, ci.level = 0.90, single.row = TRUE)
-</code></pre>
+keep.stat = "n", ci = TRUE, ci.level = 0.90, single.row = TRUE)</code></pre>
 <p><img src="http://static.datartisan.com/upload/attachment/2016/12/u0K7suc0.png" alt="其他修饰功能"></p>
 <h4 id="控制输出格式"><a href="#控制输出格式" class="headerlink" title="控制输出格式"></a>控制输出格式</h4><p>可以使用 <code>type</code> 参数控制以 <code>ASCII</code> 、<code>text</code>、<code>html</code>、<code>latex</code> 格式输出，默认为<code>LATEX</code> 格式。</p>
 <pre class=" language-R"><code class="language-R">stargazer(linear.1, linear.2, type = "text", title = "Regression Results",
 dep.var.labels = c("Overall Rating", "High Rating"),
 order = c("learning", "privileges"), 
-keep.stat = "n", ci = TRUE, ci.level = 0.90, single.row = TRUE, header = F)
-</code></pre>
+keep.stat = "n", ci = TRUE, ci.level = 0.90, single.row = TRUE, header = F)</code></pre>
 <p><img src="http://static.datartisan.com/upload/attachment/2016/12/gOA9wyCN.png" alt="控制输出格式"></p>
 <h4 id="自定义统计量"><a href="#自定义统计量" class="headerlink" title="自定义统计量"></a>自定义统计量</h4><p>我们使用 <code>sandwich</code> 包来计算异方差-稳健标准误，并将其与默认计算的标准差一同展示。</p>
 <pre class=" language-R"><code class="language-R">library(sandwich)
-cov <- vcovhc(linear.1, type="HC" ) robust.se <- sqrt(diag(cov)) stargazer(linear.1, linear.1, se="list(NULL," robust.se), column.labels="c(" default"," "robust")) < code></-></code></pre>
+cov <- vcovhc(linear.1, type="HC" ) robust.se <- sqrt(diag(cov)) stargazer(linear.1, linear.1, se="list(NULL," robust.se), column.labels="c(" default"," "robust"))< code></-></code></pre>
 <p><img src="http://static.datartisan.com/upload/attachment/2016/12/PC8L8NoB.png" alt="自定义统计量"></p>
 <h3 id="支持的模型"><a href="#支持的模型" class="headerlink" title="支持的模型"></a>支持的模型</h3><p>目前 <code>stargazer</code> 支持以下模型结果的展示：</p>
 <blockquote>
@@ -536,8 +529,7 @@ cov <- vcovhc(linear.1, type="HC" ) robust.se <- sqrt(diag(cov)) stargazer(linea
 <h2 id="结合-rmarkdown-使用"><a href="#结合-rmarkdown-使用" class="headerlink" title="结合 rmarkdown 使用"></a>结合 rmarkdown 使用</h2><p>代码格式:</p>
 <pre class=" language-r"><code class="language-r">```<span class="token punctuation">{</span>r<span class="token punctuation">,</span> results<span class="token operator">=</span><span class="token string">'asis'</span><span class="token punctuation">}</span>
 stargazer<span class="token punctuation">(</span>model<span class="token punctuation">,</span> header <span class="token operator">=</span> F<span class="token punctuation">)</span>
-```
-</code></pre>
+```</code></pre>
 <blockquote>
 <p><strong>注意事项：</strong></p>
 <ul>

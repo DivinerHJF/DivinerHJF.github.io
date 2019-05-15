@@ -455,33 +455,31 @@
 <table>
 <thead>
 <tr>
-<th style="text-align:center">交易代码</th>
+<th align="center">交易代码</th>
 <th>商品</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">0</td>
+<tbody><tr>
+<td align="center">0</td>
 <td>豆奶，莴苣</td>
 </tr>
 <tr>
-<td style="text-align:center">1</td>
+<td align="center">1</td>
 <td>莴苣，尿布，葡萄酒，甜菜</td>
 </tr>
 <tr>
-<td style="text-align:center">2</td>
+<td align="center">2</td>
 <td>豆奶，尿布，葡萄酒，橙汁</td>
 </tr>
 <tr>
-<td style="text-align:center">3</td>
+<td align="center">3</td>
 <td>莴苣，豆奶，尿布，葡萄酒</td>
 </tr>
 <tr>
-<td style="text-align:center">4</td>
+<td align="center">4</td>
 <td>莴苣，豆奶，尿布，橙汁</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p>频繁项集是指那些经常出现在一起的物品集合，表中的集合 $\{葡萄酒，尿布，豆奶\}$ 就是频繁项集的一个例子。从数据集中也可以找到诸如 $尿布\rightarrow葡萄酒$ 的关联规则。这意味着如果有人买了尿布，那么他很可能也会买葡萄酒。使用频繁项集和关联规则，商家可以更好地理解他们的顾客。</p>
 <blockquote>
 <p>应该如何定义这些有趣的关系？谁来定义什么是有趣？当寻找频繁项集时，频繁（frequent）的定义是什么？有许多概念可以解答上述问题，不过其中最重要的是 <code>支持度和可信度</code>。</p>
@@ -522,8 +520,7 @@
         如果其支持度不低于最小值，则保留该项集 
         返回所有频繁项集列表
     保留频繁项集并构建k+1项组成的候选项集的列表
-        频繁项集第二定理：非频繁项集的超集一定也是非频繁的
-</code></pre><h1 id="从频繁项集中挖掘关联规则"><a href="#从频繁项集中挖掘关联规则" class="headerlink" title="从频繁项集中挖掘关联规则"></a>从频繁项集中挖掘关联规则</h1><p>得到最大频繁项集并不是最终的目的。之前在判断关联规则的有效性时，我们学习了置信度与支持度两个指标。其中，支持度已经在寻找最大频繁项集的过程中发挥了作用，那么，在接下来关联规则的产生上，就轮到置信度大显身手了。</p>
+        频繁项集第二定理：非频繁项集的超集一定也是非频繁的</code></pre><h1 id="从频繁项集中挖掘关联规则"><a href="#从频繁项集中挖掘关联规则" class="headerlink" title="从频繁项集中挖掘关联规则"></a>从频繁项集中挖掘关联规则</h1><p>得到最大频繁项集并不是最终的目的。之前在判断关联规则的有效性时，我们学习了置信度与支持度两个指标。其中，支持度已经在寻找最大频繁项集的过程中发挥了作用，那么，在接下来关联规则的产生上，就轮到置信度大显身手了。</p>
 <p>从一个频繁项集中可以产生多少条关联规则？下图的网格图给出的是从项集 $\{0,1,2,3\}$ 产生的所有关联规则。为找到感兴趣的规则，我们先生成一个可能的规则列表，然后测试每条规则的置信度。如果置信度不满足最小要求，则去掉该规则。</p>
 <p><img src="https://blog-1255524710.cos.ap-beijing.myqcloud.com/images/data-mining-arules/Snipaste_2019-05-15_16-00-55.png" alt="对于频繁项集{0,1,2,3}的关联规则网格示意图。阴影区域给出的是低可信度的规则。如果发现0,1,2→3是一条低可信度规则，那么所有其他以3作为后件的规则可信度也会较低"></p>
 <p>类似于上一节的频繁项集生成，我们可以为每个频繁项集产生许多关联规则。如果能够减少规则数目来确保问题的可解性，那么计算起来就会好很多。可以观察到，如果某条规则并不满足 最小可信度要求，那么该规则的所有子集也不会满足最小可信度要求。以上图为例，假设规则 $0,1,2 \rightarrow 3$ 并不满足最小可信度要求，那么就知道任何左部为 $\{0,1,2\}$ 子集的规则也不会满足最小可 信度要求。在图中这些规则上都加了阴影来表示。</p>
@@ -658,8 +655,7 @@
         Hmpl <span class="token operator">=</span> aprioriGen<span class="token punctuation">(</span>H<span class="token punctuation">,</span> m<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span>
         Hmpl <span class="token operator">=</span> calcConf<span class="token punctuation">(</span>freqSet<span class="token punctuation">,</span> Hmpl<span class="token punctuation">,</span> supportData<span class="token punctuation">,</span> brl<span class="token punctuation">,</span> minConf<span class="token punctuation">)</span>
         <span class="token keyword">if</span> <span class="token punctuation">(</span>len<span class="token punctuation">(</span>Hmpl<span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            rulesFromConseq<span class="token punctuation">(</span>freqSet<span class="token punctuation">,</span> Hmpl<span class="token punctuation">,</span> supportData<span class="token punctuation">,</span> brl<span class="token punctuation">,</span> minConf<span class="token punctuation">)</span>
-</code></pre>
+            rulesFromConseq<span class="token punctuation">(</span>freqSet<span class="token punctuation">,</span> Hmpl<span class="token punctuation">,</span> supportData<span class="token punctuation">,</span> brl<span class="token punctuation">,</span> minConf<span class="token punctuation">)</span></code></pre>
 <h2 id="R"><a href="#R" class="headerlink" title="R"></a>R</h2><pre class=" language-r"><code class="language-r">setwd<span class="token punctuation">(</span><span class="token string">"关联分析/"</span><span class="token punctuation">)</span>
 
 library<span class="token punctuation">(</span>pacman<span class="token punctuation">)</span>
@@ -746,8 +742,7 @@ plot<span class="token punctuation">(</span>rules<span class="token punctuation"
 plot<span class="token punctuation">(</span>rules<span class="token punctuation">,</span> method <span class="token operator">=</span> <span class="token string">"grouped"</span><span class="token punctuation">,</span> control <span class="token operator">=</span> list<span class="token punctuation">(</span>col <span class="token operator">=</span> rev<span class="token punctuation">(</span>brewer.pal<span class="token punctuation">(</span><span class="token number">9</span><span class="token punctuation">,</span> <span class="token string">"Greens"</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">4</span><span class="token operator">:</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> 
 <span class="token comment" spellcheck="true"># 关联规则的图形展示</span>
 plot<span class="token punctuation">(</span>rules<span class="token punctuation">,</span> measure <span class="token operator">=</span> <span class="token string">"confidence"</span><span class="token punctuation">,</span> method <span class="token operator">=</span> <span class="token string">"graph"</span><span class="token punctuation">,</span> 
-     control <span class="token operator">=</span> list<span class="token punctuation">(</span>type<span class="token operator">=</span><span class="token string">"items"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> shading <span class="token operator">=</span> <span class="token string">"lift"</span><span class="token punctuation">)</span>
-</code></pre>
+     control <span class="token operator">=</span> list<span class="token punctuation">(</span>type<span class="token operator">=</span><span class="token string">"items"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> shading <span class="token operator">=</span> <span class="token string">"lift"</span><span class="token punctuation">)</span></code></pre>
 <p>详见 <a href="https://blog-1255524710.cos.ap-beijing.myqcloud.com/html/rules.html" target="_blank" rel="noopener">用 R 语言进行关联分析</a></p>
 <blockquote>
 <h3 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h3><ol>
