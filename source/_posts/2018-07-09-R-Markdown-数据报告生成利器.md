@@ -3,8 +3,8 @@ title: 'R Markdown: 数据报告生成利器'
 date: 2018-07-09 22:44:09
 author: divinerhjf
 img: 'https://blog-1255524710.cos.ap-beijing.myqcloud.com/cover/hex-rmarkdown.png'
-top: true
-cover: true
+top: false
+cover: false
 categories: R
 tags:
     - R Markdown
@@ -40,9 +40,9 @@ install.packages("tinytex")
 tinytex::install_tinytex()  # install TinyTeX
 ```
 
-TinyTeX 相当于一款轻量级、跨平台、易于维护的 LaTeX 。在将 LaTeX  或 R Markdown 文档编译成 PDF 时，`tinytex` 可以帮助您自动安装所需的相关 R 包，同时还能确保一个 LaTeX  文档被编译成正确的次数，以解决所有的交叉引用问题。如果您不明白这两件事是什么意思，应该按照我们的建议来安装 TinyTeX，因为这些细节往往并不值得您花费时间和精力去关心。 
+TinyTeX 相当于一款轻量级、跨平台、易于维护的 LaTeX 。在将 LaTeX  或 R Markdown 文档编译成 PDF 时，`tinytex` 可以帮助您自动安装所需的相关 R 包，同时还能确保一个 LaTeX  文档被编译成正确的次数，以解决所有的交叉引用问题。如果您不明白这两件事是什么意思，应该按照我们的建议来安装 TinyTeX，因为这些细节往往并不值得您花费时间和精力去关心。 
 
-使用 `rmarkdown` 包、RStudio/Pandoc 和 LaTeX，您应该能够编译大多数R Markdown 文档。在某些情况下，您可能需要其他软件包，我们将在必要时提到它们。 
+使用 `rmarkdown` 包、RStudio/Pandoc 和 LaTeX，您应该能够编译大多数R Markdown 文档。在某些情况下，您可能需要其他软件包，我们将在必要时提到它们。 
 
 
 
@@ -105,7 +105,7 @@ The slope of the regression is `r b[1]`.
 
 您可以使用任何文本编辑器（包括但不限于 RStudio）来创建这样的文本文档。如果使用 RStudio，您可以从 `File -> New File -> R Markdown ` 中创建一个新的 Rmd 文档。 
 
-一份 R Markdown 文档有三个基础组成部分：元数据，文本和代码。元数据是在三个连接符 `---` 之间的内容。元数据的语法是 YAML（ [YAML 不是标记语言](https://en.wikipedia.org/wiki/YAML) ），所以有时它也被称为 YAML metadata 或 YAML frontmatter。 需要注意的是，缩进在 YAML 中十分重要，忽视它会让你付出惨重代价。请参阅谢益辉所写的 《bookdown》（2016）一书中的 [附录b.2](https://bookdown.org/yihui/bookdown/r-markdown.html) 来了解一些简单的例子，这些示例展示了 YAML 语法。
+一份 R Markdown 文档有三个基础组成部分：元数据，文本和代码。元数据是在三个连接符 `---` 之间的内容。元数据的语法是 YAML（ [YAML 不是标记语言](https://en.wikipedia.org/wiki/YAML) ），所以有时它也被称为 YAML metadata 或 YAML frontmatter。 需要注意的是，缩进在 YAML 中十分重要，忽视它会让你付出惨重代价。请参阅谢益辉所写的 《bookdown》（2016）一书中的 [附录b.2](https://bookdown.org/yihui/bookdown/r-markdown.html) 来了解一些简单的例子，这些示例展示了 YAML 语法。
 
 文档的主体遵循元数据书写的规则。文本的语法是 Markdown，将在第 2.5 节中进行介绍。有两种类型的计算机代码，在第 2.6 节中进行了详细解释： 
 
@@ -198,9 +198,9 @@ output:
       before_body: before.html
 ```
 
-一些选项将被传递给 **knitr** ，比如 `dev`、`fig_width` 和 `fig_height`。这些选项的详细文档可以在 [knitr 文档页面](<https://yihui.name/knitr/options/> ) 上找到。请注意，实际的 knitr 选项名称可能有所不同。特别是，knitr 在名称中使用 `.`，但 rmarkdown 使用 `_`，例如，在 rmarkdown 中，`fig_width`  对应于knitr 中的 `fig.width` 。
+一些选项将被传递给 **knitr** ，比如 `dev`、`fig_width` 和 `fig_height`。这些选项的详细文档可以在 [knitr 文档页面](<https://yihui.name/knitr/options/> ) 上找到。请注意，实际的 knitr 选项名称可能有所不同。特别是，knitr 在名称中使用 `.`，但 rmarkdown 使用 `_`，例如，在 rmarkdown 中，`fig_width`  对应于knitr 中的 `fig.width` 。
 
-一些选项将被传递给 **Pandoc**，比如 `toc`、`toc_depth` 和 `number_sections` 。当有疑问时，您应该参考 Pandoc 文档。R Markdown 输出格式函数通常有一个`pandoc_args`  参数，它应该是传递给 Pandoc 的参数的字符向量。如果您发现任何没有由输出格式参数表示的 Pandoc 特性，您可以使用这个终极论证，例如：
+一些选项将被传递给 **Pandoc**，比如 `toc`、`toc_depth` 和 `number_sections` 。当有疑问时，您应该参考 Pandoc 文档。R Markdown 输出格式函数通常有一个`pandoc_args`  参数，它应该是传递给 Pandoc 的参数的字符向量。如果您发现任何没有由输出格式参数表示的 Pandoc 特性，您可以使用这个终极论证，例如：
 
 ```yaml
 output:
@@ -215,7 +215,7 @@ output:
 
 ### 内联格式
 
-- *斜体* ：`_text_` 或 `*text*` 
+- *斜体* ：`_text_` 或 `*text*` 
 
 - **粗体** ：`**text** `
 
@@ -358,15 +358,15 @@ $$
 
 - `collapse=TRUE` ：将文本输出和源代码合并为单个代码块输出，更加紧凑；
 
-- `warning`, `message`,  `error` ：是否在输出文档中显示警告、消息和错误；
+- `warning`, `message`,  `error` ：是否在输出文档中显示警告、消息和错误；
 
 - `include=FALSE` ：运行当前代码并且不显示任何源代码与输出结果；
 
 - `cache` ：是否启用高速缓存。如果启用了缓存，则在下一次编译文档时不会对相同的代码块进行评估（如果代码块没有被修改），这将节省您的时间；
 
-- `fig.width`，`fig.height` ：（图形设备）块的大小（英寸）。注意：`fig.dim = c(6, 4)` 意味着 `fig.width = 6` 并且 `fig.height = 4`；
+- `fig.width`，`fig.height` ：（图形设备）块的大小（英寸）。注意：`fig.dim = c(6, 4)` 意味着 `fig.width = 6` 并且 `fig.height = 4`；
 
-- `out.width`， `out.height` ：输出文档中 R 图片的输出大小。可以使用百分比，例如 `out.width = '80%'` 表示页面宽度的 80%； 
+- `out.width`， `out.height` ：输出文档中 R 图片的输出大小。可以使用百分比，例如 `out.width = '80%'` 表示页面宽度的 80%； 
 
 - `fig.align` ：图片的对齐方式；
 
@@ -404,7 +404,7 @@ knitr::include_graphics('images/hex-rmarkdown.png')
 
 ### 表格
 
-使用 `knitr::kable()`  函数可以简易的创建表格，表格标题可以通过 `caption`  来设置，例如：
+使用 `knitr::kable()`  函数可以简易的创建表格，表格标题可以通过 `caption`  来设置，例如：
 
 ~~~R
 ```{r tables-mtcars}
@@ -418,7 +418,7 @@ knitr::kable(iris[1:5, ], caption = 'A caption')
 
 > **参考文献**
 >
-> - Xie, Yihui. 2015. *Dynamic Documents with R and Knitr*. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. <https://yihui.name/knitr/>. 
+> - Xie, Yihui. 2015. *Dynamic Documents with R and Knitr*. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. <https://yihui.name/knitr/>. 
 
 
 
@@ -463,8 +463,8 @@ output:
 - `toc: true` ：输出目录；
 - `toc_depth` ：所输出标题的最小级别；
 - `toc_float: true` ：目录悬停于内容左侧，并一直可见；
-- `collapsed` (默认为 `TRUE`)  ：初始只显示顶级标题，随内容滚动目录逐级展开；
-- `smooth_scroll` (默认为 `TRUE`) ：点击目录标题是否导航到指定内容。
+- `collapsed` (默认为 `TRUE`)  ：初始只显示顶级标题，随内容滚动目录逐级展开；
+- `smooth_scroll` (默认为 `TRUE`) ：点击目录标题是否导航到指定内容。
 
 
 
@@ -480,7 +480,7 @@ output:
 ---
 ```
 
-注意，如果文档中没有一级标题，那么二级标题将被命名为 `0.1`, `0.2` ……
+注意，如果文档中没有一级标题，那么二级标题将被命名为 `0.1`, `0.2` ……
 
 
 
@@ -521,7 +521,7 @@ output:
 ```
 
 - `theme`  ：主题是从 [Bootswatch](https://bootswatch.com/3/) 主题库中提取的，适用的主题包括：`default`, `cerulean`, `journal`, `flatly`, `readable`, `spacelab`, `united`, `cosmo`, `lumen`, `paper`, `sandstone`, `simplex`, 和 `yeti`. 
-- `highlight` ：代码高亮模式。支持的风格包括： `default`,  `tango`,  `pygments`,  `kate`,  `monochrome`,  `espresso`,  `zenburn`,  `haddock` 和 `textmate`.  
+- `highlight` ：代码高亮模式。支持的风格包括： `default`,  `tango`,  `pygments`,  `kate`,  `monochrome`,  `espresso`,  `zenburn`,  `haddock` 和 `textmate`.  
 
 
 
@@ -538,7 +538,7 @@ output:
 ---
 ```
 
-- `fig_width` 和 `fig_height`  ：图片宽度和高度；
+- `fig_width` 和 `fig_height`  ：图片宽度和高度；
 - `fig_caption`  ：控制图片是否包括标题；
 - `dev`  ：图片渲染格式，默认为 `png`。
 
@@ -575,7 +575,7 @@ mtcars
 ![mtcars](https://bookdown.org/yihui/rmarkdown/images/paged.png)
 
 
-TABLE 3.2: The options for paged HTML tables. 
+TABLE 3.2: The options for paged HTML tables. 
 
 | Option         | Description                                           |
 | -------------- | ----------------------------------------------------- |

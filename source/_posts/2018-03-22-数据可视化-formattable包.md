@@ -72,7 +72,6 @@ p
 [1] "formattable" "numeric" 
 ```
 
-
 ---
 
 ### comma
@@ -107,7 +106,6 @@ comma(x, digits = max(get_digits(x)), format = "f",
 > comma("123,345.123")
 [1] 123,345.123
 ```
-
 
 ---
 
@@ -148,7 +146,6 @@ currency(x, symbol = get_currency_symbol(x),
 [1] HK$120,250.50
 ```
 
-
 ---
 
 ### accounting
@@ -187,7 +184,6 @@ accounting(x, digits = max(get_digits(x)), format = "f",
 > balance + 1000
 [1] 2,000.00 1,500.00 1,200.00 850.00   1,000.00 2,200.00
 ```
-
 
 ---
 
@@ -309,7 +305,6 @@ scientific(x, format = c("e", "E"), digits = 4, ...)
 > test1_score, test2_score两列通过area函数在对应字体背景位置使用条形图来代表指标量级大小，颜色填充粉色。
 > final_score列对指标按照top3显示绿色，其余显示灰色，同时将内容显示格式自定义为浮点型+(rank:名次)进行显示。
 > registered列则在对填充颜色按照对应布尔值进行显示（TRUE显示绿色、FALSE显示红色）之外，在左侧添加了对用的icon文本（TRUE显示绿色对号，FALSE显示红色叉号）。
-
 
 ---
 
