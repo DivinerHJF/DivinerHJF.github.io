@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://divinerhjf.github.io/"/>
-  <updated>2019-05-07T17:09:00.902Z</updated>
+  <updated>2019-05-15T09:35:06.011Z</updated>
   <id>https://divinerhjf.github.io/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数据挖掘 | 关联分析</title>
+    <link href="https://divinerhjf.github.io/2019/05/15/shu-ju-wa-jue-guan-lian-fen-xi/"/>
+    <id>https://divinerhjf.github.io/2019/05/15/shu-ju-wa-jue-guan-lian-fen-xi/</id>
+    <published>2019-05-15T05:30:30.000Z</published>
+    <updated>2019-05-15T09:35:06.011Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;关联分析&quot;&gt;&lt;a href=&quot;#关联分析&quot; class=&quot;headerlink&quot; title=&quot;关联分析&quot;&gt;&lt;/a&gt;关联分析&lt;/h1&gt;&lt;h2 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="算法" scheme="https://divinerhjf.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="R" scheme="https://divinerhjf.github.io/tags/R/"/>
+    
+      <category term="机器学习" scheme="https://divinerhjf.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="关联分析" scheme="https://divinerhjf.github.io/tags/%E5%85%B3%E8%81%94%E5%88%86%E6%9E%90/"/>
+    
+      <category term="Python" scheme="https://divinerhjf.github.io/tags/Python/"/>
+    
+  </entry>
   
   <entry>
     <title>customLayout：R 语言自由拼图</title>
@@ -87,7 +119,7 @@
     <link href="https://divinerhjf.github.io/2018/07/09/r-markdown-shu-ju-bao-gao-sheng-cheng-li-qi/"/>
     <id>https://divinerhjf.github.io/2018/07/09/r-markdown-shu-ju-bao-gao-sheng-cheng-li-qi/</id>
     <published>2018-07-09T14:44:09.000Z</published>
-    <updated>2019-05-07T18:21:13.472Z</updated>
+    <updated>2019-05-15T05:34:31.287Z</updated>
     
     <summary type="html">
     
@@ -213,7 +245,7 @@
     <link href="https://divinerhjf.github.io/2018/03/22/shu-ju-ke-shi-hua-formattable-bao/"/>
     <id>https://divinerhjf.github.io/2018/03/22/shu-ju-ke-shi-hua-formattable-bao/</id>
     <published>2018-03-22T06:00:11.000Z</published>
-    <updated>2019-05-07T16:34:32.734Z</updated>
+    <updated>2019-05-15T05:34:29.557Z</updated>
     
     <summary type="html">
     
@@ -246,7 +278,7 @@
     <link href="https://divinerhjf.github.io/2018/03/15/shu-ju-cao-zuo-apply-han-shu-zu/"/>
     <id>https://divinerhjf.github.io/2018/03/15/shu-ju-cao-zuo-apply-han-shu-zu/</id>
     <published>2018-03-15T04:19:00.000Z</published>
-    <updated>2019-05-07T16:27:29.752Z</updated>
+    <updated>2019-05-15T05:34:27.983Z</updated>
     
     <summary type="html">
     
@@ -277,7 +309,7 @@
     <link href="https://divinerhjf.github.io/2018/01/27/bo-ke-wen-zhang-xie-zuo-yang-shi/"/>
     <id>https://divinerhjf.github.io/2018/01/27/bo-ke-wen-zhang-xie-zuo-yang-shi/</id>
     <published>2018-01-26T16:51:29.000Z</published>
-    <updated>2019-05-07T15:40:28.543Z</updated>
+    <updated>2019-05-15T05:34:26.062Z</updated>
     
     <summary type="html">
     
@@ -307,7 +339,7 @@
     <link href="https://divinerhjf.github.io/2018/01/23/cmd-markdown-shi-yong-shuo-ming/"/>
     <id>https://divinerhjf.github.io/2018/01/23/cmd-markdown-shi-yong-shuo-ming/</id>
     <published>2018-01-23T02:54:32.000Z</published>
-    <updated>2019-05-07T15:28:26.017Z</updated>
+    <updated>2019-05-15T05:34:23.920Z</updated>
     
     <summary type="html">
     

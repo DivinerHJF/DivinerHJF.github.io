@@ -4,8 +4,8 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="分类, 灿若星河">
-    <meta name="description" content="分类 | 灿若星河">
+    <meta name="keywords" content="分类: 算法, 灿若星河">
+    <meta name="description" content="分类: 算法 | 灿若星河">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>分类 | 灿若星河</title>
+    <title>分类: 算法 | 灿若星河</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -319,7 +319,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 
                 <a href="/categories/算法/" title="算法: 1">
                     <span class="chip center-align waves-effect waves-light
-                             chip-default " style="background-color: #E8F8F5;">算法
+                             chip-active " style="background-color: #E8F8F5;">算法
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -331,64 +331,71 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
 </div>
 
     
-    <style type="text/css">
-    #category-radar {
-        width: 100%;
-        height: 360px;
-    }
-</style>
 
-<div class="container" data-aos="fade-up">
-    <div class="card">
-        <div id="category-radar" class="card-content"></div>
-    </div>
-</div>
+    <article id="articles" class="container articles">
+        <div class="row tags-posts">
+            
+            <div class="article tag-post col s12 m6 l4 overflow-policy" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2019/05/15/shu-ju-wa-jue-guan-lian-fen-xi/">
+                        <div class="card-image tag-image">
+                            
+                            <img src="https://blog-1255524710.cos.ap-beijing.myqcloud.com/images/data-mining-arules/%E5%9B%BE%E6%BA%90%EF%BC%9ATHU%E6%95%B0%E6%8D%AE%E6%B4%BE.png" class="responsive-img" alt="数据挖掘 | 关联分析">
+                            
+                            <span class="card-title">数据挖掘 | 关联分析</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                关联分析概念在数据挖掘中，关联分析是一种较为常用的无监督学习算法，与分类、聚类等算法不同的是，这一类算法的主要目的在于发掘数据内在结构特征之
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-15
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/算法/" class="post-category" target="_blank">
+                                    算法
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
 
-<script type="text/javascript" src="/libs/echarts/echarts.min.js"></script>
-<script type="text/javascript">
-    let radarChart = echarts.init(document.getElementById('category-radar'));
-
-    
-
-    let option = {
-        title: {
-            left: 'center',
-            text: '文章分类雷达图',
-            textStyle: {
-                fontWeight: 500,
-                fontSize: 22
-            }
-        },
-        tooltip: {},
-        radar: {
-            name: {
-                textStyle: {
-                    color: '#3C4858'
-                }
-            },
-            indicator: [{"name":"软件推荐","max":9},{"name":"排版","max":9},{"name":"R","max":9},{"name":"算法","max":9}],
-            nameGap: 5,
-            center: ['50%','55%'],
-            radius: '66%'
-        },
-        series: [{
-            type: 'radar',
-            color: ['#3ecf8e'],
-            itemStyle: {normal: {areaStyle: {type: 'default'}}},
-            data : [
-                {
-                    value : [1,1,8,1],
-                    name : '文章分类数量'
-                }
-            ]
-        }]
-    };
-
-    radarChart.setOption(option);
-</script>
-    
-
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/R/" target="_blank">
+                            <span class="chip bg-color">R</span>
+                        </a>
+                        
+                        <a href="/tags/机器学习/" target="_blank">
+                            <span class="chip bg-color">机器学习</span>
+                        </a>
+                        
+                        <a href="/tags/关联分析/" target="_blank">
+                            <span class="chip bg-color">关联分析</span>
+                        </a>
+                        
+                        <a href="/tags/Python/" target="_blank">
+                            <span class="chip bg-color">Python</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </article>
 </main>
+
 
 <footer class="page-footer bg-color">
     <div class="container row center-align">
