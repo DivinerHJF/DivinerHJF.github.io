@@ -418,14 +418,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        4.8k
+                        4.9k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        17 分
+                        18 分
                     </div>
                     
                 
@@ -659,7 +659,26 @@
         <span class="token keyword">if</span> <span class="token punctuation">(</span>len<span class="token punctuation">(</span>Hmpl<span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
             rulesFromConseq<span class="token punctuation">(</span>freqSet<span class="token punctuation">,</span> Hmpl<span class="token punctuation">,</span> supportData<span class="token punctuation">,</span> brl<span class="token punctuation">,</span> minConf<span class="token punctuation">)</span>
 </code></pre>
-<h2 id="R"><a href="#R" class="headerlink" title="R"></a>R</h2><p>详见 <a href="https://blog-1255524710.cos.ap-beijing.myqcloud.com/html/rules.html" target="_blank" rel="noopener">用 R 语言进行关联分析</a></p>
+<h2 id="R"><a href="#R" class="headerlink" title="R"></a>R</h2><pre class=" language-R"><code class="language-R">setwd("关联分析/")
+
+library(pacman)
+p_load(arules)        # 关联规则算法包
+p_load(arulesViz)     # 关联规则可视化
+p_load(RColorBrewer)  # 色彩搭配
+
+# 1. transactions 格式数据集 ----
+
+# 超市购物数据集, 每一行代表一个顾客的购买记录
+# 格式为 transactions, 也就是以稀疏矩阵储存的物品矩阵数据
+# as(object,class) 实现算法所需矩阵与常规数据对象间的转换, 规则的转换
+data(Groceries)
+dfGro <- as(groceries, "data.frame") tsgro <- as(dfgro, "transactions") head(dfgro) str(tsgro) # 2. 基本信息挖掘 ---- 每笔交易的项目数 basketsize size(groceries) summary(basketsize) sum(basketsize) 支持度 itemfreq itemfrequency(groceries) itemfreq[1:5] sum(itemfreq) 本质上代表"平均一个 transaction 购买的 item 个数" 查看 的分布：密度曲线 itemcount (itemfreq sum(itemfreq))*sum(basketsize) summary(itemcount) 表示每个 出现的次数。support(x)="Xs/N," n是总的交易数,xs就是item x的count ordereditem sort(itemcount, decreasing="T)" ordereditem[1:10] 按支持度排序 ordereditemfreq sort(itemfrequency(groceries), ordereditemfreq[1:10] 绘图：按某一最小支持度查看 itemfrequencyplot(groceries, support="0.05," col="blue" , xlab="paste(" proportion" of market baskets containing item", "\n(item relative frequency or support)")) 绘图：按排序查看 topn="10," 3. 关联规则挖掘 apriori(data, parameter="NULL," appearance="NULL," control="NULL)" eclat(data, 两个主要算法函数, data 为交易数据格式, 可以通过 as 转换; 为参数列表, 比如定义 最小支持度和置信度; 主要用于算法控制 求频繁项集 fsets eclat(groceries, maxlen="10))" inspect(fsets[1:10]) inspect(sort(fsets, by="support" )[1:10]) 求关联规则 rules apriori(groceries, confidence="0.01," minlen="2))" summary(rules) 查看及筛选规则 inspect(sort(rules, )[1:5]) subrules="subset(rules," subset="rhs" %in% "whole milk" & lift> 1.2)  # subset 做规则筛选
+inspect(sort(subRules,by ="support")[1:5])
+inspect(sort(subRules,by ="confidence")[1:5])
+
+# 保存结果
+rules_df <- as(rules, "data.frame") write.csv(rules_df, "rules.csv") # 图形展示 散点图 plot(rules, control="list(jitter=2," col="rev(brewer.pal(9," greens")[4:9]))," shading="lift" ) grouped matrix method="grouped" ,="rev(brewer.pal(9," "greens")[4:9]))) 关联规则的图形展示 measure="confidence" < code></-></-></code></pre>
+<p>详见 <a href="https://blog-1255524710.cos.ap-beijing.myqcloud.com/html/rules.html" target="_blank" rel="noopener">用 R 语言进行关联分析</a></p>
 
             </div>
             <hr>
@@ -1140,7 +1159,7 @@
         <div class="col s12 m8 l8 copy-right">
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数 : &nbsp;
-                <span class="white-color">20.1k</span>
+                <span class="white-color">20.2k</span>
             
 
             
