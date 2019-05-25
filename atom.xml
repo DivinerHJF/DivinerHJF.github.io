@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://divinerhjf.github.io/"/>
-  <updated>2019-05-15T11:58:46.400Z</updated>
+  <updated>2019-05-25T03:43:57.270Z</updated>
   <id>https://divinerhjf.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>数据挖掘 | 关联分析</title>
-    <link href="https://divinerhjf.github.io/2019/05/15/shu-ju-wa-jue-guan-lian-fen-xi/"/>
-    <id>https://divinerhjf.github.io/2019/05/15/shu-ju-wa-jue-guan-lian-fen-xi/</id>
-    <published>2019-05-15T05:30:30.000Z</published>
-    <updated>2019-05-15T11:58:46.400Z</updated>
+    <title>数据挖掘 | 决策树</title>
+    <link href="https://divinerhjf.github.io/2019/05/24/shu-ju-wa-jue-jue-ce-shu/"/>
+    <id>https://divinerhjf.github.io/2019/05/24/shu-ju-wa-jue-jue-ce-shu/</id>
+    <published>2019-05-24T13:42:43.000Z</published>
+    <updated>2019-05-25T03:43:57.270Z</updated>
     
     <summary type="html">
     
@@ -29,7 +29,35 @@
       
         
         
-          &lt;h1 id=&quot;关联分析&quot;&gt;&lt;a href=&quot;#关联分析&quot; class=&quot;headerlink&quot; title=&quot;关联分析&quot;&gt;&lt;/a&gt;关联分析&lt;/h1&gt;&lt;h2 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot;
+          &lt;h2 id=&quot;基本流程&quot;&gt;&lt;a href=&quot;#基本流程&quot; class=&quot;headerlink&quot; title=&quot;基本流程&quot;&gt;&lt;/a&gt;基本流程&lt;/h2&gt;&lt;p&gt;决策树（decision
+        
+      
+    
+    </summary>
+    
+      <category term="算法" scheme="https://divinerhjf.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="机器学习" scheme="https://divinerhjf.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="决策树" scheme="https://divinerhjf.github.io/tags/%E5%86%B3%E7%AD%96%E6%A0%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据挖掘 | 关联分析</title>
+    <link href="https://divinerhjf.github.io/2019/05/15/shu-ju-wa-jue-guan-lian-fen-xi/"/>
+    <id>https://divinerhjf.github.io/2019/05/15/shu-ju-wa-jue-guan-lian-fen-xi/</id>
+    <published>2019-05-15T05:30:30.000Z</published>
+    <updated>2019-05-24T14:05:47.735Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;关联分析&quot;&gt;&lt;a href=&quot;#关联分析&quot; class=&quot;headerlink&quot; title=&quot;关联分析&quot;&gt;&lt;/a&gt;关联分析&lt;/h2&gt;&lt;h3 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot;
         
       
     
@@ -86,7 +114,7 @@
     <link href="https://divinerhjf.github.io/2018/10/30/stargazer-r-yu-yan-shu-chu-tong-ji-biao/"/>
     <id>https://divinerhjf.github.io/2018/10/30/stargazer-r-yu-yan-shu-chu-tong-ji-biao/</id>
     <published>2018-10-30T08:20:03.000Z</published>
-    <updated>2019-05-07T17:09:03.930Z</updated>
+    <updated>2019-05-24T16:09:16.276Z</updated>
     
     <summary type="html">
     
@@ -119,7 +147,7 @@
     <link href="https://divinerhjf.github.io/2018/07/09/r-markdown-shu-ju-bao-gao-sheng-cheng-li-qi/"/>
     <id>https://divinerhjf.github.io/2018/07/09/r-markdown-shu-ju-bao-gao-sheng-cheng-li-qi/</id>
     <published>2018-07-09T14:44:09.000Z</published>
-    <updated>2019-05-15T05:34:31.287Z</updated>
+    <updated>2019-05-24T13:59:43.853Z</updated>
     
     <summary type="html">
     
@@ -167,13 +195,13 @@
       <category term="R" scheme="https://divinerhjf.github.io/categories/R/"/>
     
     
+      <category term="数据可视化" scheme="https://divinerhjf.github.io/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/"/>
+    
       <category term="graphics" scheme="https://divinerhjf.github.io/tags/graphics/"/>
     
       <category term="lattice" scheme="https://divinerhjf.github.io/tags/lattice/"/>
     
       <category term="ggplot2" scheme="https://divinerhjf.github.io/tags/ggplot2/"/>
-    
-      <category term="数据可视化" scheme="https://divinerhjf.github.io/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/"/>
     
   </entry>
   
@@ -265,11 +293,11 @@
     
       <category term="R" scheme="https://divinerhjf.github.io/tags/R/"/>
     
-      <category term="数据可视化" scheme="https://divinerhjf.github.io/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/"/>
-    
       <category term="formattable" scheme="https://divinerhjf.github.io/tags/formattable/"/>
     
       <category term="数据展示" scheme="https://divinerhjf.github.io/tags/%E6%95%B0%E6%8D%AE%E5%B1%95%E7%A4%BA/"/>
+    
+      <category term="数据可视化" scheme="https://divinerhjf.github.io/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/"/>
     
   </entry>
   

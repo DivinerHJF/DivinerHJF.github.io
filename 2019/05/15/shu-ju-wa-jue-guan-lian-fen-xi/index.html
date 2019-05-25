@@ -441,7 +441,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="关联分析"><a href="#关联分析" class="headerlink" title="关联分析"></a>关联分析</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>在数据挖掘中，关联分析是一种较为常用的无监督学习算法，与分类、聚类等算法不同的是，这一类算法的主要目的在于发掘数据内在结构特征之间的关联性。关联规则大致包含以下内容，本文主要介绍其中的简单关联分析及 Apriori 算法。</p>
+                <h2 id="关联分析"><a href="#关联分析" class="headerlink" title="关联分析"></a>关联分析</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>在数据挖掘中，关联分析是一种较为常用的无监督学习算法，与分类、聚类等算法不同的是，这一类算法的主要目的在于发掘数据内在结构特征之间的关联性。关联规则大致包含以下内容，本文主要介绍其中的简单关联分析及 Apriori 算法。</p>
 <p><img src="https://blog-1255524710.cos.ap-beijing.myqcloud.com/images/data-mining-arules/%E5%9B%BE%E6%BA%90%EF%BC%9ATHU%E6%95%B0%E6%8D%AE%E6%B4%BE.png" alt="图源：THU数据派"></p>
 <p>简单一点来说，关联规则就是在交易数据、关系数据或其他信息载体中，查找存在于项目集合或对象集合之间的频繁模式、关联、相关性或因果结构。<br>或者说，关联分析是发现交易数据库中不同商品（项）之间的<code>关系</code>。</p>
 <blockquote>
@@ -484,15 +484,15 @@
 <blockquote>
 <p>应该如何定义这些有趣的关系？谁来定义什么是有趣？当寻找频繁项集时，频繁（frequent）的定义是什么？有许多概念可以解答上述问题，不过其中最重要的是 <code>支持度和可信度</code>。</p>
 </blockquote>
-<h2 id="有效性指标"><a href="#有效性指标" class="headerlink" title="有效性指标"></a>有效性指标</h2><h3 id="支持度"><a href="#支持度" class="headerlink" title="支持度"></a>支持度</h3><p>一个项集的支持度（support）被定义为数据集中包含该项集的记录所占的比例，即事件发生的频率。</p>
+<h3 id="有效性指标"><a href="#有效性指标" class="headerlink" title="有效性指标"></a>有效性指标</h3><h4 id="支持度"><a href="#支持度" class="headerlink" title="支持度"></a>支持度</h4><p>一个项集的支持度（support）被定义为数据集中包含该项集的记录所占的比例，即事件发生的频率。</p>
 <p>$$<br>support(\{A, B\})=\operatorname{num}(A \cup B)=P(AB)<br>$$</p>
 <p>从上表中可以得到，$\{豆奶\}$ 的支持度为 4/5。而在5 条交易记录中有 3 条包含 $\{豆奶，尿布\}$，因此 $\{豆奶，尿布\}$ 的支持度为 3/5。<u>支持度是针对项集来说的</u>，因此可以定义一个最小支持度，而只保留满足最小支持度的项集。</p>
-<h3 id="可信度"><a href="#可信度" class="headerlink" title="可信度"></a>可信度</h3><p><u>可信度或置信度（confidence）是针对一条关联规则来定义的</u>，揭示了如果事件 A 发生了，则事件 B 发生的的概率。</p>
+<h4 id="可信度"><a href="#可信度" class="headerlink" title="可信度"></a>可信度</h4><p><u>可信度或置信度（confidence）是针对一条关联规则来定义的</u>，揭示了如果事件 A 发生了，则事件 B 发生的的概率。</p>
 <p>$$<br>confidence(A \rightarrow B)=\frac{\text {support }(\{A, B\})}{\text {support}(\{A\})}=P(B | A)=\frac{P(A B)}{P(A)}<br>$$</p>
 <p>比如 $\{尿布\}\rightarrow\{葡萄酒\}$ 这条规则的可信度被定义为 $支持度(\{尿布，葡萄酒\}) / 支持度(\{尿布\})$ 。从表中可以看到，由于 $\{尿布, 葡萄酒\}$ 的支持度为 3/5，$\{尿布\}$ 的支持度为 4/5，所以 $尿布\rightarrow葡萄酒$ 的可信度为 3/4=0.75。<br>这意味着对于包含“尿布”的所有记录，我们的规则对其中 75% 的记录都适用。</p>
 <p>支持度和可信度是用来量化关联分析是否成功的方法。假设想找到支持度大于 0.8 的所有项集，应该如何去做？一个办法是生成一个物品所有可能组合的清单，然后对每一种组合统计它出现的频繁程度，但当物品成千上万时，上述做法非常非常慢。下一节会详细分析这种情况并讨论 Apriori 原理，该原理会减少关联规则学习时所需的计算量。</p>
-<h1 id="Apriori-算法发现频繁项集"><a href="#Apriori-算法发现频繁项集" class="headerlink" title="Apriori 算法发现频繁项集"></a>Apriori 算法发现频繁项集</h1><p>上文提到，关联分析的目标包括两项：发现频繁项集和发现关联规则。首先需要找到频繁项集，然后才能获得关联规则。本节将只关注于发现频繁项集。</p>
-<h2 id="频繁项集定理"><a href="#频繁项集定理" class="headerlink" title="频繁项集定理"></a>频繁项集定理</h2><p>频繁项集具有以下两条定理，这两条定理将应用于我们后面频繁项集及其关联规则的寻找中：</p>
+<h2 id="Apriori-算法发现频繁项集"><a href="#Apriori-算法发现频繁项集" class="headerlink" title="Apriori 算法发现频繁项集"></a>Apriori 算法发现频繁项集</h2><p>上文提到，关联分析的目标包括两项：发现频繁项集和发现关联规则。首先需要找到频繁项集，然后才能获得关联规则。本节将只关注于发现频繁项集。</p>
+<h3 id="频繁项集定理"><a href="#频繁项集定理" class="headerlink" title="频繁项集定理"></a>频繁项集定理</h3><p>频繁项集具有以下两条定理，这两条定理将应用于我们后面频繁项集及其关联规则的寻找中：</p>
 <blockquote>
 <p><strong>定理1：</strong>频繁项集的子集必为频繁项集（假设项集 $\{A,C\}$ 是频繁项集，那么 $\{A\}$ 和 $\{C\}$ 也为频繁项集） </p>
 <p><strong>定理2：</strong>非频繁集的超集一定也是非频繁的（假设项集 $\{D\}$ 不是频繁项集，那么 $\{A,D\}$ 和 $\{C,D\}$ 也不是频繁项集）</p>
@@ -500,7 +500,7 @@
 <p>定理 1 比较容易证明，因为某项集的子集的支持度一定不小于该项集，定理 2 是定理 1 的逆反定理。</p>
 <p><img src="https://blog-1255524710.cos.ap-beijing.myqcloud.com/images/data-mining-arules/Snipaste_2019-05-15_14-56-52.png" alt="Apriori 原理"></p>
 <p>图中给出了所有可能的项集，其中非频繁项集用灰色表示。由于集合 $\{2,3\}$ 是非频繁的， 因此 $\{0,2,3\}$、$\{1,2,3\}$ 和 $\{0,1,2,3\}$ 也是非频繁的，它们的支持度根本不需要计算。</p>
-<h2 id="频繁项集生成"><a href="#频繁项集生成" class="headerlink" title="频繁项集生成"></a>频繁项集生成</h2><p>Apriori 算法是发现频繁项集的一种方法。Apriori 算法的两个输入参数分别是最小支持度和数据集。该算法首先会生成所有单个物品的项集列表。接着扫描交易记录来查看哪些项集满足最小 支持度要求，那些不满足最小支持度的集合会被去掉。然后，对剩下来的集合进行组合以生成包含两个元素的项集。接下来，再重新扫描交易记录，去掉不满足最小支持度的项集。该过程重复进行直到所有项集都被去掉。</p>
+<h3 id="频繁项集生成"><a href="#频繁项集生成" class="headerlink" title="频繁项集生成"></a>频繁项集生成</h3><p>Apriori 算法是发现频繁项集的一种方法。Apriori 算法的两个输入参数分别是最小支持度和数据集。该算法首先会生成所有单个物品的项集列表。接着扫描交易记录来查看哪些项集满足最小 支持度要求，那些不满足最小支持度的集合会被去掉。然后，对剩下来的集合进行组合以生成包含两个元素的项集。接下来，再重新扫描交易记录，去掉不满足最小支持度的项集。该过程重复进行直到所有项集都被去掉。</p>
 <p>综上所述，Apriori 算法采用迭代的方式逐层寻找下层的超集，并在超集中发现频繁项集。经过层层迭代，直到最顶层得到最大频繁项集为止。在每一轮的迭代中都包含以下两个步骤：</p>
 <blockquote>
 <ol>
@@ -520,12 +520,12 @@
         如果其支持度不低于最小值，则保留该项集 
         返回所有频繁项集列表
     保留频繁项集并构建k+1项组成的候选项集的列表
-        频繁项集第二定理：非频繁项集的超集一定也是非频繁的</code></pre><h1 id="从频繁项集中挖掘关联规则"><a href="#从频繁项集中挖掘关联规则" class="headerlink" title="从频繁项集中挖掘关联规则"></a>从频繁项集中挖掘关联规则</h1><p>得到最大频繁项集并不是最终的目的。之前在判断关联规则的有效性时，我们学习了置信度与支持度两个指标。其中，支持度已经在寻找最大频繁项集的过程中发挥了作用，那么，在接下来关联规则的产生上，就轮到置信度大显身手了。</p>
+        频繁项集第二定理：非频繁项集的超集一定也是非频繁的</code></pre><h2 id="从频繁项集中挖掘关联规则"><a href="#从频繁项集中挖掘关联规则" class="headerlink" title="从频繁项集中挖掘关联规则"></a>从频繁项集中挖掘关联规则</h2><p>得到最大频繁项集并不是最终的目的。之前在判断关联规则的有效性时，我们学习了置信度与支持度两个指标。其中，支持度已经在寻找最大频繁项集的过程中发挥了作用，那么，在接下来关联规则的产生上，就轮到置信度大显身手了。</p>
 <p>从一个频繁项集中可以产生多少条关联规则？下图的网格图给出的是从项集 $\{0,1,2,3\}$ 产生的所有关联规则。为找到感兴趣的规则，我们先生成一个可能的规则列表，然后测试每条规则的置信度。如果置信度不满足最小要求，则去掉该规则。</p>
 <p><img src="https://blog-1255524710.cos.ap-beijing.myqcloud.com/images/data-mining-arules/Snipaste_2019-05-15_16-00-55.png" alt="对于频繁项集{0,1,2,3}的关联规则网格示意图。阴影区域给出的是低可信度的规则。如果发现0,1,2→3是一条低可信度规则，那么所有其他以3作为后件的规则可信度也会较低"></p>
 <p>类似于上一节的频繁项集生成，我们可以为每个频繁项集产生许多关联规则。如果能够减少规则数目来确保问题的可解性，那么计算起来就会好很多。可以观察到，如果某条规则并不满足 最小可信度要求，那么该规则的所有子集也不会满足最小可信度要求。以上图为例，假设规则 $0,1,2 \rightarrow 3$ 并不满足最小可信度要求，那么就知道任何左部为 $\{0,1,2\}$ 子集的规则也不会满足最小可 信度要求。在图中这些规则上都加了阴影来表示。</p>
 <p>可以利用关联规则的上述性质属性来减少需要测试的规则数目。类似于<br>Apriori 算法，可以首先从一个频繁项集开始，接着创建一个规则列表，其中规则右部只包含一个元素，然后对这些规则进行测试。接下来合并所有剩余规则来创建一个新的规则列表，其中规则右部包含两个元素。这种方法也被称作分级法。</p>
-<h1 id="程序清单"><a href="#程序清单" class="headerlink" title="程序清单"></a>程序清单</h1><h2 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h2><pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Apriori算法中的辅助函数</span>
+<h2 id="程序清单"><a href="#程序清单" class="headerlink" title="程序清单"></a>程序清单</h2><h3 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h3><pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Apriori算法中的辅助函数</span>
 
 <span class="token keyword">def</span> <span class="token function">loadDataSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token triple-quoted-string string">"""
@@ -656,7 +656,7 @@
         Hmpl <span class="token operator">=</span> calcConf<span class="token punctuation">(</span>freqSet<span class="token punctuation">,</span> Hmpl<span class="token punctuation">,</span> supportData<span class="token punctuation">,</span> brl<span class="token punctuation">,</span> minConf<span class="token punctuation">)</span>
         <span class="token keyword">if</span> <span class="token punctuation">(</span>len<span class="token punctuation">(</span>Hmpl<span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
             rulesFromConseq<span class="token punctuation">(</span>freqSet<span class="token punctuation">,</span> Hmpl<span class="token punctuation">,</span> supportData<span class="token punctuation">,</span> brl<span class="token punctuation">,</span> minConf<span class="token punctuation">)</span></code></pre>
-<h2 id="R"><a href="#R" class="headerlink" title="R"></a>R</h2><pre class=" language-r"><code class="language-r">setwd<span class="token punctuation">(</span><span class="token string">"关联分析/"</span><span class="token punctuation">)</span>
+<h3 id="R"><a href="#R" class="headerlink" title="R"></a>R</h3><pre class=" language-r"><code class="language-r">setwd<span class="token punctuation">(</span><span class="token string">"关联分析/"</span><span class="token punctuation">)</span>
 
 library<span class="token punctuation">(</span>pacman<span class="token punctuation">)</span>
 p_load<span class="token punctuation">(</span>arules<span class="token punctuation">)</span>        <span class="token comment" spellcheck="true"># 关联规则算法包</span>
@@ -969,25 +969,23 @@ plot<span class="token punctuation">(</span>rules<span class="token punctuation"
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
-            </div>
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/05/15/shu-ju-wa-jue-guan-lian-fen-xi/">
+                <a href="/2019/05/24/shu-ju-wa-jue-jue-ce-shu/">
                     <div class="card-image">
                         
-                        <img src="https://blog-1255524710.cos.ap-beijing.myqcloud.com/images/data-mining-arules/%E5%9B%BE%E6%BA%90%EF%BC%9ATHU%E6%95%B0%E6%8D%AE%E6%B4%BE.png" class="responsive-img" alt="数据挖掘 | 关联分析">
+                        <img src="https://blog-1255524710.cos.ap-beijing.myqcloud.com/images/data-mining-decision-tree/%E5%86%B3%E7%AD%96%E6%A0%91.jpg" class="responsive-img" alt="数据挖掘 | 决策树">
                         
-                        <span class="card-title">数据挖掘 | 关联分析</span>
+                        <span class="card-title">数据挖掘 | 决策树</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">关联分析概念在数据挖掘中，关联分析是一种较为常用的无监督学习算法，与分类、聚类等算法不同的是，这一类算法的主要目的在于发掘数据内在结构特征之间的关联性。关联规则大致包含以下内容，本文主要介绍其中的简单关联分析及 Apriori 算法。
-
-简</div>
+                    <div class="summary block-with-text">基本流程决策树（decision tree）是一类常见的机器学习方法。顾名思义，决策树是基于树结构（可能是二叉树或多叉树）来进行决策的，这恰是人类在面临决策问题时一种很自然的处理机制。
+使用决策树进行决策的过程就是从根节点开始，测试待分类项</div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-15
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-24
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -1000,24 +998,15 @@ plot<span class="token punctuation">(</span>rules<span class="token punctuation"
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
-                    
-                    <a href="/tags/R/" target="_blank">
-                        <span class="chip bg-color">R</span>
-                    </a>
                     
                     <a href="/tags/机器学习/" target="_blank">
                         <span class="chip bg-color">机器学习</span>
                     </a>
                     
-                    <a href="/tags/关联分析/" target="_blank">
-                        <span class="chip bg-color">关联分析</span>
-                    </a>
-                    
-                    <a href="/tags/Python/" target="_blank">
-                        <span class="chip bg-color">Python</span>
+                    <a href="/tags/决策树/" target="_blank">
+                        <span class="chip bg-color">决策树</span>
                     </a>
                     
                 </div>
@@ -1230,7 +1219,7 @@ plot<span class="token punctuation">(</span>rules<span class="token punctuation"
         <div class="col s12 m8 l8 copy-right">
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数 : &nbsp;
-                <span class="white-color">20.7k</span>
+                <span class="white-color">23.7k</span>
             
 
             
