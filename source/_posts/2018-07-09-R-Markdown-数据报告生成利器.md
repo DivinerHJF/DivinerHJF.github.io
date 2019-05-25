@@ -3,7 +3,7 @@ title: 'R Markdown: 数据报告生成利器'
 date: 2018-07-09 22:44:09
 author: divinerhjf
 img: 'https://blog-1255524710.cos.ap-beijing.myqcloud.com/cover/hex-rmarkdown.png'
-top: false
+top: true
 cover: false
 categories: R
 tags:

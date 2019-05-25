@@ -3,7 +3,7 @@ title: stargazer：R 语言输出统计表
 date: 2018-10-30 16:20:03
 author: divinerhjf
 img: 'https://blog-1255524710.cos.ap-beijing.myqcloud.com/cover/table.png'
-top: false
+top: true
 cover: false
 categories: R
 tags: 
