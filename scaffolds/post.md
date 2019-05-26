@@ -4,7 +4,7 @@ date: {{ date }}
 author: divinerhjf
 img: http://xxx.com/xxx.jpg
 top: true
-cover: flase
+cover: false
 coverImg: http://xxx.com/xxx.jpg
 password: http://encode.chahuo.com/
 toc: true
