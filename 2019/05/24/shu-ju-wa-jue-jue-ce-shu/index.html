@@ -409,14 +409,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        6.2k
+                        7.7k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        23 分
+                        28 分
                     </div>
                     
                 
@@ -558,10 +558,83 @@
 <li>决策树剪枝：用验证数据集对已生成的树进行剪枝并选择最优子树，这时用损失函数最小作为剪枝的标准。</li>
 </ol>
 </blockquote>
-<p>本节主要介绍决策树的生成算法，剪枝算法在下一节单独介绍。决策树的生成就是递归地构建二叉决策树的过程。对回归树用平方误差最小化准则，对分类树用基尼指数（Gini index）最小化准则，进行特征选择，生成二叉树。</p>
-<h4 id="回归树的生成"><a href="#回归树的生成" class="headerlink" title="回归树的生成"></a>回归树的生成</h4><h4 id="分类树的生成"><a href="#分类树的生成" class="headerlink" title="分类树的生成"></a>分类树的生成</h4><h2 id="剪枝处理"><a href="#剪枝处理" class="headerlink" title="剪枝处理"></a>剪枝处理</h2><p>剪枝（pruning）是决策树学习算法对付<u><strong>过拟合</strong></u>的主要手段。在决策树学习中，为了尽可能正确分类训练样本，结点划分过程将不断重复，有时会造成决策树分支过多，这时就可能因训练样本学得「太好」了，以致于把训练集自身的一些特点当作所有数据都具有的一般性质而导致过拟合。因此，可通过主动去掉一些分支来降低过拟合的风险。</p>
+<p>本节主要介绍决策树的生成算法，剪枝算法在下一节单独介绍。决策树的生成就是递归地构建二叉决策树的过程，对回归树用平方误差最小化准则，对分类树用基尼指数（Gini index）最小化准则，进行特征选择，生成二叉树。</p>
+<h4 id="回归树的生成"><a href="#回归树的生成" class="headerlink" title="回归树的生成"></a>回归树的生成</h4><p>假设 $X$ 与 $Y$ 分别为输入和输出变量，并且 $Y$ 是连续变量，给定训练数据集<br>$$<br>D=\left{\left(x_{1}, y_{1}\right),\left(x_{2}, y_{2}\right), \cdots,\left(x_{N}, y_{N}\right)\right}<br>$$<br>考虑如何生成回归树。</p>
+<p>一个回归树对应着输入空间（即特征空间）的一个划分以及在划分的单元上的输出值。假设已将输入空间划分为 $M$ 个单元 $<br>R_{1}, R_{2}, \cdots, R_{M}<br>$ ，并且在每个单元 $R_m$ 上有一个固定的输出值 $c_m$，于是回归树模型可表示为<br>$$<br>f(x)=\sum_{m=1}^{M} c_{m} I\left(x \in R_{m}\right)<br>$$<br>当输入空间的划分确定时，可以用平方误差 $\sum_{x_{i} \in R_{m}}\left(y_{i}-f\left(x_{i}\right)\right)^{2}$ 来表示回归树对于训练数据的预测误差，用平方误差最小的准则求解每个单元上的最优输出值。易知，单元 $R_m$ 上的 $c_m$ 的最优值 $\hat{c}<em>{m}$ 是 $R_m$ 上的所有输入实例 $x_i$ 对应的输出 $y_i$ 的均值，即<br>$$<br>\hat{c}</em>{m}=\operatorname{ave}\left(y_{i} | x_{i} \in R_{m}\right)<br>$$<br>问题是怎样对输入空间进行划分。这里采用启发式的方法，选择第 $j$ 个变量 $x^{(j)}$ 和它取的值 $s$，作为切分变量（spliting variable）和切分点（splitting point），并定义两个区域：<br>$$<br>R_{1}(j, s)=\left{x | x^{(j)} \leqslant s\right} \quad , \quad R_{2}(j, s)=\left{x | x^{(j)}&gt;s\right}<br>$$<br>然后寻找最优切分变量 $j$ 和最优切分点 $s$。具体地，求解<br>$$<br>\min <em>{j,s} [\min _{c</em>{1}} \sum_{x_{i} \in R_{1}(j, s)}\left(y_{i}-c_{1}\right)^{2} + \min <em>{c</em>{2}} \sum_{x_{i} \in R_{2}(j, s)}\left(y_{i}-c_{2}\right)^{2}]<br>$$<br>对固定输入变量 $j$ 可以找到最优切分点 $s$。<br>$$<br>\hat{c}<em>{1}=\operatorname{ave}\left(y</em>{i} | x_{i} \in R_{1}(j, s)\right) \quad , \quad \hat{c}<em>{2}=\operatorname{ave}\left(y</em>{i} | x_{i} \in R_{2}(j, s)\right)<br>$$<br>遍历所有输入变量，找到最优的切分变量 $j$，构成一个对 $(j，s)$。依此将输入空间划分为两个区域。接着，对每个区域重复上述划分过程，直到满足停止条件为止。这样就生成一棵回归树。这样的回归树通常称为最小二乘回归树（least squares regression tree），现将算法整理如图：</p>
+<p><img src="https://blog-1255524710.cos.ap-beijing.myqcloud.com/images/data-mining-decision-tree/Snipaste_2019-05-27_15-11-52.png" alt="回归树生成算法"></p>
+<h4 id="分类树的生成"><a href="#分类树的生成" class="headerlink" title="分类树的生成"></a>分类树的生成</h4><p>分类树用「基尼指数」选择最优特征，同时决定该特征的最优二值切分点。</p>
+<p>输入：训练数据集 $D$，停止计算的条件</p>
+<p>输出：CART 决策树</p>
+<p>根据训练数据集，从根结点开始，递归地对每个结点进行以下操作，构建二叉决策树：</p>
+<ol>
+<li>设结点的训练数据集为 $D$，计算现有特征对该数据集的基尼指数。此时，对每一个特征 $A$，对其可能取的每个值 $a$，根据样本点对 $A=a$ 的测试为「是」或<br>「否」将 $D$ 分割成 $D_{1}$ 和 $D_{2}$ 两部分，利用公式计算 $A=a$ 时的基尼指数；</li>
+<li>在所有可能的特征 $A$ 以及它们所有可能的切分点 $a$ 中，选择基尼指数最小的特征及其对应的切分点作为最优特征与最优切分点。依最优特征与最优切分点，从现结点生成两个子结点，将训练数据集依特征分配到两个子结点中去；</li>
+<li>对两个子结点递归地调用步骤 1，2，直至满足停止条件；</li>
+<li>生成 CART 决策树。</li>
+</ol>
+<p>算法停止计算的条件是结点中的样本个数小于预定阀值，或样本集的基尼指数小于预定阈值（样本基本属于同一类），或者没有更多特征。</p>
+<p>下图展现一个小例子：</p>
+<p><img src="https://blog-1255524710.cos.ap-beijing.myqcloud.com/images/data-mining-decision-tree/Snipaste_2019-05-27_15-21-43.png" alt="回归树基尼系数计算示例"></p>
+<h2 id="剪枝处理"><a href="#剪枝处理" class="headerlink" title="剪枝处理"></a>剪枝处理</h2><p>剪枝（pruning）是决策树学习算法对付<u><strong>过拟合</strong></u>的主要手段。在决策树学习中，为了尽可能正确分类训练样本，结点划分过程将不断重复，有时会造成决策树分支过多，这时就可能因训练样本学得「太好」了，以致于把训练集自身的一些特点当作所有数据都具有的一般性质而导致过拟合。因此，可通过主动去掉一些分支来降低过拟合的风险。</p>
 <p>决策树剪枝的基本策略有「预剪枝」（prepruning）和「后剪枝」（post-<br>pruning）[Quinlan，1993]。预剪枝是指在决策树生成过程中，对每个结点在划分前先进行估计，若当前结点的划分不能带来决策树泛化性能提升，则停止划分并将当前结点标记为叶结点；后剪枝则是先从训练集生成一棵完整的决策树，然后自底向上地对非叶结点进行考察，若将该结点对应的子树替换为叶结点能带来决策树泛化性能提升，则将该子树替换为叶结点。那么，如何判断决策树泛化性能是否提升呢？这可使用特征选择中介绍的性能评估方法，可采用留出法，即预留一部分数据用作「验证集」以进行性能评估。</p>
-<h3 id="预剪枝"><a href="#预剪枝" class="headerlink" title="预剪枝"></a>预剪枝</h3><h3 id="后剪枝"><a href="#后剪枝" class="headerlink" title="后剪枝"></a>后剪枝</h3><h2 id="代码清单"><a href="#代码清单" class="headerlink" title="代码清单"></a>代码清单</h2><h3 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h3><h3 id="R"><a href="#R" class="headerlink" title="R"></a>R</h3><blockquote>
+<h3 id="预剪枝"><a href="#预剪枝" class="headerlink" title="预剪枝"></a>预剪枝</h3><h3 id="后剪枝"><a href="#后剪枝" class="headerlink" title="后剪枝"></a>后剪枝</h3><h2 id="算法小结"><a href="#算法小结" class="headerlink" title="算法小结"></a>算法小结</h2><table>
+<thead>
+<tr>
+<th>算法</th>
+<th>支持模型</th>
+<th>树结构</th>
+<th>特征选择</th>
+<th>连续值处理</th>
+<th>缺失值处理</th>
+<th>剪枝</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ID3</td>
+<td>分类</td>
+<td>多叉树</td>
+<td>信息增益</td>
+<td>不支持</td>
+<td>不支持</td>
+<td>不支持</td>
+</tr>
+<tr>
+<td>C4.5</td>
+<td>分类</td>
+<td>多叉树</td>
+<td>信息增益率</td>
+<td>支持</td>
+<td>支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td>CART</td>
+<td>分类/回归</td>
+<td>二叉树</td>
+<td>基尼系数/均方误差</td>
+<td>支持</td>
+<td>支持</td>
+<td>支持</td>
+</tr>
+</tbody></table>
+<h3 id="决策树算法优点"><a href="#决策树算法优点" class="headerlink" title="决策树算法优点"></a>决策树算法优点</h3><ol>
+<li>简单直观，生成的决策树很直观；</li>
+<li>基本不需要预处理，不需要提前归一化，处理缺失值；</li>
+<li>使用决策树预测的代价是 $O(log_{2}m)$，$m$ 为样本数；</li>
+<li>既可以处理离散值也可以处理连续值，很多算法只是专注于离散值或者连续值；</li>
+<li>可以处理多维度输出的分类问题；</li>
+<li>相比于神经网络之类的黑盒分类模型，决策树在逻辑上可以得到很好的解释；</li>
+<li>可以交叉验证的剪枝来选择模型，从而提高泛化能力；</li>
+<li>对于异常点的容错能力好，健壮性高。</li>
+</ol>
+<h3 id="决策树算法缺点"><a href="#决策树算法缺点" class="headerlink" title="决策树算法缺点"></a>决策树算法缺点</h3><ol>
+<li>决策树算法容易过拟合，导致泛化能力不强，可通过设置节点最少样本数量和限制决策树深度来改进；</li>
+<li>决策树会因为样本发生一点点的改动，就会导致树结构的剧烈改变，可以通过集成学习之类的方法解决；</li>
+<li>寻找最优的决策树是一个 NP 难的问题，一般通过启发式方法，易陷入局部最优，可通过集成学习之类的方法来改善；</li>
+<li>有些比较复杂的关系，决策树很难学习，比如异或，一般这种关系可以换神经网络分类方法来解决；</li>
+<li>如果某些特征的样本比例过大，生成决策树容易偏向于这些特征，可通过调节样本权重来改善。</li>
+</ol>
+<h3 id="深入探讨"><a href="#深入探讨" class="headerlink" title="深入探讨"></a>深入探讨</h3><h4 id="连续值处理"><a href="#连续值处理" class="headerlink" title="连续值处理"></a>连续值处理</h4><h4 id="缺失值处理"><a href="#缺失值处理" class="headerlink" title="缺失值处理"></a>缺失值处理</h4><h4 id="多变量决策树"><a href="#多变量决策树" class="headerlink" title="多变量决策树"></a>多变量决策树</h4><h2 id="代码清单"><a href="#代码清单" class="headerlink" title="代码清单"></a>代码清单</h2><h3 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h3><h3 id="R"><a href="#R" class="headerlink" title="R"></a>R</h3><blockquote>
 <h3 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h3><ol>
 <li><a href="https://book.douban.com/subject/26708119/" target="_blank" rel="noopener">周志华，机器学习，清华大学出版社，2016-1-1．73 - 95．</a></li>
 <li><a href="https://book.douban.com/subject/10590856/" target="_blank" rel="noopener">李舰，统计学习方法，清华大学出版社，2012-3．55－76．</a></li>
@@ -1039,7 +1112,7 @@
         <div class="col s12 m8 l8 copy-right">
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数 : &nbsp;
-                <span class="white-color">27k</span>
+                <span class="white-color">28.4k</span>
             
 
             
