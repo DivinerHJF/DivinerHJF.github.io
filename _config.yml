@@ -49,9 +49,8 @@ highlight:
 #------------------------------------------------------    
 prism_plugin:
   mode: 'preprocess'    # realtime/preprocess
-  theme: 'tomorrow'
+  theme: 'default'
   line_number: false    # default false
-  custom_css:    
 
 # 搜索设置 hexo-generator-search
 search:
