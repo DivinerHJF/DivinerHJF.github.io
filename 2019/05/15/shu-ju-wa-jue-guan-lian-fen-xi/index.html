@@ -30,7 +30,7 @@
     </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 
 
 <body>
@@ -418,14 +418,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        5.4k
+                        4.8k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        20 分
+                        17 分
                     </div>
                     
                 
@@ -486,20 +486,20 @@
 </blockquote>
 <h3 id="有效性指标"><a href="#有效性指标" class="headerlink" title="有效性指标"></a>有效性指标</h3><h4 id="支持度"><a href="#支持度" class="headerlink" title="支持度"></a>支持度</h4><p>一个项集的支持度（support）被定义为数据集中包含该项集的记录所占的比例，即事件发生的频率。</p>
 <p>$$<br>support(\{A, B\})=\operatorname{num}(A \cup B)=P(AB)<br>$$</p>
-<p>从上表中可以得到，$\{豆奶\}$ 的支持度为 4/5。而在5 条交易记录中有 3 条包含 $\{豆奶，尿布\}$，因此 $\{豆奶，尿布\}$ 的支持度为 3/5。<u>支持度是针对项集来说的</u>，因此可以定义一个最小支持度，而只保留满足最小支持度的项集。</p>
+<p>从上表中可以得到，$\\{豆奶\\}$ 的支持度为 4/5。而在5 条交易记录中有 3 条包含 $\\{豆奶，尿布\\}$，因此 $\\{豆奶，尿布\\}$ 的支持度为 3/5。<u>支持度是针对项集来说的</u>，因此可以定义一个最小支持度，而只保留满足最小支持度的项集。</p>
 <h4 id="可信度"><a href="#可信度" class="headerlink" title="可信度"></a>可信度</h4><p><u>可信度或置信度（confidence）是针对一条关联规则来定义的</u>，揭示了如果事件 A 发生了，则事件 B 发生的的概率。</p>
-<p>$$<br>confidence(A \rightarrow B)=\frac{\text {support }(\{A, B\})}{\text {support}(\{A\})}=P(B | A)=\frac{P(A B)}{P(A)}<br>$$</p>
-<p>比如 $\{尿布\}\rightarrow\{葡萄酒\}$ 这条规则的可信度被定义为 $支持度(\{尿布，葡萄酒\}) / 支持度(\{尿布\})$ 。从表中可以看到，由于 $\{尿布, 葡萄酒\}$ 的支持度为 3/5，$\{尿布\}$ 的支持度为 4/5，所以 $尿布\rightarrow葡萄酒$ 的可信度为 3/4=0.75。<br>这意味着对于包含“尿布”的所有记录，我们的规则对其中 75% 的记录都适用。</p>
+<p>$$<br>confidence(A \rightarrow B)=\frac{\text {support }(\left\{A, B\right\})}{\text {support}(\left\{A\right\})}=P(B | A)=\frac{P(A B)}{P(A)}<br>$$</p>
+<p>比如 $\{尿布\}\rightarrow\{葡萄酒\}$ 这条规则的可信度被定义为 $支持度(\{尿布，葡萄酒\}) / 支持度(\{尿布\})$ 。从表中可以看到，由于 $\{尿布, 葡萄酒\}$ 的支持度为 3/5，$\{尿布\}$ 的支持度为 4/5，所以 $尿布\rightarrow葡萄酒$ 的可信度为 3/4=0.75。<br>这意味着对于包含「尿布」的所有记录，我们的规则对其中 75% 的记录都适用。</p>
 <p>支持度和可信度是用来量化关联分析是否成功的方法。假设想找到支持度大于 0.8 的所有项集，应该如何去做？一个办法是生成一个物品所有可能组合的清单，然后对每一种组合统计它出现的频繁程度，但当物品成千上万时，上述做法非常非常慢。下一节会详细分析这种情况并讨论 Apriori 原理，该原理会减少关联规则学习时所需的计算量。</p>
 <h2 id="Apriori-算法发现频繁项集"><a href="#Apriori-算法发现频繁项集" class="headerlink" title="Apriori 算法发现频繁项集"></a>Apriori 算法发现频繁项集</h2><p>上文提到，关联分析的目标包括两项：发现频繁项集和发现关联规则。首先需要找到频繁项集，然后才能获得关联规则。本节将只关注于发现频繁项集。</p>
 <h3 id="频繁项集定理"><a href="#频繁项集定理" class="headerlink" title="频繁项集定理"></a>频繁项集定理</h3><p>频繁项集具有以下两条定理，这两条定理将应用于我们后面频繁项集及其关联规则的寻找中：</p>
 <blockquote>
-<p><strong>定理1：</strong>频繁项集的子集必为频繁项集（假设项集 $\{A,C\}$ 是频繁项集，那么 $\{A\}$ 和 $\{C\}$ 也为频繁项集） </p>
-<p><strong>定理2：</strong>非频繁集的超集一定也是非频繁的（假设项集 $\{D\}$ 不是频繁项集，那么 $\{A,D\}$ 和 $\{C,D\}$ 也不是频繁项集）</p>
+<p><strong>定理1：</strong>频繁项集的子集必为频繁项集（假设项集 $\\{A,C\\}$ 是频繁项集，那么 $\\{A\\}$ 和 $\\{C\\}$ 也为频繁项集） </p>
+<p><strong>定理2：</strong>非频繁集的超集一定也是非频繁的（假设项集 $\\{D\\}$ 不是频繁项集，那么 $\\{A,D\\}$ 和 $\\{C,D\\}$ 也不是频繁项集）</p>
 </blockquote>
 <p>定理 1 比较容易证明，因为某项集的子集的支持度一定不小于该项集，定理 2 是定理 1 的逆反定理。</p>
 <p><img src="https://blog-1255524710.cos.ap-beijing.myqcloud.com/images/data-mining-arules/Snipaste_2019-05-15_14-56-52.png" alt="Apriori 原理"></p>
-<p>图中给出了所有可能的项集，其中非频繁项集用灰色表示。由于集合 $\{2,3\}$ 是非频繁的， 因此 $\{0,2,3\}$、$\{1,2,3\}$ 和 $\{0,1,2,3\}$ 也是非频繁的，它们的支持度根本不需要计算。</p>
+<p>图中给出了所有可能的项集，其中非频繁项集用灰色表示。由于集合 $\\{2,3\\}$ 是非频繁的， 因此 $\\{0,2,3\\}$、$\\{1,2,3\\}$ 和 $\\{0,1,2,3\\}$ 也是非频繁的，它们的支持度根本不需要计算。</p>
 <h3 id="频繁项集生成"><a href="#频繁项集生成" class="headerlink" title="频繁项集生成"></a>频繁项集生成</h3><p>Apriori 算法是发现频繁项集的一种方法。Apriori 算法的两个输入参数分别是最小支持度和数据集。该算法首先会生成所有单个物品的项集列表。接着扫描交易记录来查看哪些项集满足最小 支持度要求，那些不满足最小支持度的集合会被去掉。然后，对剩下来的集合进行组合以生成包含两个元素的项集。接下来，再重新扫描交易记录，去掉不满足最小支持度的项集。该过程重复进行直到所有项集都被去掉。</p>
 <p>综上所述，Apriori 算法采用迭代的方式逐层寻找下层的超集，并在超集中发现频繁项集。经过层层迭代，直到最顶层得到最大频繁项集为止。在每一轮的迭代中都包含以下两个步骤：</p>
 <blockquote>
@@ -521,9 +521,9 @@
         返回所有频繁项集列表
     保留频繁项集并构建k+1项组成的候选项集的列表
         频繁项集第二定理：非频繁项集的超集一定也是非频繁的</code></pre><h2 id="从频繁项集中挖掘关联规则"><a href="#从频繁项集中挖掘关联规则" class="headerlink" title="从频繁项集中挖掘关联规则"></a>从频繁项集中挖掘关联规则</h2><p>得到最大频繁项集并不是最终的目的。之前在判断关联规则的有效性时，我们学习了置信度与支持度两个指标。其中，支持度已经在寻找最大频繁项集的过程中发挥了作用，那么，在接下来关联规则的产生上，就轮到置信度大显身手了。</p>
-<p>从一个频繁项集中可以产生多少条关联规则？下图的网格图给出的是从项集 $\{0,1,2,3\}$ 产生的所有关联规则。为找到感兴趣的规则，我们先生成一个可能的规则列表，然后测试每条规则的置信度。如果置信度不满足最小要求，则去掉该规则。</p>
+<p>从一个频繁项集中可以产生多少条关联规则？下图的网格图给出的是从项集 $\\{0,1,2,3\\}$ 产生的所有关联规则。为找到感兴趣的规则，我们先生成一个可能的规则列表，然后测试每条规则的置信度。如果置信度不满足最小要求，则去掉该规则。</p>
 <p><img src="https://blog-1255524710.cos.ap-beijing.myqcloud.com/images/data-mining-arules/Snipaste_2019-05-15_16-00-55.png" alt="对于频繁项集{0,1,2,3}的关联规则网格示意图。阴影区域给出的是低可信度的规则。如果发现0,1,2→3是一条低可信度规则，那么所有其他以3作为后件的规则可信度也会较低"></p>
-<p>类似于上一节的频繁项集生成，我们可以为每个频繁项集产生许多关联规则。如果能够减少规则数目来确保问题的可解性，那么计算起来就会好很多。可以观察到，如果某条规则并不满足 最小可信度要求，那么该规则的所有子集也不会满足最小可信度要求。以上图为例，假设规则 $0,1,2 \rightarrow 3$ 并不满足最小可信度要求，那么就知道任何左部为 $\{0,1,2\}$ 子集的规则也不会满足最小可 信度要求。在图中这些规则上都加了阴影来表示。</p>
+<p>类似于上一节的频繁项集生成，我们可以为每个频繁项集产生许多关联规则。如果能够减少规则数目来确保问题的可解性，那么计算起来就会好很多。可以观察到，如果某条规则并不满足 最小可信度要求，那么该规则的所有子集也不会满足最小可信度要求。以上图为例，假设规则 $0,1,2 \rightarrow 3$ 并不满足最小可信度要求，那么就知道任何左部为 $\\{0,1,2\\}$ 子集的规则也不会满足最小可 信度要求。在图中这些规则上都加了阴影来表示。</p>
 <p>可以利用关联规则的上述性质属性来减少需要测试的规则数目。类似于<br>Apriori 算法，可以首先从一个频繁项集开始，接着创建一个规则列表，其中规则右部只包含一个元素，然后对这些规则进行测试。接下来合并所有剩余规则来创建一个新的规则列表，其中规则右部包含两个元素。这种方法也被称作分级法。</p>
 <h2 id="程序清单"><a href="#程序清单" class="headerlink" title="程序清单"></a>程序清单</h2><h3 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h3><pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Apriori算法中的辅助函数</span>
 
@@ -656,94 +656,7 @@
         Hmpl <span class="token operator">=</span> calcConf<span class="token punctuation">(</span>freqSet<span class="token punctuation">,</span> Hmpl<span class="token punctuation">,</span> supportData<span class="token punctuation">,</span> brl<span class="token punctuation">,</span> minConf<span class="token punctuation">)</span>
         <span class="token keyword">if</span> <span class="token punctuation">(</span>len<span class="token punctuation">(</span>Hmpl<span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
             rulesFromConseq<span class="token punctuation">(</span>freqSet<span class="token punctuation">,</span> Hmpl<span class="token punctuation">,</span> supportData<span class="token punctuation">,</span> brl<span class="token punctuation">,</span> minConf<span class="token punctuation">)</span></code></pre>
-<h3 id="R"><a href="#R" class="headerlink" title="R"></a>R</h3><pre class=" language-r"><code class="language-r">setwd<span class="token punctuation">(</span><span class="token string">"关联分析/"</span><span class="token punctuation">)</span>
-
-library<span class="token punctuation">(</span>pacman<span class="token punctuation">)</span>
-p_load<span class="token punctuation">(</span>arules<span class="token punctuation">)</span>        <span class="token comment" spellcheck="true"># 关联规则算法包</span>
-p_load<span class="token punctuation">(</span>arulesViz<span class="token punctuation">)</span>     <span class="token comment" spellcheck="true"># 关联规则可视化</span>
-p_load<span class="token punctuation">(</span>RColorBrewer<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 色彩搭配</span>
-
-<span class="token comment" spellcheck="true"># 1. transactions 格式数据集 ----</span>
-
-<span class="token comment" spellcheck="true"># 超市购物数据集, 每一行代表一个顾客的购买记录</span>
-<span class="token comment" spellcheck="true"># 格式为 transactions, 也就是以稀疏矩阵储存的物品矩阵数据</span>
-<span class="token comment" spellcheck="true"># as(object,class) 实现算法所需矩阵与常规数据对象间的转换, 规则的转换</span>
-data<span class="token punctuation">(</span>Groceries<span class="token punctuation">)</span>
-dfGro <span class="token operator">&lt;-</span> as<span class="token punctuation">(</span>Groceries<span class="token punctuation">,</span> <span class="token string">"data.frame"</span><span class="token punctuation">)</span>
-tsGro <span class="token operator">&lt;-</span> as<span class="token punctuation">(</span>dfGro<span class="token punctuation">,</span> <span class="token string">"transactions"</span><span class="token punctuation">)</span>
-head<span class="token punctuation">(</span>dfGro<span class="token punctuation">)</span>
-str<span class="token punctuation">(</span>tsGro<span class="token punctuation">)</span>
-
-
-<span class="token comment" spellcheck="true"># 2. 基本信息挖掘 ----</span>
-
-<span class="token comment" spellcheck="true"># 每笔交易的项目数</span>
-basketSize <span class="token operator">&lt;-</span> size<span class="token punctuation">(</span>Groceries<span class="token punctuation">)</span>
-summary<span class="token punctuation">(</span>basketSize<span class="token punctuation">)</span>
-sum<span class="token punctuation">(</span>basketSize<span class="token punctuation">)</span>
-
-<span class="token comment" spellcheck="true"># 支持度</span>
-itemFreq <span class="token operator">&lt;-</span> itemFrequency<span class="token punctuation">(</span>Groceries<span class="token punctuation">)</span>
-itemFreq<span class="token punctuation">[</span><span class="token number">1</span><span class="token operator">:</span><span class="token number">5</span><span class="token punctuation">]</span>
-sum<span class="token punctuation">(</span>itemFreq<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 本质上代表"平均一个 transaction 购买的 item 个数"</span>
-
-<span class="token comment" spellcheck="true"># 查看 basketSize 的分布：密度曲线</span>
-itemCount <span class="token operator">&lt;-</span> <span class="token punctuation">(</span>itemFreq<span class="token operator">/</span>sum<span class="token punctuation">(</span>itemFreq<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">*</span>sum<span class="token punctuation">(</span>basketSize<span class="token punctuation">)</span>
-summary<span class="token punctuation">(</span>itemCount<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># itemCount 表示每个 item 出现的次数。Support(X) = Xs/N, N是总的交易数,Xs就是Item X的count</span>
-orderedItem <span class="token operator">&lt;-</span> sort<span class="token punctuation">(</span>itemCount<span class="token punctuation">,</span> decreasing<span class="token operator">=</span>T<span class="token punctuation">)</span>
-orderedItem<span class="token punctuation">[</span><span class="token number">1</span><span class="token operator">:</span><span class="token number">10</span><span class="token punctuation">]</span>
-
-<span class="token comment" spellcheck="true"># 按支持度排序</span>
-orderedItemFreq <span class="token operator">&lt;-</span> sort<span class="token punctuation">(</span>itemFrequency<span class="token punctuation">(</span>Groceries<span class="token punctuation">)</span><span class="token punctuation">,</span> decreasing<span class="token operator">=</span>T<span class="token punctuation">)</span>
-orderedItemFreq<span class="token punctuation">[</span><span class="token number">1</span><span class="token operator">:</span><span class="token number">10</span><span class="token punctuation">]</span>
-
-<span class="token comment" spellcheck="true"># 绘图：按某一最小支持度查看</span>
-itemFrequencyPlot<span class="token punctuation">(</span>Groceries<span class="token punctuation">,</span> support<span class="token operator">=</span><span class="token number">0.05</span><span class="token punctuation">,</span> col <span class="token operator">=</span> <span class="token string">"blue"</span><span class="token punctuation">,</span> 
-                  xlab <span class="token operator">=</span> paste<span class="token punctuation">(</span><span class="token string">"Proportion of Market Baskets Containing Item"</span><span class="token punctuation">,</span> 
-                               <span class="token string">"\n(Item Relative Frequency or Support)"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true"># 绘图：按排序查看</span>
-itemFrequencyPlot<span class="token punctuation">(</span>Groceries<span class="token punctuation">,</span> topN<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">,</span> col <span class="token operator">=</span> <span class="token string">"blue"</span><span class="token punctuation">,</span>
-                  xlab <span class="token operator">=</span> paste<span class="token punctuation">(</span><span class="token string">"Proportion of Market Baskets Containing Item"</span><span class="token punctuation">,</span> 
-                               <span class="token string">"\n(Item Relative Frequency or Support)"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-
-
-<span class="token comment" spellcheck="true"># 3. 关联规则挖掘 ----</span>
-
-<span class="token comment" spellcheck="true"># apriori(data, parameter = NULL, appearance = NULL, control = NULL) </span>
-<span class="token comment" spellcheck="true"># eclat(data, parameter = NULL, control = NULL) </span>
-<span class="token comment" spellcheck="true"># 两个主要算法函数, data 为交易数据格式, 可以通过 as 转换;</span>
-<span class="token comment" spellcheck="true"># parameter 为参数列表, 比如定义 最小支持度和置信度; control 主要用于算法控制</span>
-
-<span class="token comment" spellcheck="true"># 求频繁项集</span>
-fsets <span class="token operator">&lt;-</span> eclat<span class="token punctuation">(</span>Groceries<span class="token punctuation">,</span> parameter <span class="token operator">=</span> list<span class="token punctuation">(</span>support<span class="token operator">=</span><span class="token number">0.05</span><span class="token punctuation">,</span> maxlen<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-inspect<span class="token punctuation">(</span>fsets<span class="token punctuation">[</span><span class="token number">1</span><span class="token operator">:</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-inspect<span class="token punctuation">(</span>sort<span class="token punctuation">(</span>fsets<span class="token punctuation">,</span> by <span class="token operator">=</span> <span class="token string">"support"</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token operator">:</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-
-<span class="token comment" spellcheck="true"># 求关联规则</span>
-rules <span class="token operator">&lt;-</span> apriori<span class="token punctuation">(</span>Groceries<span class="token punctuation">,</span> parameter <span class="token operator">=</span> list<span class="token punctuation">(</span>support<span class="token operator">=</span><span class="token number">0.01</span><span class="token punctuation">,</span> confidence<span class="token operator">=</span><span class="token number">0.01</span><span class="token punctuation">,</span> minlen<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-summary<span class="token punctuation">(</span>rules<span class="token punctuation">)</span>
-
-<span class="token comment" spellcheck="true"># 查看及筛选规则</span>
-inspect<span class="token punctuation">(</span>sort<span class="token punctuation">(</span>rules<span class="token punctuation">,</span> by <span class="token operator">=</span> <span class="token string">"support"</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token operator">:</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span>   
-inspect<span class="token punctuation">(</span>sort<span class="token punctuation">(</span>rules<span class="token punctuation">,</span> by <span class="token operator">=</span> <span class="token string">"confidence"</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token operator">:</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-inspect<span class="token punctuation">(</span>sort<span class="token punctuation">(</span>rules<span class="token punctuation">,</span> by <span class="token operator">=</span> <span class="token string">"lift"</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token operator">:</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-subRules <span class="token operator">=</span> subset<span class="token punctuation">(</span>rules<span class="token punctuation">,</span> subset <span class="token operator">=</span> rhs <span class="token percent-operator operator">%in%</span> <span class="token string">"whole milk"</span> <span class="token operator">&amp;</span> lift <span class="token operator">></span> <span class="token number">1.2</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># subset 做规则筛选</span>
-inspect<span class="token punctuation">(</span>sort<span class="token punctuation">(</span>subRules<span class="token punctuation">,</span>by <span class="token operator">=</span><span class="token string">"support"</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token operator">:</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-inspect<span class="token punctuation">(</span>sort<span class="token punctuation">(</span>subRules<span class="token punctuation">,</span>by <span class="token operator">=</span><span class="token string">"confidence"</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token operator">:</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-
-<span class="token comment" spellcheck="true"># 保存结果</span>
-rules_df <span class="token operator">&lt;-</span> as<span class="token punctuation">(</span>rules<span class="token punctuation">,</span> <span class="token string">"data.frame"</span><span class="token punctuation">)</span> 
-write.csv<span class="token punctuation">(</span>rules_df<span class="token punctuation">,</span> <span class="token string">"rules.csv"</span><span class="token punctuation">)</span>
-
-<span class="token comment" spellcheck="true"># 图形展示</span>
-<span class="token comment" spellcheck="true"># 散点图</span>
-plot<span class="token punctuation">(</span>rules<span class="token punctuation">,</span> control <span class="token operator">=</span> list<span class="token punctuation">(</span>jitter<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span> col<span class="token operator">=</span>rev<span class="token punctuation">(</span>brewer.pal<span class="token punctuation">(</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token string">"Greens"</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">4</span><span class="token operator">:</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> shading <span class="token operator">=</span> <span class="token string">"lift"</span><span class="token punctuation">)</span> 
-<span class="token comment" spellcheck="true"># Grouped Matrix</span>
-plot<span class="token punctuation">(</span>rules<span class="token punctuation">,</span> method <span class="token operator">=</span> <span class="token string">"grouped"</span><span class="token punctuation">,</span> control <span class="token operator">=</span> list<span class="token punctuation">(</span>col <span class="token operator">=</span> rev<span class="token punctuation">(</span>brewer.pal<span class="token punctuation">(</span><span class="token number">9</span><span class="token punctuation">,</span> <span class="token string">"Greens"</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">4</span><span class="token operator">:</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> 
-<span class="token comment" spellcheck="true"># 关联规则的图形展示</span>
-plot<span class="token punctuation">(</span>rules<span class="token punctuation">,</span> measure <span class="token operator">=</span> <span class="token string">"confidence"</span><span class="token punctuation">,</span> method <span class="token operator">=</span> <span class="token string">"graph"</span><span class="token punctuation">,</span> 
-     control <span class="token operator">=</span> list<span class="token punctuation">(</span>type<span class="token operator">=</span><span class="token string">"items"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> shading <span class="token operator">=</span> <span class="token string">"lift"</span><span class="token punctuation">)</span></code></pre>
-<p>详见 <a href="https://blog-1255524710.cos.ap-beijing.myqcloud.com/html/rules.html" target="_blank" rel="noopener">用 R 语言进行关联分析</a></p>
+<h3 id="R"><a href="#R" class="headerlink" title="R"></a>R</h3><p>详见 <a href="https://blog-1255524710.cos.ap-beijing.myqcloud.com/html/rules.html" target="_blank" rel="noopener">用 R 语言进行关联分析</a></p>
 <blockquote>
 <h3 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h3><ol>
 <li><a href="https://baike.baidu.com/item/关联分析" target="_blank" rel="noopener">关联分析-本词条由“科普中国”科学百科词条编写与应用工作项目审核</a></li>
@@ -1219,7 +1132,7 @@ plot<span class="token punctuation">(</span>rules<span class="token punctuation"
         <div class="col s12 m8 l8 copy-right">
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数 : &nbsp;
-                <span class="white-color">28.4k</span>
+                <span class="white-color">27.9k</span>
             
 
             
