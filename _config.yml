@@ -46,6 +46,15 @@ highlight:
   auto_detect: false
   tab_replace:
 
+# 文章支持 emoji
+# npm install hexo-filter-github-emojis --save
+githubEmojis:
+  enable: true
+  className: github-emoji
+  inject: true
+  styles: 
+  customEmojis: 
+
 #------------------------------------------------------    
 prism_plugin:
   mode: 'preprocess'    # realtime/preprocess
