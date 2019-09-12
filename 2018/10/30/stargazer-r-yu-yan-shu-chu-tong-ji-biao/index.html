@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 
 
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <meta name="keywords" content="stargazer：R 语言输出统计表, 灿若星河">
     <meta name="description" content="使用 stargazer 可以将 R 构建的模型结果以 LATEX 、 HTML 和 ASCII 格式输出，方便我们生成标准格式的表格结合 rmarkdown 来进行使用，会使我们优雅地写出一篇拥有期刊级统计表的文章
@@ -96,6 +96,15 @@
     </li>
     
     <li class="hide-on-med-and-down">
+        <a href="/contact" class="waves-effect waves-light">
+            
+            <i class="fa fa-comments"></i>
+            
+            <span>留言板</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
         <a href="/friends" class="waves-effect waves-light">
             
             <i class="fa fa-address-book"></i>
@@ -175,6 +184,15 @@
         </li>
         
         <li>
+            <a href="/contact" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-comments"></i>
+                
+                Contact
+            </a>
+        </li>
+        
+        <li>
             <a href="/friends" class="waves-effect waves-light">
                 
                 <i class="fa fa-fw fa-address-book"></i>
@@ -242,11 +260,14 @@
     }
 </style>
 
-<a href="https://github.com/DivinerHJF" class="github-corner tooltipped hide-on-med-and-down" target="_blank" data-tooltip="Fork Me" data-position="left" data-delay="50">
-    <svg viewbox="0 0 250 250" aria-hidden="true">
-        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/>
-        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/>
-        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/>
+<a href="https://github.com/DivinerHJF" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
     </svg>
 </a>
         
@@ -430,11 +451,6 @@
                 
 				
 				
-                    <div id="busuanzi_container_page_pv" class="info-break-policy">
-                        <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
-                        <span id="busuanzi_value_page_pv"></span>
-                    </div>
-				
             </div>
         </div>
         <hr class="clearfix">
@@ -461,13 +477,21 @@ stargazer(attitude[1:4,], summary = FALSE, rownames = TRUE)</code></pre>
 <p><img src="http://static.datartisan.com/upload/attachment/2016/12/O5nnDnBH.png" alt="展示数据集"></p>
 <p>可以看到，<code>attitude</code> 数据集中包括 <code>rating</code>、<code>complaints</code> 等多个变量，数据展示形式为 <strong>三线表</strong> 。</p>
 <h3 id="列联表"><a href="#列联表" class="headerlink" title="列联表"></a>列联表</h3><p><code>stargazer</code> 也可以用来展示向量、矩阵或者数据框的内容。在这里我们建立了 <code>attitude</code> 数据集中变量 <code>rating</code>、<code>complaints</code>、<code>privileges</code> 的相关系数矩阵，并予以展示：</p>
-<pre class=" language-R"><code class="language-R">correlation.matrix <- cor(attitude[,c("rating", "complaints", "privileges")]) stargazer(correlation.matrix, title="Correlation Matrix" )< code></-></code></pre>
+<pre class=" language-R"><code class="language-R">correlation.matrix <- cor(attitude[,c("rating", "complaints", "privileges")])
+stargazer(correlation.matrix, title = "Correlation Matrix")</code></pre>
 <p><img src="http://static.datartisan.com/upload/attachment/2016/12/cC2cR66K.png" alt="矩阵展示"></p>
 <hr>
 <h2 id="统计模型结果"><a href="#统计模型结果" class="headerlink" title="统计模型结果"></a>统计模型结果</h2><h3 id="回归表"><a href="#回归表" class="headerlink" title="回归表"></a>回归表</h3><p>在 R 中可以很方便的使用 <code>lm()</code> 和 <code>glm()</code> 函数来构建回归模型，我们同样可以在同一张表中对这些模型进行比较，参数 <code>title</code> 用来设定表的标题，参数 <code>align</code> 使每列中的系数沿小数点对齐：</p>
 <pre class=" language-R"><code class="language-R">## 构建两个线性回归模型
-linear.1 <- lm(rating ~ complaints + privileges learning raises critical, data="attitude)" linear.2 <- learning, ## 构建一个 probit 模型 attitude$high.rating (attitude$rating> 70)
-probit.model <- glm(high.rating ~ learning + critical advance, data="attitude," family="binomial(link" = "probit")) stargazer(linear.1, linear.2, probit.model, title="Results" , align="TRUE)</code"></-></-></code></pre>
+linear.1 <- lm(rating ~ complaints + privileges + learning + raises + critical,
+data = attitude)
+linear.2 <- lm(rating ~ complaints + privileges + learning, data = attitude)
+## 构建一个 probit 模型
+attitude$high.rating <- (attitude$rating > 70)
+probit.model <- glm(high.rating ~ learning + critical + advance, data = attitude,
+family = binomial(link = "probit"))
+
+stargazer(linear.1, linear.2, probit.model, title = "Results", align = TRUE)</code></pre>
 <p><img src="http://static.datartisan.com/upload/attachment/2016/12/Cyqs7adZ.png" alt="回归表"></p>
 <h4 id="回归表的修饰"><a href="#回归表的修饰" class="headerlink" title="回归表的修饰"></a>回归表的修饰</h4><p>为了使表格更加标准，我们还可以通过调整参数进行以下操作：</p>
 <ul>
@@ -486,7 +510,7 @@ omit.stat = c("LL", "ser", "f"), no.space = TRUE)</code></pre>
 <ol>
 <li><p>使用 <code>dep.var.labels</code> 和 <code>covariate.lables</code> 参数分别将因变量和自变量重命名为容易理解的形式；</p>
 </li>
-<li><p>使用 <code>omit.stat</code> 参数移除对数似然比（<code>&quot;LL&quot;</code>）、标准化残差（<code>&quot;ser&quot;</code>）和 F 统计量（<code>&quot;f&quot;</code>）；</p>
+<li><p>使用 <code>omit.stat</code> 参数移除对数似然比（<code>"LL"</code>）、标准化残差（<code>"ser"</code>）和 F 统计量（<code>"f"</code>）；</p>
 </li>
 <li><p>使用<code>no.space</code>参数将输出表格中的空行删去。</p>
 </li>
@@ -504,7 +528,7 @@ covariate.labels = c("Handling of Complaints", "No Special Privileges",
 omit.stat = c("LL","ser","f"), ci = TRUE, ci.level = 0.90, single.row = TRUE)</code></pre>
 <p><img src="http://static.datartisan.com/upload/attachment/2016/12/rUe11IM4.png" alt="展示置信区间"></p>
 <h4 id="其他修饰功能"><a href="#其他修饰功能" class="headerlink" title="其他修饰功能"></a>其他修饰功能</h4><blockquote>
-<p>控制自变量展示的顺序：<code>order</code><br>控制要展示的统计量：<code>keep.stat</code> , <code>keep.stat = &quot;n&quot;</code> 即只展示样本量的大小，并移除其他统计量</p>
+<p>控制自变量展示的顺序：<code>order</code><br>控制要展示的统计量：<code>keep.stat</code> , <code>keep.stat = "n"</code> 即只展示样本量的大小，并移除其他统计量</p>
 </blockquote>
 <pre class=" language-R"><code class="language-R">stargazer(linear.1, linear.2, title = "Regression Results",
 dep.var.labels = c("Overall Rating", "High Rating"),
@@ -519,7 +543,11 @@ keep.stat = "n", ci = TRUE, ci.level = 0.90, single.row = TRUE, header = F)</cod
 <p><img src="http://static.datartisan.com/upload/attachment/2016/12/gOA9wyCN.png" alt="控制输出格式"></p>
 <h4 id="自定义统计量"><a href="#自定义统计量" class="headerlink" title="自定义统计量"></a>自定义统计量</h4><p>我们使用 <code>sandwich</code> 包来计算异方差-稳健标准误，并将其与默认计算的标准差一同展示。</p>
 <pre class=" language-R"><code class="language-R">library(sandwich)
-cov <- vcovhc(linear.1, type="HC" ) robust.se <- sqrt(diag(cov)) stargazer(linear.1, linear.1, se="list(NULL," robust.se), column.labels="c(" default"," "robust"))< code></-></code></pre>
+cov <- vcovHC(linear.1, type = "HC")
+robust.se <- sqrt(diag(cov))
+
+stargazer(linear.1, linear.1, se = list(NULL, robust.se),
+column.labels = c("default", "robust"))</code></pre>
 <p><img src="http://static.datartisan.com/upload/attachment/2016/12/PC8L8NoB.png" alt="自定义统计量"></p>
 <h3 id="支持的模型"><a href="#支持的模型" class="headerlink" title="支持的模型"></a>支持的模型</h3><p>目前 <code>stargazer</code> 支持以下模型结果的展示：</p>
 <blockquote>
@@ -533,7 +561,7 @@ stargazer<span class="token punctuation">(</span>model<span class="token punctua
 <blockquote>
 <p><strong>注意事项：</strong></p>
 <ul>
-<li>要加上 <code>results=&#39;asis&#39;</code> 保证输出的是表格，而不是 LATEX 文本；</li>
+<li>要加上 <code>results='asis'</code> 保证输出的是表格，而不是 LATEX 文本；</li>
 <li>参数 <code>align</code> 失效，不能使用；</li>
 <li>加上参数 <code>header=FALSE</code>，避免输出关于包作者的一些文本信息。</li>
 </ul>
@@ -544,9 +572,27 @@ stargazer<span class="token punctuation">(</span>model<span class="token punctua
 <li>Hlavac, Marek (2018). stargazer: Well-Formatted Regression and Summary Statistics<br>Tables. R package version 5.2.2. <a href="https://CRAN.R-project.org/package=stargazer" target="_blank" rel="noopener">https://CRAN.R-project.org/package=stargazer</a></li>
 </ul>
 </blockquote>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
             </div>
-            <hr>
+            <hr/>
 
             
             <style>
@@ -694,14 +740,18 @@ stargazer<span class="token punctuation">(</span>model<span class="token punctua
         
             <div class="center-align">
                 <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
-                    <img alt style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png">
+                    <img alt=""
+                         style="border-width:0"
+                         src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
                 </a>
             </div>
-            <br>
-            <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">
+            <br/>
+            <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
+                  property="dct:title" rel="dct:type">
                     《stargazer：R 语言输出统计表》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2018/10/30/stargazer-r-yu-yan-shu-chu-tong-ji-biao/" property="cc:attributionName" rel="cc:attributionURL">
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2018/10/30/stargazer-r-yu-yan-shu-chu-tong-ji-biao/" property="cc:attributionName"
+               rel="cc:attributionURL">
                 divinerhjf
             </a> 采用
             <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
@@ -1017,25 +1067,43 @@ stargazer<span class="token punctuation">(</span>model<span class="token punctua
         <div class="col s12 m8 l8 copy-right">
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数 : &nbsp;
-                <span class="white-color">27.9k</span>
+                <span class="white-color">28.4k</span>
             
+
+            <br>
+            <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+            <script>
+                var now = new Date();
+                function createtime() {
+                    var grt = new Date("5/20/2018 00:00:00");
+                    now.setTime(now.getTime() + 250);
+                    days = (now - grt) / 1000 / 60 / 60 / 24;
+                    dnum = Math.floor(days);
+                    hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
+                    hnum = Math.floor(hours);
+                    if (String(hnum).length == 1) {
+                        hnum = "0" + hnum;
+                    }
+                    minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+                    mnum = Math.floor(minutes);
+                    if (String(mnum).length == 1) {
+                        mnum = "0" + mnum;
+                    }
+                    seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+                    snum = Math.round(seconds);
+                    if (String(snum).length == 1) {
+                        snum = "0" + snum;
+                    }
+                    document.getElementById("timeDate").innerHTML = "本站已安全运行 " + dnum + " 天 ";
+                    document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+                }
+                setInterval("createtime()", 250);
+            </script>
 
             
 			
-                <br>
-                
-                <span id="busuanzi_container_site_pv">
-                    访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
-                </span>
-                
-                
-                <span id="busuanzi_container_site_uv">
-                    次  &nbsp;|&nbsp;  访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人
-                </span>
-                
-            
         </div>
-        <div class="col s12 m4 l4 social-link social-statis">
+        <div class="col s12 m4 l4 social-link ">
     <a href="https://github.com/DivinerHJF" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fa fa-github"></i>
     </a>
@@ -1057,6 +1125,14 @@ stargazer<span class="token punctuation">(</span>model<span class="token punctua
     <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
         <i class="fa fa-rss"></i>
     </a>
+
+
+
+
+
+
+
+
 </div>
     </div>
 </footer>
@@ -1069,7 +1145,8 @@ stargazer<span class="token punctuation">(</span>model<span class="token punctua
     <div class="modal-content">
         <div class="search-header">
             <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
-            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input">
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
         </div>
         <div id="searchResult"></div>
     </div>
@@ -1102,8 +1179,6 @@ $(function () {
 
     <script src="/libs/others/clicklove.js"></script>
 
-
-    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
 
 
 </body>
