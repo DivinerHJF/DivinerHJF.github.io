@@ -16,6 +16,9 @@ menu:
   About:
     url: /about
     icon: fa-user-circle-o
+  Contact:
+    url: /contact
+    icon: fa-comments     
   Friends:
     url: /friends
     icon: fa-address-book
@@ -99,6 +102,10 @@ socialLink:
   qq: 1246574158
   github: https://github.com/DivinerHJF
   email: haojianfeng1997@gmail.com
+  facebook: 
+  twitter: 
+  weibo: 
+  zhihu: 
 
 # Whether to activate the Post TOC, and Configure which title types are supported by TOC support.
 # You can add `toc: false` to the Front-matter of a post to turn off the TOC.
