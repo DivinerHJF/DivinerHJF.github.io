@@ -542,7 +542,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"软件推荐","value":1},{"name":"排版","value":1},{"name":"R","value":8},{"name":"算法","value":2}],
+                data: [{"name":"排版","value":1},{"name":"R","value":8},{"name":"软件推荐","value":1},{"name":"算法","value":2}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -566,7 +566,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
         xAxis: [
             {
                 type: 'category',
-                data: ["R","数据可视化","机器学习","可视化","API","REmap","地图可视化","apply","数据操作","formattable"]
+                data: ["R","数据可视化","机器学习","lattice","数据处理","apply","数据操作","Cmd-Markdown","formattable","数据展示"]
             }
         ],
         yAxis: [
@@ -747,12 +747,6 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
         <div class="tag-chips center-align">
             
             
-            <a href="/tags/Cmd-Markdown/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">Cmd-Markdown</span>
-            </a>
-            
-            
-            
             <a href="/tags/Markdown/" target="_blank">
                 <span class="chip center-align waves-effect waves-light chip-default">Markdown</span>
             </a>
@@ -767,20 +761,14 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             
             
             
-            <a href="/tags/API/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">API</span>
+            <a href="/tags/DT/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">DT</span>
             </a>
             
             
             
-            <a href="/tags/REmap/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">REmap</span>
-            </a>
-            
-            
-            
-            <a href="/tags/地图可视化/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">地图可视化</span>
+            <a href="/tags/数据处理/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">数据处理</span>
             </a>
             
             
@@ -793,6 +781,12 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             
             <a href="/tags/数据操作/" target="_blank">
                 <span class="chip center-align waves-effect waves-light chip-default">数据操作</span>
+            </a>
+            
+            
+            
+            <a href="/tags/Cmd-Markdown/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">Cmd-Markdown</span>
             </a>
             
             
@@ -815,50 +809,20 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             
             
             
-            <a href="/tags/DT/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">DT</span>
+            <a href="/tags/API/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">API</span>
             </a>
             
             
             
-            <a href="/tags/数据处理/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">数据处理</span>
+            <a href="/tags/REmap/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">REmap</span>
             </a>
             
             
             
-            <a href="/tags/stargazer/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">stargazer</span>
-            </a>
-            
-            
-            
-            <a href="/tags/可视化/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">可视化</span>
-            </a>
-            
-            
-            
-            <a href="/tags/统计表/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">统计表</span>
-            </a>
-            
-            
-            
-            <a href="/tags/customLayout/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">customLayout</span>
-            </a>
-            
-            
-            
-            <a href="/tags/绘图/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">绘图</span>
-            </a>
-            
-            
-            
-            <a href="/tags/图片布局/" target="_blank">
-                <span class="chip center-align waves-effect waves-light chip-default">图片布局</span>
+            <a href="/tags/地图可视化/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">地图可视化</span>
             </a>
             
             
@@ -895,6 +859,42 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             
             <a href="/tags/可重复性/" target="_blank">
                 <span class="chip center-align waves-effect waves-light chip-default">可重复性</span>
+            </a>
+            
+            
+            
+            <a href="/tags/customLayout/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">customLayout</span>
+            </a>
+            
+            
+            
+            <a href="/tags/绘图/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">绘图</span>
+            </a>
+            
+            
+            
+            <a href="/tags/图片布局/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">图片布局</span>
+            </a>
+            
+            
+            
+            <a href="/tags/stargazer/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">stargazer</span>
+            </a>
+            
+            
+            
+            <a href="/tags/可视化/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">可视化</span>
+            </a>
+            
+            
+            
+            <a href="/tags/统计表/" target="_blank">
+                <span class="chip center-align waves-effect waves-light chip-default">统计表</span>
             </a>
             
             
