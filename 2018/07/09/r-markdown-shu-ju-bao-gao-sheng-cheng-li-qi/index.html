@@ -414,8 +414,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/R/" class="post-category" target="_blank">
-                                R
+                            <a href="/categories/编程之道/" class="post-category" target="_blank">
+                                编程之道
                             </a>
                         
                     </div>
@@ -453,7 +453,7 @@
             <div id="articleContent">
                 <p>R Markdown 站在 knitr 和 Pandoc 的肩膀上，前者执行嵌入于文档中的计算机代码，并将 R Markdown 转换为 Markdown；后者将 Markdown 呈现出您想要的输出格式（如 PDF、HTML、Word 等）</p>
 <p>此篇文章翻译自谢益辉新书 <a href="https://bookdown.org/yihui/rmarkdown/" target="_blank" rel="noopener">《R Markdown: The Definitive Guide》</a> 的前三章节，内容有所删减，主要介绍了 R Markdown 的相关结构及语法规则，如果想了解更多更详细的内容推荐您阅读原书。</p>
-<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>这里假设您已经安装了 R (<a href="https://www.r-project.org/" target="_blank" rel="noopener">https://www.r-project.org</a>)  和 RStudio IDE (<a href="https://www.rstudio.com/" target="_blank" rel="noopener">https://www.rstudio.com</a>) 。Rstudio 并不是必须的，但安装它会使您更加容易地使用 R Markdown。如果您没有安装 RStudio IDE，您将不得不安装 Pandoc（ <a href="http://pandoc.org" target="_blank" rel="noopener">http://pandoc.org</a> ），否则就不需要单独安装 Pandoc，因为在安装 RStudio 时已经将它捆绑安装了。接下来，您可以在 R 中安装 <code>rmarkdown</code> 包： </p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>这里假设您已经安装了 R (<a href="https://www.r-project.org/" target="_blank" rel="noopener">https://www.r-project.org</a>)  和 RStudio IDE (<a href="https://www.rstudio.com/" target="_blank" rel="noopener">https://www.rstudio.com</a>) 。Rstudio 并不是必须的，但安装它会使您更加容易地使用 R Markdown。如果您没有安装 RStudio IDE，您将不得不安装 Pandoc（ <a href="http://pandoc.org" target="_blank" rel="noopener">http://pandoc.org</a> ），否则就不需要单独安装 Pandoc，因为在安装 RStudio 时已经将它捆绑安装了。接下来，您可以在 R 中安装 <code>rmarkdown</code> 包：</p>
 <pre class=" language-R"><code class="language-R"># Install from CRAN
 install.packages('rmarkdown')
 
@@ -462,11 +462,11 @@ install.packages('rmarkdown')
 if (!requireNamespace("devtools"))
   install.packages('devtools')
 devtools::install_github('rstudio/rmarkdown')</code></pre>
-<p>如果您想要生成 PDF 类型文档输出，您将需要安装 LaTeX 。对于那些以前没有安装过 LaTeX 的 R Markdown 用户，我们建议您安装 TinyTeX（<a href="https://yihui./tinytex/）：" target="_blank" rel="noopener">https://yihui./tinytex/）：</a> </p>
+<p>如果您想要生成 PDF 类型文档输出，您将需要安装 LaTeX 。对于那些以前没有安装过 LaTeX 的 R Markdown 用户，我们建议您安装 TinyTeX（<a href="https://yihui./tinytex/）：" target="_blank" rel="noopener">https://yihui./tinytex/）：</a></p>
 <pre class=" language-R"><code class="language-R">install.packages("tinytex")
 tinytex::install_tinytex()  # install TinyTeX</code></pre>
-<p>TinyTeX 相当于一款轻量级、跨平台、易于维护的 LaTeX 。在将 LaTeX  或 R Markdown 文档编译成 PDF 时，<code>tinytex</code> 可以帮助您自动安装所需的相关 R 包，同时还能确保一个 LaTeX  文档被编译成正确的次数，以解决所有的交叉引用问题。如果您不明白这两件事是什么意思，应该按照我们的建议来安装 TinyTeX，因为这些细节往往并不值得您花费时间和精力去关心。 </p>
-<p>使用 <code>rmarkdown</code> 包、RStudio/Pandoc 和 LaTeX，您应该能够编译大多数R Markdown 文档。在某些情况下，您可能需要其他软件包，我们将在必要时提到它们。 </p>
+<p>TinyTeX 相当于一款轻量级、跨平台、易于维护的 LaTeX 。在将 LaTeX  或 R Markdown 文档编译成 PDF 时，<code>tinytex</code> 可以帮助您自动安装所需的相关 R 包，同时还能确保一个 LaTeX  文档被编译成正确的次数，以解决所有的交叉引用问题。如果您不明白这两件事是什么意思，应该按照我们的建议来安装 TinyTeX，因为这些细节往往并不值得您花费时间和精力去关心。</p>
+<p>使用 <code>rmarkdown</code> 包、RStudio/Pandoc 和 LaTeX，您应该能够编译大多数R Markdown 文档。在某些情况下，您可能需要其他软件包，我们将在必要时提到它们。</p>
 <blockquote>
 <p><strong>参考文献</strong></p>
 <ul>
@@ -480,8 +480,8 @@ tinytex::install_tinytex()  # install TinyTeX</code></pre>
 <li>保存并执行代码；</li>
 <li>生成可共享的高质量报告。</li>
 </ul>
-<p>R Markdown 的设计初衷是为了更容易地实现报告内容的可重复性，这是因为计算代码和叙述都在同一个文档中，结果是由源代码自动生成的。并且 R Markdown 支持数十种静态和动态/交互式输出格式。 </p>
-<p>如果您更喜欢观看视频进行学习，我们建议您查看网站 <a href="https://rmarkdown.rstudio.com" target="_blank" rel="noopener">https://rmarkdown.rstudio.com</a>，并在 “Get Started ” 中观看视频，其中包括了 R Markdown 的基础知识。 </p>
+<p>R Markdown 的设计初衷是为了更容易地实现报告内容的可重复性，这是因为计算代码和叙述都在同一个文档中，结果是由源代码自动生成的。并且 R Markdown 支持数十种静态和动态/交互式输出格式。</p>
+<p>如果您更喜欢观看视频进行学习，我们建议您查看网站 <a href="https://rmarkdown.rstudio.com" target="_blank" rel="noopener">https://rmarkdown.rstudio.com</a>，并在 “Get Started ” 中观看视频，其中包括了 R Markdown 的基础知识。</p>
 <h2 id="文档结构"><a href="#文档结构" class="headerlink" title="文档结构"></a>文档结构</h2><p>下面是一份非常简易的 R Markdown 文档，是一个带有 <code>.Rmd</code> 拓展名的纯文本文档。</p>
 <ul>
 <li>YAML 元数据</li>
@@ -505,9 +505,9 @@ abline(fit)
 
 The slope of the regression is <span class="token code keyword">`r b[1]`</span>.
 ```</code></pre>
-<p>您可以使用任何文本编辑器（包括但不限于 RStudio）来创建这样的文本文档。如果使用 RStudio，您可以从 <code>File -&gt; New File -&gt; R Markdown</code> 中创建一个新的 Rmd 文档。 </p>
+<p>您可以使用任何文本编辑器（包括但不限于 RStudio）来创建这样的文本文档。如果使用 RStudio，您可以从 <code>File -&gt; New File -&gt; R Markdown</code> 中创建一个新的 Rmd 文档。</p>
 <p>一份 R Markdown 文档有三个基础组成部分：元数据，文本和代码。元数据是在三个连接符 <code>---</code> 之间的内容。元数据的语法是 YAML（ <a href="https://en.wikipedia.org/wiki/YAML" target="_blank" rel="noopener">YAML 不是标记语言</a> ），所以有时它也被称为 YAML metadata 或 YAML frontmatter。 需要注意的是，缩进在 YAML 中十分重要，忽视它会让你付出惨重代价。请参阅谢益辉所写的 《bookdown》（2016）一书中的 <a href="https://bookdown.org/yihui/bookdown/r-markdown.html" target="_blank" rel="noopener">附录b.2</a> 来了解一些简单的例子，这些示例展示了 YAML 语法。</p>
-<p>文档的主体遵循元数据书写的规则。文本的语法是 Markdown，将在第 2.5 节中进行介绍。有两种类型的计算机代码，在第 2.6 节中进行了详细解释： </p>
+<p>文档的主体遵循元数据书写的规则。文本的语法是 Markdown，将在第 2.5 节中进行介绍。有两种类型的计算机代码，在第 2.6 节中进行了详细解释：</p>
 <ul>
 <li><strong>代码块</strong>：以三个重音符及所使用语言开始，其中 <code>r</code> 代表所使用的程序语言，并以三个重音符结束。 可以在花括号中填写块选项（如：将图形高度设置为5英寸：<code>{r, fig.height=5}</code>）。</li>
 <li><strong>内联代码</strong>：以 ``r` 开始，并以单个重音符结束。</li>
@@ -535,7 +535,7 @@ The slope of the regression is <span class="token code keyword">`r b[1]`</span>.
 <pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">output</span><span class="token punctuation">:</span> tufte<span class="token punctuation">:</span><span class="token punctuation">:</span>tufte_html</code></pre>
 <p>每种输出格式通常都有多种格式选项。所有这些选项都记录在 R 包 help 页面上。例如，您可以在 R 中键入 <code>?rmarkdown::</code> 打开关于 <code>html_document</code> 格式的 help 页面。当您想要使用某些选项时，必须将这些值从 R 转换成 YAML，例如：</p>
 <pre class=" language-R"><code class="language-R">html_document(toc = TRUE, toc_depth = 2, dev = 'svg')</code></pre>
-<p>可以用 YAML 写为： </p>
+<p>可以用 YAML 写为：</p>
 <pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">output</span><span class="token punctuation">:</span>
   <span class="token key atrule">html_document</span><span class="token punctuation">:</span>
     <span class="token key atrule">toc</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
@@ -564,23 +564,23 @@ The slope of the regression is <span class="token code keyword">`r b[1]`</span>.
     <span class="token key atrule">toc</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
     <span class="token key atrule">pandoc_args</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">"--wrap=none"</span><span class="token punctuation">,</span> <span class="token string">"--top-level-division=chapter"</span><span class="token punctuation">]</span></code></pre>
 <h2 id="Markdown-语法"><a href="#Markdown-语法" class="headerlink" title="Markdown 语法"></a>Markdown 语法</h2><h3 id="内联格式"><a href="#内联格式" class="headerlink" title="内联格式"></a>内联格式</h3><ul>
-<li><p>_斜体_ ：<code>_text_</code> 或 <code>*text*</code> </p>
+<li><p>_斜体_ ：<code>_text_</code> 或 <code>*text*</code></p>
 </li>
 <li><p><strong>粗体</strong> ：<code>**text**</code></p>
 </li>
-<li><p>下标 ：<code>H~3~PO~4~</code>  渲染为 $H_3PO_4$ </p>
+<li><p>下标 ：<code>H~3~PO~4~</code>  渲染为 $H_3PO_4$</p>
 </li>
-<li><p>上标 ：<code>Cu^2+^</code>  渲染为 $Cu^{2+}$ </p>
+<li><p>上标 ：<code>Cu^2+^</code>  渲染为 $Cu^{2+}$</p>
 </li>
-<li><p>脚注 ： <code>^[This is a footnote.]</code> </p>
+<li><p>脚注 ： <code>^[This is a footnote.]</code></p>
 </li>
 <li><p>内联代码 ：<code>`code`</code> , 可以使用 n+1 个重音符输出包含 n 个重音符的代码块。</p>
 </li>
-<li><p>超链接 ：<code>[text](link)</code> </p>
+<li><p>超链接 ：<code>[text](link)</code></p>
 </li>
 <li><p>图片链接 ： <code>![alt text or image title](path/to/image)</code></p>
 </li>
-<li><p>引用 ： </p>
+<li><p>引用 ：</p>
 <pre class=" language-ruby"><code class="language-ruby"><span class="token variable">@Manual</span><span class="token punctuation">{</span><span class="token constant">R</span><span class="token operator">-</span>base<span class="token punctuation">,</span>
   title <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token constant">R</span><span class="token punctuation">:</span> <span class="token constant">A</span> <span class="token constant">Language</span> <span class="token keyword">and</span> <span class="token constant">Environment</span> <span class="token keyword">for</span> <span class="token constant">Statistical</span>
     <span class="token constant">Computing</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
@@ -600,7 +600,7 @@ The slope of the regression is <span class="token code keyword">`r b[1]`</span>.
 
 ### Third-level header</code></pre>
 <p>如果不想让某个标题被编号，可以在标题后面添加 <code>{-}</code> 或者 <code>{.unnumbered}</code>，如：</p>
-<pre class=" language-Markdown"><code class="language-Markdown"># Preface {-} </code></pre>
+<pre class=" language-Markdown"><code class="language-Markdown"># Preface {-}</code></pre>
 </li>
 <li><p><strong>无序列表</strong></p>
 <pre class=" language-Markdown"><code class="language-Markdown">- one item
@@ -638,8 +638,8 @@ Or indent by four spaces:
     This text is displayed verbatim / preformatted</code></pre>
 </li>
 </ul>
-<h3 id="数学表达式"><a href="#数学表达式" class="headerlink" title="数学表达式"></a>数学表达式</h3><p><code>$f(k) = {n \choose k} p^{k} (1-p)^{n-k}$</code> :  $f(k) = {n \choose k} p^{k} (1-p)^{n-k}$ </p>
-<p><code>$$f(k) = {n \choose k} p^{k} (1-p)^{n-k}$$</code> : </p>
+<h3 id="数学表达式"><a href="#数学表达式" class="headerlink" title="数学表达式"></a>数学表达式</h3><p><code>$f(k) = {n \choose k} p^{k} (1-p)^{n-k}$</code> :  $f(k) = {n \choose k} p^{k} (1-p)^{n-k}$</p>
+<p><code>$$f(k) = {n \choose k} p^{k} (1-p)^{n-k}$$</code> :</p>
 <p>$$<br>f(k) = {n \choose k} p^{k} (1-p)^{n-k}<br>$$</p>
 <hr>
 <h2 id="代码块选项"><a href="#代码块选项" class="headerlink" title="代码块选项"></a>代码块选项</h2><p>单击 <code>Insert</code> 按钮，对应快捷键为 <code>Ctrl + Alt + I</code> （macOS：<code>Cmd + Option + I</code> ）。</p>
@@ -669,7 +669,7 @@ x = rnorm(100)
 </li>
 <li><p><code>fig.width</code>，<code>fig.height</code> ：（图形设备）块的大小（英寸）。注意：<code>fig.dim = c(6, 4)</code> 意味着 <code>fig.width = 6</code> 并且 <code>fig.height = 4</code>；</p>
 </li>
-<li><p><code>out.width</code>， <code>out.height</code> ：输出文档中 R 图片的输出大小。可以使用百分比，例如 <code>out.width = '80%'</code> 表示页面宽度的 80%； </p>
+<li><p><code>out.width</code>， <code>out.height</code> ：输出文档中 R 图片的输出大小。可以使用百分比，例如 <code>out.width = '80%'</code> 表示页面宽度的 80%；</p>
 </li>
 <li><p><code>fig.align</code> ：图片的对齐方式；</p>
 </li>
@@ -677,7 +677,7 @@ x = rnorm(100)
 </li>
 <li><p><code>fig.cap</code> ：图片标题；</p>
 </li>
-<li><p><code>child</code> ：您可以在主文档中包含子文档。这个选项选择一条通向外部文件的路径。 </p>
+<li><p><code>child</code> ：您可以在主文档中包含子文档。这个选项选择一条通向外部文件的路径。</p>
 </li>
 </ul>
 <p>如果某个选项需要经常被设置为多个代码块中的值，您可以考虑在文档的第一个代码块中全局设置它：</p>
@@ -688,16 +688,16 @@ knitr::opts_chunk$set(fig.width = 8, collapse = TRUE)
 <pre class=" language-R"><code class="language-R">```{r, out.width='25%', fig.align='center', fig.cap='...'}
 knitr::include_graphics('images/hex-rmarkdown.png')
 ```</code></pre>
-<p>如果您想要淡入一个不是由 R 代码生成的图形，您可以使用 <code>knitr::include_graphics()</code>  函数，它使您能够更好地控制图像的属性，而不是像 <code>![alt text or image title](path/to/image)</code> 这样的 Markdown 语法难以调解图片属性。 </p>
+<p>如果您想要淡入一个不是由 R 代码生成的图形，您可以使用 <code>knitr::include_graphics()</code>  函数，它使您能够更好地控制图像的属性，而不是像 <code>![alt text or image title](path/to/image)</code> 这样的 Markdown 语法难以调解图片属性。</p>
 <h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><p>使用 <code>knitr::kable()</code>  函数可以简易的创建表格，表格标题可以通过 <code>caption</code>  来设置，例如：</p>
 <pre class=" language-R"><code class="language-R">```{r tables-mtcars}
 knitr::kable(iris[1:5, ], caption = 'A caption')
 ```</code></pre>
-<p>如果您正在寻找更高级的表格样式控制，建议您使用 <a href="https://cran.r-project.org/package=kableExtra" target="_blank" rel="noopener">kableExtra</a> 包，它提供了定制 PDF 和 HTML 表格外观的功能。在第 12.3 节中解释了 <code>bookdown</code> 包如何扩展 rmarkdown 的功能，以允许在文本中轻松地交叉引用数字和表格。 </p>
+<p>如果您正在寻找更高级的表格样式控制，建议您使用 <a href="https://cran.r-project.org/package=kableExtra" target="_blank" rel="noopener">kableExtra</a> 包，它提供了定制 PDF 和 HTML 表格外观的功能。在第 12.3 节中解释了 <code>bookdown</code> 包如何扩展 rmarkdown 的功能，以允许在文本中轻松地交叉引用数字和表格。</p>
 <blockquote>
 <p><strong>参考文献</strong></p>
 <ul>
-<li>Xie, Yihui. 2015. _Dynamic Documents with R and Knitr_. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. <a href="https://yihui.name/knitr/" target="_blank" rel="noopener">https://yihui.name/knitr/</a>. </li>
+<li>Xie, Yihui. 2015. _Dynamic Documents with R and Knitr_. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. <a href="https://yihui.name/knitr/" target="_blank" rel="noopener">https://yihui.name/knitr/</a>.</li>
 </ul>
 </blockquote>
 <hr>
@@ -756,7 +756,7 @@ knitr::kable(iris[1:5, ], caption = 'A caption')
     <span class="token key atrule">highlight</span><span class="token punctuation">:</span> tango
 <span class="token punctuation">---</span></code></pre>
 <ul>
-<li><code>theme</code>  ：主题是从 <a href="https://bootswatch.com/3/" target="_blank" rel="noopener">Bootswatch</a> 主题库中提取的，适用的主题包括：<code>default</code>, <code>cerulean</code>, <code>journal</code>, <code>flatly</code>, <code>readable</code>, <code>spacelab</code>, <code>united</code>, <code>cosmo</code>, <code>lumen</code>, <code>paper</code>, <code>sandstone</code>, <code>simplex</code>, 和 <code>yeti</code>. </li>
+<li><code>theme</code>  ：主题是从 <a href="https://bootswatch.com/3/" target="_blank" rel="noopener">Bootswatch</a> 主题库中提取的，适用的主题包括：<code>default</code>, <code>cerulean</code>, <code>journal</code>, <code>flatly</code>, <code>readable</code>, <code>spacelab</code>, <code>united</code>, <code>cosmo</code>, <code>lumen</code>, <code>paper</code>, <code>sandstone</code>, <code>simplex</code>, 和 <code>yeti</code>.</li>
 <li><code>highlight</code> ：代码高亮模式。支持的风格包括： <code>default</code>,  <code>tango</code>,  <code>pygments</code>,  <code>kate</code>,  <code>monochrome</code>,  <code>espresso</code>,  <code>zenburn</code>,  <code>haddock</code> 和 <code>textmate</code>.  </li>
 </ul>
 <h3 id="图片选项"><a href="#图片选项" class="headerlink" title="图片选项"></a>图片选项</h3><pre class=" language-yaml"><code class="language-yaml"><span class="token punctuation">---</span>
@@ -807,9 +807,9 @@ knitr::kable(iris[1:5, ], caption = 'A caption')
 
 ​``` <span class="token punctuation">{</span>r<span class="token punctuation">,</span> rows.print=5<span class="token punctuation">}</span>
 mtcars
-​``` </code></pre>
+​```</code></pre>
 <p><img src="https://bookdown.org/yihui/rmarkdown/images/paged.png" alt="mtcars"></p>
-<p>TABLE 3.2: The options for paged HTML tables. </p>
+<p>TABLE 3.2: The options for paged HTML tables.</p>
 <table>
 <thead>
 <tr>
@@ -863,7 +863,7 @@ mtcars
   <span class="token key atrule">html_document</span><span class="token punctuation">:</span>
     <span class="token key atrule">keep_md</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
 <span class="token punctuation">---</span></code></pre>
-<h4 id="添加本地-HTML-文档"><a href="#添加本地-HTML-文档" class="headerlink" title="添加本地 HTML 文档"></a>添加本地 HTML 文档</h4><p>可以通过添加额外的 HTML 内容或完全替换核心 Pandoc 模板来完成更高级的输出定制。为了在文档头部或文档主体之前/之后包含内容，您可以使用以下选项： </p>
+<h4 id="添加本地-HTML-文档"><a href="#添加本地-HTML-文档" class="headerlink" title="添加本地 HTML 文档"></a>添加本地 HTML 文档</h4><p>可以通过添加额外的 HTML 内容或完全替换核心 Pandoc 模板来完成更高级的输出定制。为了在文档头部或文档主体之前/之后包含内容，您可以使用以下选项：</p>
 <pre class=" language-yaml"><code class="language-yaml"><span class="token punctuation">---</span>
 <span class="token key atrule">title</span><span class="token punctuation">:</span> <span class="token string">"Habits"</span>
 <span class="token key atrule">output</span><span class="token punctuation">:</span>
@@ -1147,8 +1147,8 @@ mtcars
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/R/" class="post-category" target="_blank">
-                                    R
+                            <a href="/categories/编程之道/" class="post-category" target="_blank">
+                                    编程之道
                                 </a>
                             
                             
@@ -1208,8 +1208,8 @@ mtcars
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/R/" class="post-category" target="_blank">
-                                    R
+                            <a href="/categories/可视化/" class="post-category" target="_blank">
+                                    可视化
                                 </a>
                             
                             
@@ -1218,6 +1218,10 @@ mtcars
                 </div>
                 
                 <div class="card-action article-tags">
+                    
+                    <a href="/tags/R/" target="_blank">
+                        <span class="chip bg-color">R</span>
+                    </a>
                     
                     <a href="/tags/数据可视化/" target="_blank">
                         <span class="chip bg-color">数据可视化</span>
@@ -1387,7 +1391,7 @@ mtcars
         <div class="col s12 m8 l8 copy-right">
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数 : &nbsp;
-                <span class="white-color">28.4k</span>
+                <span class="white-color">32.4k</span>
             
 
             <br>

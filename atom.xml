@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://divinerhjf.github.io/"/>
-  <updated>2019-05-27T07:48:05.932Z</updated>
+  <updated>2020-03-03T08:49:20.377Z</updated>
   <id>https://divinerhjf.github.io/</id>
   
   <author>
@@ -15,6 +15,60 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数据库漫游指南 - SQL</title>
+    <link href="https://divinerhjf.github.io/2020/02/08/sql-tutorial/"/>
+    <id>https://divinerhjf.github.io/2020/02/08/sql-tutorial/</id>
+    <published>2020-02-08T06:28:47.000Z</published>
+    <updated>2020-03-03T08:49:20.377Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;SQL（Structured Query Language）是「结构化查询语言」，它是对关系型数据库的操作语言。它可以应用到所有关系型数据库中，例如：MySQL、Oracle、SQL Server等。它主要划分为以下几类：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;DQL - Data Query Language&lt;/strong&gt;：数据查询语言，用来查询记录（数据）。&lt;u&gt;select&lt;/u&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;DDL - Data Definition Language&lt;/strong&gt;：数据定义语言，用来定义数据库对象；&lt;u&gt;create/drop/alter&lt;/u&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;DML - Data Manipulation Language&lt;/strong&gt;：数据操作语言，用来定义数据库记录；&lt;u&gt;Insert/delete/update&lt;/u&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;DCL - Data Control Language&lt;/strong&gt;：数据控制语言，用来定义访问权限和安全级别；&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="编程之道" scheme="https://divinerhjf.github.io/categories/%E7%BC%96%E7%A8%8B%E4%B9%8B%E9%81%93/"/>
+    
+    
+      <category term="SQL" scheme="https://divinerhjf.github.io/tags/SQL/"/>
+    
+      <category term="Database" scheme="https://divinerhjf.github.io/tags/Database/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python 漫游指南 - 数据库</title>
+    <link href="https://divinerhjf.github.io/2020/02/02/database-python/"/>
+    <id>https://divinerhjf.github.io/2020/02/02/database-python/</id>
+    <published>2020-02-01T23:19:59.000Z</published>
+    <updated>2020-03-03T08:48:40.526Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这两天待在家里比较闲，利用网络资源学了点儿数据库相关知识，同时对如何用 Python 与数据库进行交互有了进一步的了解。在这里主要是概览性的记录一下学习到的知识点，以备日后温习之用。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="编程之道" scheme="https://divinerhjf.github.io/categories/%E7%BC%96%E7%A8%8B%E4%B9%8B%E9%81%93/"/>
+    
+    
+      <category term="Python" scheme="https://divinerhjf.github.io/tags/Python/"/>
+    
+      <category term="MySQL" scheme="https://divinerhjf.github.io/tags/MySQL/"/>
+    
+      <category term="MongoDB" scheme="https://divinerhjf.github.io/tags/MongoDB/"/>
+    
+      <category term="Redis" scheme="https://divinerhjf.github.io/tags/Redis/"/>
+    
+  </entry>
   
   <entry>
     <title>数据挖掘 | 决策树</title>
@@ -81,7 +135,7 @@
     <link href="https://divinerhjf.github.io/2018/11/10/customlayout-r-yu-yan-zi-you-pin-tu/"/>
     <id>https://divinerhjf.github.io/2018/11/10/customlayout-r-yu-yan-zi-you-pin-tu/</id>
     <published>2018-11-10T02:51:49.000Z</published>
-    <updated>2019-05-07T17:09:00.902Z</updated>
+    <updated>2020-03-03T08:52:09.767Z</updated>
     
     <summary type="html">
     
@@ -96,7 +150,7 @@
     
     </summary>
     
-      <category term="R" scheme="https://divinerhjf.github.io/categories/R/"/>
+      <category term="可视化" scheme="https://divinerhjf.github.io/categories/%E5%8F%AF%E8%A7%86%E5%8C%96/"/>
     
     
       <category term="R" scheme="https://divinerhjf.github.io/tags/R/"/>
@@ -114,7 +168,7 @@
     <link href="https://divinerhjf.github.io/2018/10/30/stargazer-r-yu-yan-shu-chu-tong-ji-biao/"/>
     <id>https://divinerhjf.github.io/2018/10/30/stargazer-r-yu-yan-shu-chu-tong-ji-biao/</id>
     <published>2018-10-30T08:20:03.000Z</published>
-    <updated>2019-05-24T16:09:16.276Z</updated>
+    <updated>2020-03-03T08:51:04.516Z</updated>
     
     <summary type="html">
     
@@ -129,7 +183,7 @@
     
     </summary>
     
-      <category term="R" scheme="https://divinerhjf.github.io/categories/R/"/>
+      <category term="编程之道" scheme="https://divinerhjf.github.io/categories/%E7%BC%96%E7%A8%8B%E4%B9%8B%E9%81%93/"/>
     
     
       <category term="R" scheme="https://divinerhjf.github.io/tags/R/"/>
@@ -147,7 +201,7 @@
     <link href="https://divinerhjf.github.io/2018/07/09/r-markdown-shu-ju-bao-gao-sheng-cheng-li-qi/"/>
     <id>https://divinerhjf.github.io/2018/07/09/r-markdown-shu-ju-bao-gao-sheng-cheng-li-qi/</id>
     <published>2018-07-09T14:44:09.000Z</published>
-    <updated>2019-05-24T13:59:43.853Z</updated>
+    <updated>2020-03-03T08:51:11.552Z</updated>
     
     <summary type="html">
     
@@ -161,7 +215,7 @@
     
     </summary>
     
-      <category term="R" scheme="https://divinerhjf.github.io/categories/R/"/>
+      <category term="编程之道" scheme="https://divinerhjf.github.io/categories/%E7%BC%96%E7%A8%8B%E4%B9%8B%E9%81%93/"/>
     
     
       <category term="R Markdown" scheme="https://divinerhjf.github.io/tags/R-Markdown/"/>
@@ -177,7 +231,7 @@
     <link href="https://divinerhjf.github.io/2018/04/07/shu-ju-ke-shi-hua-r-hui-tu-bao-xi-lie/"/>
     <id>https://divinerhjf.github.io/2018/04/07/shu-ju-ke-shi-hua-r-hui-tu-bao-xi-lie/</id>
     <published>2018-04-07T09:30:49.000Z</published>
-    <updated>2019-05-07T16:48:54.264Z</updated>
+    <updated>2020-03-03T08:51:58.732Z</updated>
     
     <summary type="html">
     
@@ -192,8 +246,10 @@
     
     </summary>
     
-      <category term="R" scheme="https://divinerhjf.github.io/categories/R/"/>
+      <category term="可视化" scheme="https://divinerhjf.github.io/categories/%E5%8F%AF%E8%A7%86%E5%8C%96/"/>
     
+    
+      <category term="R" scheme="https://divinerhjf.github.io/tags/R/"/>
     
       <category term="数据可视化" scheme="https://divinerhjf.github.io/tags/%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96/"/>
     
@@ -210,7 +266,7 @@
     <link href="https://divinerhjf.github.io/2018/04/05/shu-ju-ke-shi-hua-di-tu-ke-shi-hua-xi-lie-wen-zhang/"/>
     <id>https://divinerhjf.github.io/2018/04/05/shu-ju-ke-shi-hua-di-tu-ke-shi-hua-xi-lie-wen-zhang/</id>
     <published>2018-04-05T14:30:49.000Z</published>
-    <updated>2019-05-27T08:01:46.058Z</updated>
+    <updated>2020-03-03T08:51:50.382Z</updated>
     
     <summary type="html">
     
@@ -225,7 +281,7 @@
     
     </summary>
     
-      <category term="R" scheme="https://divinerhjf.github.io/categories/R/"/>
+      <category term="可视化" scheme="https://divinerhjf.github.io/categories/%E5%8F%AF%E8%A7%86%E5%8C%96/"/>
     
     
       <category term="R" scheme="https://divinerhjf.github.io/tags/R/"/>
@@ -243,7 +299,7 @@
     <link href="https://divinerhjf.github.io/2018/04/05/dt-datatables-ku-de-r-jie-kou/"/>
     <id>https://divinerhjf.github.io/2018/04/05/dt-datatables-ku-de-r-jie-kou/</id>
     <published>2018-04-05T07:00:11.000Z</published>
-    <updated>2019-05-07T16:42:21.393Z</updated>
+    <updated>2020-03-03T08:51:40.333Z</updated>
     
     <summary type="html">
     
@@ -257,7 +313,7 @@
     
     </summary>
     
-      <category term="R" scheme="https://divinerhjf.github.io/categories/R/"/>
+      <category term="编程之道" scheme="https://divinerhjf.github.io/categories/%E7%BC%96%E7%A8%8B%E4%B9%8B%E9%81%93/"/>
     
     
       <category term="R" scheme="https://divinerhjf.github.io/tags/R/"/>
@@ -273,7 +329,7 @@
     <link href="https://divinerhjf.github.io/2018/03/22/shu-ju-ke-shi-hua-formattable-bao/"/>
     <id>https://divinerhjf.github.io/2018/03/22/shu-ju-ke-shi-hua-formattable-bao/</id>
     <published>2018-03-22T06:00:11.000Z</published>
-    <updated>2019-05-15T05:34:29.557Z</updated>
+    <updated>2020-03-03T08:52:18.135Z</updated>
     
     <summary type="html">
     
@@ -288,7 +344,7 @@
     
     </summary>
     
-      <category term="R" scheme="https://divinerhjf.github.io/categories/R/"/>
+      <category term="可视化" scheme="https://divinerhjf.github.io/categories/%E5%8F%AF%E8%A7%86%E5%8C%96/"/>
     
     
       <category term="R" scheme="https://divinerhjf.github.io/tags/R/"/>
@@ -306,7 +362,7 @@
     <link href="https://divinerhjf.github.io/2018/03/15/shu-ju-cao-zuo-apply-han-shu-zu/"/>
     <id>https://divinerhjf.github.io/2018/03/15/shu-ju-cao-zuo-apply-han-shu-zu/</id>
     <published>2018-03-15T04:19:00.000Z</published>
-    <updated>2019-05-15T05:34:27.983Z</updated>
+    <updated>2020-03-03T08:52:27.949Z</updated>
     
     <summary type="html">
     
@@ -321,7 +377,7 @@
     
     </summary>
     
-      <category term="R" scheme="https://divinerhjf.github.io/categories/R/"/>
+      <category term="编程之道" scheme="https://divinerhjf.github.io/categories/%E7%BC%96%E7%A8%8B%E4%B9%8B%E9%81%93/"/>
     
     
       <category term="R" scheme="https://divinerhjf.github.io/tags/R/"/>
@@ -367,7 +423,7 @@
     <link href="https://divinerhjf.github.io/2018/01/23/cmd-markdown-shi-yong-shuo-ming/"/>
     <id>https://divinerhjf.github.io/2018/01/23/cmd-markdown-shi-yong-shuo-ming/</id>
     <published>2018-01-23T02:54:32.000Z</published>
-    <updated>2019-09-12T07:10:48.115Z</updated>
+    <updated>2019-09-12T08:41:20.382Z</updated>
     
     <summary type="html">
     

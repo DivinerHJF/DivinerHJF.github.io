@@ -415,8 +415,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/R/" class="post-category" target="_blank">
-                                R
+                            <a href="/categories/编程之道/" class="post-category" target="_blank">
+                                编程之道
                             </a>
                         
                     </div>
@@ -503,8 +503,8 @@
 <span class="token number">5</span>  <span class="token number">5</span> <span class="token number">10</span>
 
 <span class="token operator">></span> apply<span class="token punctuation">(</span>data<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> mean<span class="token punctuation">)</span>
-x1 x2 
- <span class="token number">3</span>  <span class="token number">8</span> </code></pre>
+x1 x2
+ <span class="token number">3</span>  <span class="token number">8</span></code></pre>
 <hr>
 <h3 id="tapply"><a href="#tapply" class="headerlink" title="tapply"></a>tapply</h3><p>tapply-函数定义：按 INDEX 值分组，相同值对应下标的 X 中的元素形成一个集合，应用到 FUN</p>
 <pre class=" language-r"><code class="language-r">tapply<span class="token punctuation">(</span>X<span class="token punctuation">,</span> INDEX<span class="token punctuation">,</span> FUN <span class="token operator">=</span> <span class="token keyword">NULL</span><span class="token punctuation">,</span> <span class="token ellipsis">...</span><span class="token punctuation">,</span> simplify <span class="token operator">=</span> <span class="token boolean">TRUE</span><span class="token punctuation">)</span></code></pre>
@@ -522,8 +522,8 @@ x1 x2
 <li>eg2-向量按 INDEX 分组求和</li>
 </ul>
 <pre class=" language-r"><code class="language-r"><span class="token operator">></span> tapply<span class="token punctuation">(</span>x<span class="token punctuation">,</span> INDEX<span class="token punctuation">,</span> sum<span class="token punctuation">)</span>
- a  b  c 
- <span class="token number">3</span>  <span class="token number">3</span> <span class="token number">15</span> </code></pre>
+ a  b  c
+ <span class="token number">3</span>  <span class="token number">3</span> <span class="token number">15</span></code></pre>
 <p>eg3-矩阵按 INDEX 分组求均值</p>
 <pre class=" language-r"><code class="language-r"><span class="token operator">></span> mat <span class="token operator">&lt;-</span> matrix<span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">:</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
 <span class="token operator">></span> mat
@@ -538,8 +538,8 @@ x1 x2
 <span class="token operator">></span> tapply<span class="token punctuation">(</span>mat<span class="token punctuation">,</span> INDEX<span class="token punctuation">)</span>
  <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token number">1</span> <span class="token number">1</span> <span class="token number">1</span> <span class="token number">1</span> <span class="token number">1</span> <span class="token number">2</span> <span class="token number">2</span> <span class="token number">2</span> <span class="token number">2</span> <span class="token number">2</span>
 <span class="token operator">></span> tapply<span class="token punctuation">(</span>mat<span class="token punctuation">,</span> INDEX<span class="token punctuation">,</span> mean<span class="token punctuation">)</span>
-<span class="token number">1</span> <span class="token number">2</span> 
-<span class="token number">3</span> <span class="token number">8</span> </code></pre>
+<span class="token number">1</span> <span class="token number">2</span>
+<span class="token number">3</span> <span class="token number">8</span></code></pre>
 <hr>
 <h3 id="lapply"><a href="#lapply" class="headerlink" title="lapply"></a>lapply</h3><p>lapply-函数定义：在 X 上逐个元素调用 FUN, 返回和 X 等长的 list 作为结果集</p>
 <pre class=" language-r"><code class="language-r">lapply<span class="token punctuation">(</span>X<span class="token punctuation">,</span> FUN<span class="token punctuation">,</span> <span class="token ellipsis">...</span><span class="token punctuation">)</span></code></pre>
@@ -627,8 +627,8 @@ x1 x2
 <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token number">55</span>
 
 <span class="token operator">></span> rapply<span class="token punctuation">(</span>lst<span class="token punctuation">,</span> sum<span class="token punctuation">,</span> how<span class="token operator">=</span><span class="token string">"unlist"</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true"># 输出结果为vector</span>
-a.aa a.ab b.ba 
-  <span class="token number">15</span>   <span class="token number">40</span>   <span class="token number">55</span> </code></pre>
+a.aa a.ab b.ba
+  <span class="token number">15</span>   <span class="token number">40</span>   <span class="token number">55</span></code></pre>
 <hr>
 <h3 id="sapply"><a href="#sapply" class="headerlink" title="sapply"></a>sapply</h3><p>sapply-函数定义：简化版lapply，增加参数simplify和USE.NAMES，可设定输出类型</p>
 <pre class=" language-r"><code class="language-r">sapply<span class="token punctuation">(</span>X<span class="token punctuation">,</span> FUN<span class="token punctuation">,</span> <span class="token ellipsis">...</span><span class="token punctuation">,</span> simplify <span class="token operator">=</span> <span class="token boolean">TRUE</span><span class="token punctuation">,</span> USE.NAMES <span class="token operator">=</span> <span class="token boolean">TRUE</span><span class="token punctuation">)</span></code></pre>
@@ -646,8 +646,8 @@ a.aa a.ab b.ba
 <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token number">40</span>
 
 <span class="token operator">></span> sapply<span class="token punctuation">(</span>lst<span class="token punctuation">,</span> sum<span class="token punctuation">)</span>                  <span class="token comment" spellcheck="true"># 输出vector</span>
- a  b 
-<span class="token number">15</span> <span class="token number">40</span> 
+ a  b
+<span class="token number">15</span> <span class="token number">40</span>
 
 <span class="token operator">></span> sapply<span class="token punctuation">(</span>lst<span class="token punctuation">,</span> fivenum<span class="token punctuation">)</span>              <span class="token comment" spellcheck="true"># 输出matrix</span>
      a  b
@@ -663,8 +663,8 @@ a.aa a.ab b.ba
 <span class="token operator">></span> val
 <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token string">"a"</span> <span class="token string">"b"</span> <span class="token string">"c"</span> <span class="token string">"d"</span> <span class="token string">"e"</span> <span class="token string">"f"</span>
 <span class="token operator">></span> sapply<span class="token punctuation">(</span>val<span class="token punctuation">,</span> paste<span class="token punctuation">)</span>
-  a   b   c   d   e   f 
-<span class="token string">"a"</span> <span class="token string">"b"</span> <span class="token string">"c"</span> <span class="token string">"d"</span> <span class="token string">"e"</span> <span class="token string">"f"</span> 
+  a   b   c   d   e   f
+<span class="token string">"a"</span> <span class="token string">"b"</span> <span class="token string">"c"</span> <span class="token string">"d"</span> <span class="token string">"e"</span> <span class="token string">"f"</span>
 <span class="token operator">></span> sapply<span class="token punctuation">(</span>val<span class="token punctuation">,</span> paste<span class="token punctuation">,</span> USE.NAMES <span class="token operator">=</span> F<span class="token punctuation">)</span>
 <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token string">"a"</span> <span class="token string">"b"</span> <span class="token string">"c"</span> <span class="token string">"d"</span> <span class="token string">"e"</span> <span class="token string">"f"</span></code></pre>
 <hr>
@@ -709,8 +709,8 @@ d <span class="token number">12</span> <span class="token number">12</span></cod
 <li>eg1-输入两个list并分组求和</li>
 </ul>
 <pre class=" language-r"><code class="language-r"><span class="token operator">></span> mapply<span class="token punctuation">(</span>sum<span class="token punctuation">,</span> list<span class="token punctuation">(</span>a<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span>b<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">,</span>c<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> list<span class="token punctuation">(</span>a<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">,</span>b<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">,</span>d<span class="token operator">=</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
- a  b  c 
-<span class="token number">11</span> <span class="token number">22</span> <span class="token number">33</span> </code></pre>
+ a  b  c
+<span class="token number">11</span> <span class="token number">22</span> <span class="token number">33</span></code></pre>
 <ul>
 <li>eg2-比较两个向量大小，按索引顺序取较大的值</li>
 </ul>
@@ -767,8 +767,8 @@ logic <span class="token operator">:</span>  logi <span class="token punctuation
 <ul>
 <li>应用1-tapply实现crosstable功能</li>
 </ul>
-<pre class=" language-r"><code class="language-r"><span class="token operator">></span> df <span class="token operator">&lt;-</span> data.frame<span class="token punctuation">(</span>year<span class="token operator">=</span>kronecker<span class="token punctuation">(</span><span class="token number">2001</span><span class="token operator">:</span><span class="token number">2003</span><span class="token punctuation">,</span> rep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> 
-                 loc<span class="token operator">=</span>c<span class="token punctuation">(</span><span class="token string">'beijing'</span><span class="token punctuation">,</span><span class="token string">'beijing'</span><span class="token punctuation">,</span><span class="token string">'shanghai'</span><span class="token punctuation">,</span><span class="token string">'shanghai'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> 
+<pre class=" language-r"><code class="language-r"><span class="token operator">></span> df <span class="token operator">&lt;-</span> data.frame<span class="token punctuation">(</span>year<span class="token operator">=</span>kronecker<span class="token punctuation">(</span><span class="token number">2001</span><span class="token operator">:</span><span class="token number">2003</span><span class="token punctuation">,</span> rep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                 loc<span class="token operator">=</span>c<span class="token punctuation">(</span><span class="token string">'beijing'</span><span class="token punctuation">,</span><span class="token string">'beijing'</span><span class="token punctuation">,</span><span class="token string">'shanghai'</span><span class="token punctuation">,</span><span class="token string">'shanghai'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
                  type<span class="token operator">=</span>rep<span class="token punctuation">(</span>c<span class="token punctuation">(</span><span class="token string">'A'</span><span class="token punctuation">,</span><span class="token string">'B'</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">)</span><span class="token punctuation">,</span> sale<span class="token operator">=</span>rep<span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">:</span><span class="token number">12</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token operator">></span> df
    year      loc type sale
@@ -851,20 +851,20 @@ year    A  B
 
 <span class="token operator">></span> by<span class="token punctuation">(</span>data<span class="token punctuation">,</span> INDICES<span class="token punctuation">,</span> colMeans<span class="token punctuation">)</span>
 INDICES<span class="token operator">:</span> <span class="token number">1</span>
-  a   b 
-<span class="token number">1.5</span> <span class="token number">6.5</span> 
+  a   b
+<span class="token number">1.5</span> <span class="token number">6.5</span>
 <span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>
 INDICES<span class="token operator">:</span> <span class="token number">2</span>
-a b 
-<span class="token number">4</span> <span class="token number">9</span> 
+a b
+<span class="token number">4</span> <span class="token number">9</span>
 <span class="token operator">></span> by<span class="token punctuation">(</span>data<span class="token punctuation">,</span> INDICES<span class="token punctuation">,</span> rowMeans<span class="token punctuation">)</span>
 INDICES<span class="token operator">:</span> <span class="token number">1</span>
-  <span class="token number">1</span>   <span class="token number">2</span> 
-<span class="token number">3.5</span> <span class="token number">4.5</span> 
+  <span class="token number">1</span>   <span class="token number">2</span>
+<span class="token number">3.5</span> <span class="token number">4.5</span>
 <span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>
 INDICES<span class="token operator">:</span> <span class="token number">2</span>
-  <span class="token number">3</span>   <span class="token number">4</span>   <span class="token number">5</span> 
-<span class="token number">5.5</span> <span class="token number">6.5</span> <span class="token number">7.5</span> </code></pre>
+  <span class="token number">3</span>   <span class="token number">4</span>   <span class="token number">5</span>
+<span class="token number">5.5</span> <span class="token number">6.5</span> <span class="token number">7.5</span></code></pre>
 <h4 id="outer"><a href="#outer" class="headerlink" title="outer"></a>outer</h4><p>outer-函数定义：作用于数组的类似于矩阵外积运算方式的运算函数</p>
 <pre class=" language-r"><code class="language-r">outer<span class="token punctuation">(</span>X<span class="token punctuation">,</span> Y<span class="token punctuation">,</span> FUN <span class="token operator">=</span> <span class="token string">"*"</span><span class="token punctuation">,</span> <span class="token ellipsis">...</span><span class="token punctuation">)</span></code></pre>
 <blockquote>
@@ -1273,8 +1273,8 @@ INDICES<span class="token operator">:</span> <span class="token number">2</span>
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/R/" class="post-category" target="_blank">
-                                    R
+                            <a href="/categories/可视化/" class="post-category" target="_blank">
+                                    可视化
                                 </a>
                             
                             
@@ -1499,7 +1499,7 @@ INDICES<span class="token operator">:</span> <span class="token number">2</span>
         <div class="col s12 m8 l8 copy-right">
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数 : &nbsp;
-                <span class="white-color">28.4k</span>
+                <span class="white-color">32.4k</span>
             
 
             <br>
