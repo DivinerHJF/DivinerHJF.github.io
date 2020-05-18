@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>中财大创活动记录</title>
+      <link href="/2020/05/18/da-chuang-ji-lu/"/>
+      <url>/2020/05/18/da-chuang-ji-lu/</url>
+      
+        <content type="html"><![CDATA[<iframe src="https://onedrive.live.com/embed?cid=2D084BC390E48751&amp;resid=2D084BC390E48751%2133181&amp;authkey=ABEGAVR21xUQeWs&amp;em=2&amp;wdAr=1.7777777777777777" width="962px" height="565px" frameborder="0">这是嵌入 <a target="_blank" href="https://office.com">Microsoft Office</a> 演示文稿，由 <a target="_blank" href="https://office.com/webapps">Office</a> 提供支持。</iframe><iframe width="700" height="600" frameborder="0" scrolling="no" src="https://onedrive.live.com/embed?resid=2D084BC390E48751%2133183&amp;authkey=%21AK_lwr54N4Z3l4E&amp;em=2&amp;wdAllowInteractivity=False&amp;wdHideGridlines=True&amp;wdHideHeaders=True&amp;wdDownloadButton=True&amp;wdInConfigurator=True"></iframe><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数据报告 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 大创 </tag>
+            
+            <tag> 数据分析 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>数据库漫游指南 - SQL</title>
       <link href="/2020/02/08/sql-tutorial/"/>
       <url>/2020/02/08/sql-tutorial/</url>
@@ -47,13 +74,13 @@
       
         <tags>
             
-            <tag> Python </tag>
-            
             <tag> MySQL </tag>
             
             <tag> MongoDB </tag>
             
             <tag> Redis </tag>
+            
+            <tag> Python </tag>
             
         </tags>
       
@@ -107,11 +134,11 @@
             
             <tag> R </tag>
             
+            <tag> Python </tag>
+            
             <tag> 机器学习 </tag>
             
             <tag> 关联分析 </tag>
-            
-            <tag> Python </tag>
             
         </tags>
       
