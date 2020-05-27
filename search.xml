@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>面试作品</title>
+      <link href="/2020/05/27/dachuang-md/"/>
+      <url>/2020/05/27/dachuang-md/</url>
+      
+        <content type="html"><![CDATA[<iframe width="1000" height="1000" src="https://app.powerbi.com/reportEmbed?reportId=8d0952a6-796a-462b-8787-2b1015a7b13c&amp;autoAuth=true&amp;ctid=af3913a9-e828-4efd-98c6-c0dde9ec50b4&amp;config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLXdlc3QtdXMtcmVkaXJlY3QuYW5hbHlzaXMud2luZG93cy5uZXQvIn0%3D" frameborder="0" allowfullscreen="true"></iframe><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数据报告 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 大创 </tag>
+            
+            <tag> Power BI </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>中财大创活动记录</title>
       <link href="/2020/05/18/da-chuang-ji-lu/"/>
       <url>/2020/05/18/da-chuang-ji-lu/</url>
