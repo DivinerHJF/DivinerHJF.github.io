@@ -5,8 +5,8 @@ author: divinerhjf
 img: 'https://blog-1255524710.cos.ap-beijing.myqcloud.com/cover/DT包封面.PNG'
 top: false
 cover: false
-categories: R
-tags: 
+categories: 编程之道
+tags:
     - R
     - DT
     - 数据处理

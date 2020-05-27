@@ -5,8 +5,8 @@ author: divinerhjf
 img: 'https://blog-1255524710.cos.ap-beijing.myqcloud.com/cover/formattable.png'
 top: false
 cover: false
-categories: R
-tags: 
+categories: 可视化
+tags:
     - R
     - formattable
     - 数据展示
@@ -69,7 +69,7 @@ p
 
 > # formattable格式继承了numeric属性，因而保留了数学运算能力
 > class(p)
-[1] "formattable" "numeric" 
+[1] "formattable" "numeric"
 ```
 
 ---
@@ -217,7 +217,7 @@ scientific(x, format = c("e", "E"), digits = 4, ...)
 
 ```r
 > df <- data.frame(
-+   id = c(1, 2, 3, 4, 5), 
++   id = c(1, 2, 3, 4, 5),
 +   name = c("A1", "A2", "B1", "B2", "C1"),
 +   balance = accounting(c(52500, 36150, 25000, 18300, 7600), format = "d"),
 +   growth = percent(c(0.3, 0.3, 0.1, 0.15, 0.15), format = "d"),
@@ -245,8 +245,8 @@ scientific(x, format = c("e", "E"), digits = 4, ...)
 ```r
 > df <- data.frame(
 +   id = 1:10,
-+   name = c("Bob", "Ashley", "James", "David", "Jenny", 
-+            "Hans", "Leo", "John", "Emily", "Lee"), 
++   name = c("Bob", "Ashley", "James", "David", "Jenny",
++            "Hans", "Leo", "John", "Emily", "Lee"),
 +   age = c(28, 27, 30, 28, 29, 29, 27, 27, 31, 30),
 +   grade = c("C", "A", "A", "C", "B", "B", "B", "A", "C", "C"),
 +   test1_score = c(8.9, 9.5, 9.6, 8.9, 9.1, 9.3, 9.3, 9.9, 8.5, 8.6),
@@ -271,11 +271,11 @@ scientific(x, format = c("e", "E"), digits = 4, ...)
 格式化表格，具有以下可视化效果：
 
 ```r
-> formattable(df, 
+> formattable(df,
 +             list(
 +               age = color_tile("white", "orange"),
 +               grade = formatter(
-+                 "span", 
++                 "span",
 +                 style = x ~ ifelse(x == "A", style(color = "green", font.weight = "bold"), NA)
 +               ),
 +               area(col = c(test1_score, test2_score)) ~ normalize_bar("pink", 0.2),

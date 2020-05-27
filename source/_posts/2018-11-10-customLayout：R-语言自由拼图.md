@@ -5,8 +5,8 @@ author: divinerhjf
 img: 'https://blog-1255524710.cos.ap-beijing.myqcloud.com/cover/customLayout.png'
 top: false
 cover: false
-categories: R
-tags: 
+categories: 可视化
+tags:
     - R
     - customLayout
     - 绘图

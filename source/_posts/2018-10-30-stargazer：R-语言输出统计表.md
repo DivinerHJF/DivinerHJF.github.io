@@ -5,8 +5,8 @@ author: divinerhjf
 img: 'https://blog-1255524710.cos.ap-beijing.myqcloud.com/cover/table.png'
 top: true
 cover: false
-categories: R
-tags: 
+categories: 编程之道
+tags:
     - R
     - stargazer
     - 可视化
@@ -115,7 +115,7 @@ stargazer(linear.1, linear.2, probit.model, title = "Results", align = TRUE)
 
 - 删除表中的空白行：`no.space`
 - 移除不关心的统计量：`omit.stat`
-- 修改因变量和自变量的名称：`dep.var.labels` 、 `covariate.labels` 
+- 修改因变量和自变量的名称：`dep.var.labels` 、 `covariate.labels`
 
 ```R
 stargazer(linear.1, linear.2, probit.model, title = "Regression Results",
@@ -180,7 +180,7 @@ keep.stat = "n", ci = TRUE, ci.level = 0.90, single.row = TRUE)
 ```R
 stargazer(linear.1, linear.2, type = "text", title = "Regression Results",
 dep.var.labels = c("Overall Rating", "High Rating"),
-order = c("learning", "privileges"), 
+order = c("learning", "privileges"),
 keep.stat = "n", ci = TRUE, ci.level = 0.90, single.row = TRUE, header = F)
 ```
 
@@ -239,5 +239,5 @@ stargazer(model, header = F)
 
 > ### 参考文章
 > * [stargazer.pdf](https://cran.r-project.org/web/packages/stargazer/vignettes/stargazer.pdf)
-> * Hlavac, Marek (2018). stargazer: Well-Formatted Regression and Summary Statistics 
+> * Hlavac, Marek (2018). stargazer: Well-Formatted Regression and Summary Statistics
 >   Tables. R package version 5.2.2. https://CRAN.R-project.org/package=stargazer
