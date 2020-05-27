@@ -1,5 +1,5 @@
 ---
-title: 面试作品.md
+title: 面试作品
 author: divinerhjf
 img: 'https://image-host-1255524710.cos.ap-beijing.myqcloud.com/20200527113350.png'
 top: false
@@ -11,7 +11,6 @@ copyright: true
 categories: 数据报告
 tags:
   - 大创
-  - 数据分析
   - Power BI
 date: 2020-05-27 11:29:10
 ---
